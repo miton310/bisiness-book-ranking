@@ -1,0 +1,34 @@
+{
+  "channels": [
+    {
+      "name": "本要約チャンネル",
+      "channel_id": "UCEixleMT76xDzoiEb9ZA7XA",
+      "subscribers": "約180万人",
+      "note": "毎日更新、幅広いジャンル"
+    },
+    {
+      "name": "サラタメさん",
+      "channel_id": "UCaG7jufgiw4p5mphPPVbqhw",
+      "subscribers": "約70万人",
+      "note": "ビジネス書中心、サラリーマン目線"
+    },
+    {
+      "name": "フェルミ漫画大学",
+      "channel_id": "UC9V4eJBNx_hOieGG51NZ6nA",
+      "subscribers": "約120万人",
+      "note": "漫画形式で解説 ※要ID確認"
+    },
+    {
+      "name": "学識サロン",
+      "channel_id": "UCC4NkFV-L-vVYD5z_Ei5dUA",
+      "subscribers": "約60万人",
+      "note": "ビジネス・自己啓発 ※要ID確認"
+    },
+    {
+      "name": "アバタロー",
+      "channel_id": "UCduDJ6s3mMchYMy2HvqalxQ",
+      "subscribers": "約50万人",
+      "note": "古典・名著中心 ※要ID確認"
+    }
+  ]
+}

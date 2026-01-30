@@ -1,0 +1,54 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { fetchRankings } from '../data'
+import type { RankingEntry } from '../types'
+
+export function TopPage() {
+  const [books, setBooks] = useState<RankingEntry[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchRankings().then(data => {
+      setBooks(data.slice(0, 20))
+      setLoading(false)
+    })
+  }, [])
+
+  if (loading) return <p>読み込み中...</p>
+
+  return (
+    <div>
+      <h1>ビジネス書ランキング TOP20</h1>
+      <p className="subtitle">本要約系YouTuberが紹介した書籍を紹介回数でランキング</p>
+      <div className="ranking-list">
+        {books.map((book, i) => (
+          <div key={book.id} className="ranking-card">
+            <span className="rank">{i + 1}</span>
+            <div className="book-info">
+              <Link to={`/book/${book.id}`} className="book-title">
+                {book.title}
+              </Link>
+              {book.author && <span className="book-author">{book.author}</span>}
+              <div className="book-stats">
+                <span>紹介 {book.count}回</span>
+                <span>再生 {book.total_views.toLocaleString()}</span>
+                <span>いいね {book.total_likes.toLocaleString()}</span>
+              </div>
+            </div>
+            <a
+              href={book.amazon_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="amazon-btn"
+            >
+              Amazon
+            </a>
+          </div>
+        ))}
+      </div>
+      <div className="more-link">
+        <Link to="/ranking">全ランキングを見る →</Link>
+      </div>
+    </div>
+  )
+}
