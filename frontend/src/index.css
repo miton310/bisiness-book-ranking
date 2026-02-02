@@ -150,6 +150,15 @@ h1 {
 .ranking-card:nth-child(2) .rank { color: #94a3b8; font-size: 1.3rem; }
 .ranking-card:nth-child(3) .rank { color: #d97706; font-size: 1.3rem; }
 
+.book-cover {
+  width: 60px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .book-info {
   flex: 1;
   min-width: 0;
@@ -171,6 +180,13 @@ h1 {
 
 .book-author {
   font-size: 0.8rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.book-publisher {
+  font-size: 0.75rem;
   color: var(--text-muted);
   display: block;
   margin-top: 2px;
@@ -213,6 +229,26 @@ h1 {
   display: inline-block;
   margin-bottom: 16px;
   font-size: 0.9rem;
+}
+
+.detail-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.detail-cover {
+  width: 140px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.detail-info {
+  flex: 1;
+  min-width: 0;
 }
 
 .detail-title {
@@ -345,9 +381,21 @@ h2 {
   .rank {
     min-width: 28px;
   }
+  .book-cover {
+    width: 50px;
+    height: 75px;
+  }
   .book-stats {
     flex-wrap: wrap;
     gap: 8px;
+  }
+  .detail-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .detail-cover {
+    width: 120px;
+    height: 180px;
   }
   .detail-stats {
     flex-direction: column;

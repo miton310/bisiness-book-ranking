@@ -24,11 +24,20 @@ export function TopPage() {
         {books.map((book, i) => (
           <div key={book.id} className="ranking-card">
             <span className="rank">{i + 1}</span>
+            {book.image_url && (
+              <img
+                src={book.image_url}
+                alt={book.title}
+                className="book-cover"
+                loading="lazy"
+              />
+            )}
             <div className="book-info">
               <Link to={`/book/${book.id}`} className="book-title">
                 {book.title}
               </Link>
               {book.author && <span className="book-author">{book.author}</span>}
+              {book.publisher && <span className="book-publisher">{book.publisher}</span>}
               <div className="book-stats">
                 <span>紹介 {book.count}回</span>
                 <span>再生 {book.total_views.toLocaleString()}</span>

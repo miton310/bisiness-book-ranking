@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Google Books API で書籍情報（画像・著者・出版社・出版日）を取得するスクリプト"""
+"""openBD + Google Books API で書籍情報（画像・著者・出版社・出版日）を取得するスクリプト"""
 
 import json
 import os
@@ -12,30 +12,116 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 BOOKS_FILE = os.path.join(DATA_DIR, "books.json")
 
 GOOGLE_BOOKS_API = "https://www.googleapis.com/books/v1/volumes"
+OPENBD_API = "https://api.openbd.jp/v1/get"
 
 AMAZON_ASSOCIATE_TAG = "miton31003"
 AMAZON_TRACKING_ID = "business-book-ranking02-22"
 
+# Google Books APIキーを取得（.envから）
+# 環境変数で明示的に空文字が設定された場合はGoogle Books APIを無効化
+GOOGLE_BOOKS_API_KEY = os.environ.get("GOOGLE_BOOKS_API_KEY")
+if GOOGLE_BOOKS_API_KEY is None:
+    env_path = os.path.join(os.path.dirname(__file__), "..", ".env")
+    if os.path.exists(env_path):
+        with open(env_path) as f:
+            for line in f:
+                if line.startswith("GOOGLE_BOOKS_API_KEY="):
+                    GOOGLE_BOOKS_API_KEY = line.strip().split("=", 1)[1]
+    if not GOOGLE_BOOKS_API_KEY:
+        GOOGLE_BOOKS_API_KEY = ""
 
-def search_google_books(title):
-    """Google Books API でタイトル検索"""
-    params = urllib.parse.urlencode({
+
+def fetch_openbd(isbn):
+    """openBD API でISBNから書籍情報を取得"""
+    url = f"{OPENBD_API}?isbn={isbn}"
+    req = urllib.request.Request(url)
+    try:
+        with urllib.request.urlopen(req) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            # openBDは配列を返す。存在しない場合は[null]
+            if data and data[0]:
+                return data[0]
+            return None
+    except Exception as e:
+        print(f"  [ERROR] openBD API: {e}")
+        return None
+
+
+def search_google_books(title, retry=3):
+    """Google Books API でタイトル検索（リトライ機能付き）"""
+    params = {
         "q": f"intitle:{title}",
         "langRestrict": "ja",
         "maxResults": 1,
         "printType": "books",
-    })
-    url = f"{GOOGLE_BOOKS_API}?{params}"
-    req = urllib.request.Request(url)
-    try:
-        with urllib.request.urlopen(req) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        print(f"  [ERROR] Google Books API {e.code}")
+    }
+
+    # APIキーがあれば追加（レート制限緩和）
+    if GOOGLE_BOOKS_API_KEY:
+        params["key"] = GOOGLE_BOOKS_API_KEY
+
+    url = f"{GOOGLE_BOOKS_API}?{urllib.parse.urlencode(params)}"
+
+    for attempt in range(retry):
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            if e.code == 429:  # レート制限
+                if attempt < retry - 1:
+                    wait_time = 10 * (attempt + 1)  # 10秒、20秒、30秒と増やす
+                    time.sleep(wait_time)
+                    continue
+                else:
+                    print(f"  [ERROR] Google Books API {e.code}")
+                    return None
+            else:
+                print(f"  [ERROR] Google Books API {e.code}")
+                return None
+        except Exception as e:
+            print(f"  [ERROR] {e}")
+            return None
+
+    return None
+
+
+def extract_openbd_details(openbd_data):
+    """openBD API レスポンスから書籍情報を抽出"""
+    if not openbd_data:
         return None
 
+    summary = openbd_data.get("summary", {})
+    onix = openbd_data.get("onix", {})
 
-def extract_details(result):
+    # 画像URL
+    image_url = summary.get("cover")
+
+    # 著者
+    authors = None
+    author_str = summary.get("author")
+    if author_str:
+        authors = [author_str]
+
+    # 出版社
+    publisher = summary.get("publisher")
+
+    # 出版日
+    pub_date = summary.get("pubdate")
+
+    # ISBN
+    isbn = summary.get("isbn")
+
+    return {
+        "image_url": image_url,
+        "authors": authors,
+        "publisher": publisher,
+        "publication_date": pub_date,
+        "isbn": isbn,
+    }
+
+
+def extract_google_books_details(result):
     """Google Books API レスポンスから書籍情報を抽出"""
     if not result or result.get("totalItems", 0) == 0:
         return None
@@ -89,7 +175,42 @@ def extract_details(result):
 def generate_amazon_search_url(book_title):
     """書籍タイトルからAmazon検索URLを生成（アソシエイトタグ付き）"""
     query = urllib.parse.quote(book_title)
-    return f"https://www.amazon.co.jp/s?k={query}&i=stripbooks&tag={AMAZON_ASSOCIATE_TAG}&linkId={AMAZON_TRACKING_ID}"
+    return f"https://www.amazon.co.jp/s?k={query}&i=stripbooks&tag={AMAZON_TRACKING_ID}"
+
+
+def search_ndl(title, retry=3):
+    """国立国会図書館サーチAPIでタイトルからISBNを検索"""
+    import re as _re
+    params = urllib.parse.urlencode({"title": title, "cnt": 3})
+    url = f"https://ndlsearch.ndl.go.jp/api/opensearch?{params}"
+
+    for attempt in range(retry):
+        try:
+            req = urllib.request.Request(url)
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                data = resp.read().decode("utf-8")
+                isbns = _re.findall(
+                    r'<dc:identifier xsi:type="dcndl:ISBN">([^<]+)</dc:identifier>', data
+                )
+                # ISBN-13を優先
+                for isbn in isbns:
+                    cleaned = isbn.replace("-", "")
+                    if len(cleaned) == 13:
+                        return cleaned
+                # ISBN-10でもOK
+                for isbn in isbns:
+                    cleaned = isbn.replace("-", "")
+                    if len(cleaned) == 10:
+                        return cleaned
+                return None
+        except Exception as e:
+            if attempt < retry - 1:
+                time.sleep(3 * (attempt + 1))
+                continue
+            print(f"  [ERROR] NDL API: {e}")
+            return None
+
+    return None
 
 
 def main():
@@ -108,28 +229,64 @@ def main():
         title = book["title"]
         print(f"  [{i+1}/{len(books)}] {title[:40]}...", end=" ")
 
-        result = search_google_books(title)
-        details = extract_details(result)
+        details = None
+
+        # 1. NDLサーチでISBNを取得
+        isbn = search_ndl(title)
+
+        # 2. ISBNが取れたらopenBDで詳細取得
+        if isbn:
+            openbd_data = fetch_openbd(isbn)
+            openbd_details = extract_openbd_details(openbd_data)
+            if openbd_details:
+                details = openbd_details
+                print(f"OK (NDL→openBD, ISBN:{isbn})", end="")
+
+        # 3. openBDで取れなかったらGoogle Books APIにフォールバック
+        # ※Google Books APIのクォータが切れている場合はスキップ
+        if not details and GOOGLE_BOOKS_API_KEY:
+            google_result = search_google_books(title, retry=1)
+            google_details = extract_google_books_details(google_result)
+            if google_details:
+                # Google BooksでISBNが取れたらopenBDも試す
+                g_isbn = google_details.get("isbn")
+                if g_isbn and not isbn:
+                    openbd_data = fetch_openbd(g_isbn)
+                    openbd_details = extract_openbd_details(openbd_data)
+                    if openbd_details:
+                        details = {
+                            "image_url": openbd_details.get("image_url") or google_details.get("image_url"),
+                            "authors": openbd_details.get("authors") or google_details.get("authors"),
+                            "publisher": openbd_details.get("publisher") or google_details.get("publisher"),
+                            "publication_date": openbd_details.get("publication_date") or google_details.get("publication_date"),
+                            "isbn": openbd_details.get("isbn") or g_isbn,
+                        }
+                        print(f"OK (Google→openBD)", end="")
+                if not details:
+                    details = google_details
+                    print("OK (Google Books)", end="")
 
         if details:
-            if details["image_url"]:
+            if details.get("image_url"):
                 book["image_url"] = details["image_url"]
-            if details["authors"]:
+            if details.get("authors"):
                 book["author"] = "、".join(details["authors"])
-            if details["publisher"]:
+            if details.get("publisher"):
                 book["publisher"] = details["publisher"]
-            if details["publication_date"]:
+            if details.get("publication_date"):
                 book["publication_date"] = details["publication_date"]
-            if details["isbn"]:
+            if details.get("isbn"):
                 book["isbn"] = details["isbn"]
+                # ISBNがあれば商品ページURLに置き換え
+                book["amazon_url"] = f"https://www.amazon.co.jp/dp/{details['isbn']}?tag={AMAZON_TRACKING_ID}"
             updated += 1
-            print("OK")
+            print()
         else:
             errors += 1
-            print("NOT FOUND")
+            print(" NOT FOUND")
 
-        # レート制限対策
-        time.sleep(0.5)
+        # NDL + openBD はレート制限が緩いので短めでOK
+        time.sleep(1)
 
         # 100件ごとに中間保存
         if updated > 0 and updated % 100 == 0:

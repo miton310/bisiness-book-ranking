@@ -22,10 +22,22 @@ export function BookDetailPage() {
   return (
     <div>
       <Link to="/" className="back-link">← トップに戻る</Link>
-      <h1 className="detail-title">{book.title}</h1>
-      <div className="detail-meta">
-        {book.author && <p>著者: {book.author}</p>}
-        {book.publisher && <p>出版社: {book.publisher}</p>}
+      <div className="detail-header">
+        {book.image_url && (
+          <img
+            src={book.image_url}
+            alt={book.title}
+            className="detail-cover"
+          />
+        )}
+        <div className="detail-info">
+          <h1 className="detail-title">{book.title}</h1>
+          <div className="detail-meta">
+            {book.author && <p>著者: {book.author}</p>}
+            {book.publisher && <p>出版社: {book.publisher}</p>}
+            {book.publication_date && <p>出版日: {book.publication_date}</p>}
+          </div>
+        </div>
       </div>
       <div className="detail-stats">
         <div className="stat-card">

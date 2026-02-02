@@ -18,6 +18,9 @@ export interface Book {
   total_views: number
   total_likes: number
   videos: Video[]
+  image_url?: string
+  publication_date?: string
+  isbn?: string
 }
 
 export interface RankingEntry {
@@ -28,4 +31,7 @@ export interface RankingEntry {
   total_views: number
   total_likes: number
   amazon_url: string
+  image_url?: string
+  publisher?: string
+  publication_date?: string
 }

@@ -10,6 +10,9 @@ import time
 import urllib.parse
 import urllib.request
 
+# Amazonリンクから書籍情報取得
+from fetch_amazon_info import extract_books_from_amazon_links
+
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 CHANNELS_FILE = os.path.join(DATA_DIR, "channels.json")
 
@@ -124,7 +127,19 @@ def extract_book_info_list(summary):
     """概要欄から書籍情報を抽出（複数冊対応）"""
     results = []
 
-    amazon_urls = re.findall(r'https?://amzn\.to/[A-Za-z0-9]+', summary)
+    # TODO: Amazonリンクから書籍情報を取得（時間がかかるため一時的に無効化）
+    # amazon_urls = re.findall(r'https?://amzn\.to/[A-Za-z0-9]+', summary)
+    # if amazon_urls:
+    #     amazon_books = extract_books_from_amazon_links(amazon_urls, max_books=5, context=summary)
+    #     for book in amazon_books:
+    #         results.append({
+    #             "title": book["title"],
+    #             "author": None,
+    #             "publisher": None,
+    #             "amazon_url": book["amazon_url"],
+    #         })
+    #     if results:
+    #         return results
 
     # パターン1: 本要約チャンネル / サラタメさん「タイトル：」「著者：」「出版社：」
     title_match = re.search(r'タイトル[：:](.+)', summary)
@@ -169,7 +184,153 @@ def extract_book_info_list(summary):
             results.append(info)
             return results
 
-    # パターン4: アバタロー「書籍の購入」セクション
+    # パターン4: サムの本解説ch「【今回の参考書籍📚】」セクション
+    sam_section = re.search(
+        r'【今回の参考書籍.*?】\s*\n(.*?)(?=【|$)', summary, re.DOTALL
+    )
+    if sam_section:
+        section_text = sam_section.group(1).strip()
+        lines = section_text.split('\n')
+        title_line = None
+        author_line = None
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('http'):
+                continue
+            # 著者行を判定: 「〜(著)」「〜（著）」を含む行
+            if re.search(r'[（(]著[）)]', line):
+                author_line = line
+            else:
+                # タイトル行: 「Kindle版」等を除去
+                title_line = re.sub(r'\s*(Kindle版|単行本|文庫|新書|ハードカバー)\s*$', '', line).strip()
+        if title_line:
+            info = {"title": title_line, "author": None, "publisher": None}
+            if author_line:
+                author_match = re.match(r'(.+?)\s*[（(]著[）)]', author_line)
+                if author_match:
+                    info["author"] = author_match.group(1).strip()
+                pub_match = re.search(r'([^\s]+?)[（(]編集[）)]', author_line)
+                if pub_match:
+                    info["publisher"] = pub_match.group(1).strip()
+            results.append(info)
+            return results
+
+    # パターン5: PIVOT「＜参考書籍＞」セクション
+    pivot_section = re.search(
+        r'[＜<]参考書籍[＞>]\s*\n(.*?)(?=\n[＜<]|\n※|$)', summary, re.DOTALL
+    )
+    if pivot_section:
+        section_text = pivot_section.group(1).strip()
+        lines = section_text.split('\n')
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('http') or line.startswith('※'):
+                continue
+
+            title = None
+            author = None
+
+            # パターンA: 『タイトル』を優先（内部に「」が含まれてもOK）
+            book_match = re.search(r'『(.+?)』', line)
+            if book_match:
+                title = book_match.group(1).strip()
+                before = line[:book_match.start()].strip()
+                if before:
+                    author = before
+                after = line[book_match.end():].strip()
+                if not author and after:
+                    a_match = re.match(r'(.+?)\s*[（(]著[）)]', after)
+                    if a_match:
+                        author = a_match.group(1).strip()
+
+            # パターンB: 「タイトル」＋後続テキストも含める
+            if not title:
+                book_match = re.search(r'「(.+?)」(.+?)(?=[（(]|https?://|\s*$)', line)
+                if book_match:
+                    # 「タイトル」の後ろもタイトルの一部として結合
+                    title = book_match.group(1).strip() + book_match.group(2).strip()
+                    # 末尾の括弧内（出版社等）を除去
+                    title = re.sub(r'[（(][^）)]+[）)]$', '', title).strip()
+
+            if not title:
+                continue
+
+            results.append({
+                "title": title,
+                "author": author,
+                "publisher": None,
+            })
+        # PIVOTの参考書籍セクションがある場合は結果に関わらずここで返す
+        # （パターン6のamzn.to汎用抽出に落ちないようにする）
+        return results
+
+    # パターン6: 七瀬アリーサ — amzn.toリンクから書籍タイトルを抽出
+    # 形式A: 「タイトル　https://amzn.to/xxx」(同一行)
+    # 形式B: 「タイトル」+ 次行「https://amzn.to/xxx」(別行)
+    amazon_lines = re.findall(r'https?://amzn\.to/[A-Za-z0-9]+', summary)
+    if amazon_lines:
+        lines = summary.split('\n')
+        ng_words = ['Amazon', 'URL', 'リンク', '七瀬', '商品紹介', '特典',
+                    'メッセージカード', 'Success Book', '動画', '概要欄',
+                    'おすすめ順ではない', 'アソシエイト', '購入ページ',
+                    '提供:', 'Mainichi Eikaiwa', '評判', 'おすすめ本', '出演本',
+                    '参考本', 'お勧め本', 'TOEIC', '勉強本', 'オーディブル',
+                    'Audible', 'Kindle', 'Udemy', '手帳', 'プランナー',
+                    'オンライン英会話', 'AQUES', 'チャンネル登録', 'LOWYAの',
+                    'Meta Quest', 'Kindle端末', '本棚デスク', 'はこちら',
+                    'タイマー', 'トレーナー', 'ボードゲーム', 'かっさ',
+                    'テラヘルツ', 'イヤホン', 'キーボード', 'マウス',
+                    'ディスプレイ', 'モニター', 'チェア', 'ライト付き',
+                    '金フレ', 'キクタン', 'でる1000問', '公式問題集',
+                    '精選問題集', '精選模試']
+
+        for i, line in enumerate(lines):
+            line_stripped = line.strip()
+            amazon_match = re.search(r'https?://amzn\.to/[A-Za-z0-9]+', line_stripped)
+            if not amazon_match:
+                continue
+
+            title_candidate = None
+            amazon_url = amazon_match.group(0)
+
+            # 形式A: amzn.toの前にテキストがある（同一行）
+            before_url = line_stripped[:amazon_match.start()].strip()
+            if before_url and not before_url.startswith('http'):
+                title_candidate = before_url
+            # 形式B: amzn.toだけの行 → 前の行がタイトル
+            elif line_stripped == amazon_url and i > 0:
+                prev_line = lines[i-1].strip()
+                if prev_line and not prev_line.startswith('http'):
+                    title_candidate = prev_line
+
+            if not title_candidate:
+                continue
+
+            # NGワードチェック
+            if any(ng in title_candidate for ng in ng_words):
+                continue
+
+            # クリーンアップ
+            cleaned = re.sub(r'^[*\s・※❤️📕📗📘📙🔽▽↓]+', '', title_candidate).strip()
+            # 括弧付きの補足を除去: 「タイトル(Amazon)」→「タイトル」
+            cleaned = re.sub(r'[（(](?:Amazon|Amazonリンク|アマゾン)[）)]$', '', cleaned).strip()
+            # 『』「」で囲まれている場合は外す
+            if cleaned.startswith('『') and cleaned.endswith('』'):
+                cleaned = cleaned[1:-1]
+            if cleaned.startswith('「') and cleaned.endswith('」'):
+                cleaned = cleaned[1:-1]
+
+            if cleaned and len(cleaned) > 2:
+                results.append({
+                    "title": cleaned,
+                    "author": None,
+                    "publisher": None,
+                })
+
+        if results:
+            return results
+
+    # パターン5: アバタロー「書籍の購入」セクション
     abataro_section = re.search(
         r'(?:【書籍の購入】|▼書籍の購入)\s*\n?(.*?)(?=\n▼|\n\n\n|\Z)', summary, re.DOTALL
     )
@@ -191,7 +352,8 @@ def extract_book_info_list(summary):
                 line.startswith('📗') or line.startswith('📕') or
                 '本を聴く' in line or '関連動画' in line or
                 '分解説' in line or 'チャンネル登録' in line or
-                'SNS' in line or 'Twitter' in line or 'Instagram' in line):
+                'SNS' in line or 'Twitter' in line or 'Instagram' in line or
+                'OUTPUT読書術' in line):
                 i += 1
                 continue
             line = re.sub(r'^・\s*', '', line)
@@ -216,10 +378,94 @@ def extract_book_info_list(summary):
     return results
 
 
+def is_valid_book_title(title):
+    """書籍タイトルとして有効かどうかを判定"""
+    if not title or not isinstance(title, str):
+        return False
+
+    title = title.strip()
+
+    # 短すぎるタイトルを除外（3文字以下）
+    if len(title) <= 3:
+        return False
+
+    # 絵文字で始まるものを除外
+    emoji_starts = ['📚', '📗', '📕', '📘', '📙', '▼', '【', '■', '●', '・', '※']
+    if any(title.startswith(emoji) for emoji in emoji_starts):
+        return False
+
+    # NGワード（セクションヘッダーや宣伝）を除外
+    ng_words = [
+        'その他',
+        'おすすめ動画',
+        'チャンネル登録',
+        '関連動画',
+        '動画一覧',
+        'SNS',
+        'Twitter',
+        'Instagram',
+        'LINE',
+        'エッセンシャル版',
+        '簡易版',
+        'Audible',
+        'Kindle',
+        '本を聴く',
+        '分解説',
+        '要約',
+        '解説',
+        'まとめ',
+        'プレゼント',
+        'キャンペーン',
+        '無料',
+        'プロフィール',
+        'お問い合わせ',
+        'メンバーシップ',
+        'サブチャンネル',
+        # 七瀬アリーサ関連の宣伝を除外
+        '七瀬制作',
+        '商品紹介',
+        'メッセージカード',
+        'Success Book',
+        'Your Success',
+        '購入ページ',
+        '特典',
+        'おすすめ順ではない',
+        '概要欄',
+        'デジタル版',
+        '冊子版',
+        # YouTuber自著の宣伝を除外
+        'OUTPUT読書術',
+    ]
+
+    for ng in ng_words:
+        if ng in title:
+            return False
+
+    # 「本」だけのタイトルを除外
+    if title in ['本', '書籍', '図書', 'book', 'books']:
+        return False
+
+    # URLっぽいものを除外
+    if 'http' in title.lower() or '.com' in title.lower():
+        return False
+
+    # 全て記号のタイトルを除外
+    if all(not c.isalnum() for c in title):
+        return False
+
+    # YouTuber名が入っているものを除外（自著宣伝の可能性）
+    youtuber_names = ['アバタロー', 'サラタメ', '本要約チャンネル', '学識サロン', 'フェルミ', '三宅', '七瀬', 'アリーサ']
+    for name in youtuber_names:
+        if name in title:
+            return False
+
+    return True
+
+
 def generate_amazon_search_url(book_title):
     """書籍タイトルからAmazon検索URLを生成（アソシエイトタグ付き）"""
     query = urllib.parse.quote(book_title)
-    return f"https://www.amazon.co.jp/s?k={query}&i=stripbooks&tag={AMAZON_ASSOCIATE_TAG}&linkId={AMAZON_TRACKING_ID}"
+    return f"https://www.amazon.co.jp/s?k={query}&i=stripbooks&tag={AMAZON_TRACKING_ID}"
 
 
 def generate_book_id(title):
@@ -263,11 +509,17 @@ def main():
                 book_title = book_info.get("title")
                 if not book_title:
                     continue
+
+                # タイトルの妥当性チェック
+                if not is_valid_book_title(book_title):
+                    continue
+
                 # 自著宣伝スキップ
                 if book_info.get("_is_first") and len(book_info_list) > 1:
                     continue
 
-                amazon_url = generate_amazon_search_url(book_title)
+                # Amazonリンクから取得した場合は既にamazon_urlが設定されている
+                amazon_url = book_info.get("amazon_url") or generate_amazon_search_url(book_title)
 
                 if book_title not in all_books:
                     all_books[book_title] = {
