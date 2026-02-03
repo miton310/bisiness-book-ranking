@@ -196,10 +196,44 @@ def generate_amazon_search_url(book_title):
     return f"https://www.amazon.co.jp/s?k={query}&i=stripbooks&tag={AMAZON_TRACKING_ID}"
 
 
+def normalize_title_for_search(title: str) -> str:
+    """NDL検索用にタイトルを正規化"""
+    import re
+    t = title
+
+    # 『』を除去
+    t = t.strip('『』')
+
+    # サブタイトルを除去（――  ―  —  :  ： 以降）
+    t = re.sub(r'[―—]{1,2}.+$', '', t)
+    t = re.sub(r'[:：].+$', '', t)
+
+    # 版表記・形態プレフィックスを除去
+    t = re.sub(r'^新版\s*', '', t)
+    t = re.sub(r'^改訂版\s*', '', t)
+    t = re.sub(r'^新書[：:]\s*', '', t)
+    t = re.sub(r'^文庫[：:]\s*', '', t)
+    t = re.sub(r'\[第.版\]', '', t)
+    t = re.sub(r'【.*?】', '', t)
+
+    # 余計な注釈を除去
+    t = re.sub(r'[（(][^）)]*文庫[^）)]*[）)]', '', t)
+    t = re.sub(r'[（(]ソフトカバー[）)]', '', t)
+    t = re.sub(r'\s*–\s*\d{4}/\d{1,2}/\d{1,2}', '', t)
+
+    # 連続スペースを整理
+    t = re.sub(r'\s+', ' ', t).strip()
+
+    return t
+
+
 def search_ndl(title, retry=3):
     """国立国会図書館サーチAPIでタイトルからISBNを検索"""
     import re as _re
-    params = urllib.parse.urlencode({"title": title, "cnt": 3})
+
+    # タイトルを正規化して検索
+    normalized_title = normalize_title_for_search(title)
+    params = urllib.parse.urlencode({"title": normalized_title, "cnt": 3})
     url = f"https://ndlsearch.ndl.go.jp/api/opensearch?{params}"
 
     for attempt in range(retry):
