@@ -17,6 +17,24 @@ OPENBD_API = "https://api.openbd.jp/v1/get"
 AMAZON_ASSOCIATE_TAG = "miton31003"
 AMAZON_TRACKING_ID = "business-book-ranking02-22"
 
+
+def isbn13_to_asin(isbn13: str) -> str | None:
+    """ISBN-13をASIN(ISBN-10)に変換する"""
+    src = str(isbn13).replace("-", "")
+    if len(src) != 13 or not src.startswith("978"):
+        return None
+    core = src[3:12]
+    total = sum(int(d) * (10 - i) for i, d in enumerate(core))
+    remainder = total % 11
+    check_digit = 11 - remainder
+    if check_digit == 11:
+        cd_str = "0"
+    elif check_digit == 10:
+        cd_str = "X"
+    else:
+        cd_str = str(check_digit)
+    return core + cd_str
+
 # Google Books APIキーを取得（.envから）
 # 環境変数で明示的に空文字が設定された場合はGoogle Books APIを無効化
 GOOGLE_BOOKS_API_KEY = os.environ.get("GOOGLE_BOOKS_API_KEY")
@@ -221,9 +239,11 @@ def main():
     updated = 0
     errors = 0
 
+    skipped = 0
     for i, book in enumerate(books):
-        # 既に画像取得済みならスキップ
-        if book.get("image_url"):
+        # 既にISBN取得済みならスキップ
+        if book.get("isbn"):
+            skipped += 1
             continue
 
         title = book["title"]
@@ -277,8 +297,11 @@ def main():
                 book["publication_date"] = details["publication_date"]
             if details.get("isbn"):
                 book["isbn"] = details["isbn"]
-                # ISBNがあれば商品ページURLに置き換え
-                book["amazon_url"] = f"https://www.amazon.co.jp/dp/{details['isbn']}?tag={AMAZON_TRACKING_ID}"
+                # ISBN-13 → ASIN(ISBN-10)に変換して商品ページURLに
+                asin = isbn13_to_asin(details["isbn"])
+                if asin:
+                    book["asin"] = asin
+                    book["amazon_url"] = f"https://www.amazon.co.jp/dp/{asin}?tag={AMAZON_TRACKING_ID}"
             updated += 1
             print()
         else:
@@ -324,7 +347,7 @@ def main():
         json.dump([make_ranking_entry(b) for b in by_likes], f, ensure_ascii=False, indent=2)
 
     print(f"\n=== 完了 ===")
-    print(f"更新: {updated}件 / エラー: {errors}件 / 合計: {len(books)}件")
+    print(f"更新: {updated}件 / エラー: {errors}件 / スキップ: {skipped}件 / 合計: {len(books)}件")
 
 
 if __name__ == "__main__":

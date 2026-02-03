@@ -39,9 +39,9 @@ export function TopPage() {
               {book.author && <span className="book-author">{book.author}</span>}
               {book.publisher && <span className="book-publisher">{book.publisher}</span>}
               <div className="book-stats">
-                <span>紹介 {book.count}回</span>
-                <span>再生 {book.total_views.toLocaleString()}</span>
-                <span>いいね {book.total_likes.toLocaleString()}</span>
+                <span>📚 紹介: <span className="stat-value">{book.count}回</span></span>
+                <span>▶️ 再生回数: <span className="stat-value">{book.total_views.toLocaleString()}</span></span>
+                <span>👍 いいね: <span className="stat-value">{book.total_likes.toLocaleString()}</span></span>
               </div>
             </div>
             <a
