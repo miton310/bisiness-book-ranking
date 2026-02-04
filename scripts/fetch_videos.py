@@ -340,6 +340,41 @@ def extract_book_info_list(summary, video_title=None):
     flier_section = re.search(
         r'▼紹介した作品\s*\n(.*?)(?=\n▼[^紹]|\n※上記リンク|$)', summary, re.DOTALL
     )
+
+    # パターン5.6: TBS CROSS DIG「◆書籍紹介◆」セクション
+    # 形式: ◆書籍紹介◆
+    #       ▼『タイトル』
+    #       著者
+    #       出版社
+    #       https://amzn.to/xxx
+    tbs_section = re.search(
+        r'◆書籍紹介◆\s*\n(.*?)(?=\n◆|$)', summary, re.DOTALL
+    )
+    if tbs_section:
+        section_text = tbs_section.group(1).strip()
+        lines = section_text.split('\n')
+        i = 0
+        while i < len(lines):
+            line = lines[i].strip()
+            # ▼『タイトル』を探す
+            title_match = re.match(r'▼『(.+?)』', line)
+            if title_match:
+                title = title_match.group(1).strip()
+                author = None
+                publisher = None
+                # 次の行で著者、その次で出版社を取得
+                if i + 1 < len(lines) and not lines[i+1].strip().startswith('http'):
+                    author = lines[i+1].strip()
+                if i + 2 < len(lines) and not lines[i+2].strip().startswith('http'):
+                    publisher = lines[i+2].strip()
+                results.append({
+                    "title": title,
+                    "author": author,
+                    "publisher": publisher,
+                })
+            i += 1
+        if results:
+            return results
     if flier_section:
         section_text = flier_section.group(1).strip()
         lines = section_text.split('\n')
