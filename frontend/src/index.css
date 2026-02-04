@@ -150,11 +150,20 @@ h1 {
   font-size: 0.9rem;
 }
 
+/* Filter Row */
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 /* Sort Tabs */
 .sort-tabs {
   display: flex;
   gap: 8px;
-  margin-bottom: 24px;
 }
 .sort-tab {
   padding: 8px 16px;
@@ -175,6 +184,32 @@ h1 {
   background: var(--primary);
   border-color: var(--primary);
   color: #fff;
+}
+
+/* Year Filter */
+.year-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.year-select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--text);
+  cursor: pointer;
+}
+.year-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.filter-result {
+  margin: -16px 0 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 /* Ranking List */

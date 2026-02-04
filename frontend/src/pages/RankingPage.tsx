@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { fetchRankings, fetchRankingsViews, fetchRankingsLikes } from '../data'
-import type { RankingEntry } from '../types'
+import { fetchBooks } from '../data'
+import type { Book } from '../types'
 
 type SortMode = 'count' | 'views' | 'likes'
 
@@ -13,26 +13,83 @@ const SORT_OPTIONS: { key: SortMode; label: string }[] = [
 
 const ITEMS_PER_PAGE = 20
 
+// 書籍から紹介年のリストを取得
+function getYearsFromBooks(books: Book[]): number[] {
+  const years = new Set<number>()
+  for (const book of books) {
+    for (const video of book.videos || []) {
+      if (video.published) {
+        const year = new Date(video.published).getFullYear()
+        if (year >= 2015 && year <= new Date().getFullYear()) {
+          years.add(year)
+        }
+      }
+    }
+  }
+  return Array.from(years).sort((a, b) => b - a) // 降順
+}
+
+// 書籍を指定年でフィルタリングし、その年の統計を再計算
+function filterBooksByYear(books: Book[], year: number | null): Book[] {
+  if (!year) return books
+
+  return books
+    .map(book => {
+      const filteredVideos = (book.videos || []).filter(v => {
+        if (!v.published) return false
+        return new Date(v.published).getFullYear() === year
+      })
+      if (filteredVideos.length === 0) return null
+
+      return {
+        ...book,
+        videos: filteredVideos,
+        count: filteredVideos.length,
+        total_views: filteredVideos.reduce((sum, v) => sum + (v.view_count || 0), 0),
+        total_likes: filteredVideos.reduce((sum, v) => sum + (v.like_count || 0), 0),
+      }
+    })
+    .filter((b): b is Book => b !== null)
+}
+
 export function RankingPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const sortMode = (searchParams.get('sort') as SortMode) || 'count'
   const currentPage = parseInt(searchParams.get('page') || '1', 10)
   const searchQuery = searchParams.get('q') || ''
-  const [books, setBooks] = useState<RankingEntry[]>([])
+  const yearParam = searchParams.get('year')
+  const selectedYear = yearParam ? parseInt(yearParam, 10) : null
+
+  const [allBooks, setAllBooks] = useState<Book[]>([])
   const [loading, setLoading] = useState(true)
   const [inputValue, setInputValue] = useState(searchQuery)
 
   useEffect(() => {
     setLoading(true)
-    const fetcher =
-      sortMode === 'views' ? fetchRankingsViews :
-      sortMode === 'likes' ? fetchRankingsLikes :
-      fetchRankings
-    fetcher().then(data => {
-      setBooks(data)
-      setLoading(false)
+    fetchBooks()
+      .then(data => {
+        setAllBooks(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Failed to fetch books:', err)
+        setLoading(false)
+      })
+  }, [])
+
+  // 利用可能な年のリスト
+  const availableYears = useMemo(() => getYearsFromBooks(allBooks), [allBooks])
+
+  // 年でフィルタリング → ソート
+  const books = useMemo(() => {
+    const filtered = filterBooksByYear(allBooks, selectedYear)
+    const sorted = [...filtered].sort((a, b) => {
+      if (sortMode === 'views') return b.total_views - a.total_views
+      if (sortMode === 'likes') return b.total_likes - a.total_likes
+      return b.count - a.count
     })
-  }, [sortMode])
+    return sorted
+  }, [allBooks, selectedYear, sortMode])
 
   // 検索フィルタ
   const filteredBooks = searchQuery
@@ -46,29 +103,41 @@ export function RankingPage() {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
   const currentBooks = filteredBooks.slice(startIndex, startIndex + ITEMS_PER_PAGE)
 
+  const buildParams = (overrides: Partial<{ sort: string; page: string; q: string; year: string }>) => {
+    const params: Record<string, string> = {}
+    const sort = overrides.sort ?? sortMode
+    const page = overrides.page ?? '1'
+    const q = overrides.q ?? searchQuery
+    const year = overrides.year !== undefined ? overrides.year : (selectedYear?.toString() || '')
+
+    params.sort = sort
+    params.page = page
+    if (q) params.q = q
+    if (year) params.year = year
+    return params
+  }
+
   const handleSort = (mode: SortMode) => {
-    const params: Record<string, string> = { sort: mode, page: '1' }
-    if (searchQuery) params.q = searchQuery
-    setSearchParams(params)
+    setSearchParams(buildParams({ sort: mode, page: '1' }))
   }
 
   const handlePageChange = (page: number) => {
-    const params: Record<string, string> = { sort: sortMode, page: page.toString() }
-    if (searchQuery) params.q = searchQuery
-    setSearchParams(params)
+    setSearchParams(buildParams({ page: page.toString() }))
     window.scrollTo(0, 0)
   }
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    const params: Record<string, string> = { sort: sortMode, page: '1' }
-    if (inputValue.trim()) params.q = inputValue.trim()
-    setSearchParams(params)
+    setSearchParams(buildParams({ q: inputValue.trim(), page: '1' }))
   }
 
   const handleClearSearch = () => {
     setInputValue('')
-    setSearchParams({ sort: sortMode, page: '1' })
+    setSearchParams(buildParams({ q: '', page: '1' }))
+  }
+
+  const handleYearChange = (year: number | null) => {
+    setSearchParams(buildParams({ year: year?.toString() || '', page: '1' }))
   }
 
   const renderPagination = () => {
@@ -140,17 +209,34 @@ export function RankingPage() {
       {searchQuery && (
         <p className="search-result">「{searchQuery}」の検索結果: {filteredBooks.length}件</p>
       )}
-      <div className="sort-tabs">
-        {SORT_OPTIONS.map(opt => (
-          <button
-            key={opt.key}
-            className={`sort-tab ${sortMode === opt.key ? 'active' : ''}`}
-            onClick={() => handleSort(opt.key)}
+      <div className="filter-row">
+        <div className="sort-tabs">
+          {SORT_OPTIONS.map(opt => (
+            <button
+              key={opt.key}
+              className={`sort-tab ${sortMode === opt.key ? 'active' : ''}`}
+              onClick={() => handleSort(opt.key)}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+        <div className="year-filter">
+          <select
+            className="year-select"
+            value={selectedYear || ''}
+            onChange={(e) => handleYearChange(e.target.value ? parseInt(e.target.value, 10) : null)}
           >
-            {opt.label}
-          </button>
-        ))}
+            <option value="">全期間</option>
+            {availableYears.map(year => (
+              <option key={year} value={year}>{year}年</option>
+            ))}
+          </select>
+        </div>
       </div>
+      {selectedYear && (
+        <p className="filter-result">{selectedYear}年に紹介された書籍: {filteredBooks.length}件</p>
+      )}
       {loading ? (
         <p>読み込み中...</p>
       ) : (

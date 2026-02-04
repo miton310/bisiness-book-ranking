@@ -216,6 +216,4 @@ cp data/*.json frontend/public/data/
 - [ ] amzn.toリンクありの場合 → リンクからASIN抽出（リダイレクト先URLに含まれる） 
 - [ ] どちらもない場合 → タイトルでAmazon検索
 
-
-
 - [ ] 出版社別、出版年別、チャンネル別、紹介年別、ジャンル別
