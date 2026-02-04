@@ -201,9 +201,16 @@ GOOGLE_BOOKS_API_KEY=AIzaSy...
 - [ ] カテゴリの自動分類
 - [ ] SEO対策
 - [ ] 追加チャンネル: 三宅書店, 出版区
+
 - [ ] ISBNで重複統一 → 同一ISBNの書籍をマージ、ランキング反映
-- [ ] ISBNでタイトルを統一※追加
-- [ ] ISBN-13 → ISBN-10変換 = ASIN取得（isbn_converter.py が既にある）
+python3 scripts/merge_by_isbn.py 
+
+- [ ] ISBNでタイトルを統一 ※fetch_amazon.py に統合済み
+- [ ] ISBN-13 → ISBN-10変換 = ASIN取得 ※fetch_amazon.py に統合済み
+
+- [ ] フロントエンドに反映
+cp data/*.json frontend/public/data/
+
 - [ ] ISBNが取得できているものとできていないものを分ける
 - [ ] ISBNを取得できていないものの一覧を取得
 - [ ] amzn.toリンクありの場合 → リンクからASIN抽出（リダイレクト先URLに含まれる） 
