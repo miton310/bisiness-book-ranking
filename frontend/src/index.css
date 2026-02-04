@@ -91,6 +91,65 @@ h1 {
   font-size: 0.9rem;
 }
 
+/* Search */
+.search-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 400px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: var(--primary-dark);
+}
+
+.search-clear {
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.search-clear:hover {
+  background: var(--bg);
+}
+
+.search-result {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 /* Sort Tabs */
 .sort-tabs {
   display: flex;
@@ -200,6 +259,11 @@ h1 {
   color: var(--text-muted);
 }
 
+.book-stats .stat-value {
+  font-weight: 600;
+  color: var(--text);
+}
+
 .amazon-btn {
   display: inline-block;
   padding: 6px 14px;
@@ -278,7 +342,7 @@ h1 {
   text-align: center;
   flex: 1;
 }
-.stat-value {
+.stat-card .stat-value {
   display: block;
   font-size: 1.4rem;
   font-weight: 700;
@@ -361,6 +425,51 @@ h2 {
   display: flex;
   gap: 12px;
   font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.page-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-ellipsis {
+  padding: 0 8px;
   color: var(--text-muted);
 }
 
