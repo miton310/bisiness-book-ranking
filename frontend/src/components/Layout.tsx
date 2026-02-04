@@ -6,14 +6,14 @@ export function Layout({ children }: { children: ReactNode }) {
     <div className="app">
       <header className="header">
         <div className="container">
-          <h1>
-            <Link to="/" className="site-title">
-              ビジネス書ランキング - 本要約系YouTuberが紹介したビジネス書や人生に役に立つ本を集計・ランキング化
-            </Link>
-          </h1>
+          <div className="l-header__inner">
+            <h1><Link to="/" className="site-title">ビジネス書ランキング</Link></h1>
+            <h2 className='p-header__title--sub'>
+              - 本要約系YouTuberが紹介したビジネス書や人生に役に立つ本を集計・ランキング化
+            </h2>         
+          </div>
           <nav className="nav">
             <Link to="/">トップ</Link>
-            <Link to="/ranking">ランキング</Link>
           </nav>
         </div>
       </header>

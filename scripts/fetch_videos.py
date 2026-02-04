@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
-"""YouTube Data APIで全動画を取得し、書籍情報を抽出してJSONを生成するスクリプト"""
+"""YouTube Data APIで全動画を取得し、書籍情報を抽出してJSONを生成するスクリプト
 
+使用方法:
+  python fetch_videos.py          # 差分更新（前回以降の新しい動画のみ）
+  python fetch_videos.py --full   # 全件取得（初回実行時や完全リセット時）
+"""
+
+import argparse
 import hashlib
 import json
 import os
@@ -9,12 +15,14 @@ import sys
 import time
 import urllib.parse
 import urllib.request
+from datetime import datetime
 
 # Amazonリンクから書籍情報取得
 from fetch_amazon_info import extract_books_from_amazon_links
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 CHANNELS_FILE = os.path.join(DATA_DIR, "channels.json")
+FETCH_STATE_FILE = os.path.join(DATA_DIR, "fetch_state.json")
 
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
 if not YOUTUBE_API_KEY:
@@ -57,11 +65,18 @@ def get_uploads_playlist_id(channel_id):
     return items[0]["contentDetails"]["relatedPlaylists"]["uploads"]
 
 
-def get_all_video_ids(playlist_id):
-    """再生リストから全動画IDを取得（ページネーション対応）"""
+def get_all_video_ids(playlist_id, since=None):
+    """再生リストから動画IDを取得（ページネーション対応）
+
+    Args:
+        playlist_id: YouTubeのプレイリストID
+        since: この日時以降の動画のみ取得（ISO 8601形式）。Noneなら全件取得。
+    """
     video_ids = []
     page_token = None
-    while True:
+    stop_fetching = False
+
+    while not stop_fetching:
         params = {
             "part": "snippet",
             "playlistId": playlist_id,
@@ -70,13 +85,23 @@ def get_all_video_ids(playlist_id):
         if page_token:
             params["pageToken"] = page_token
         data = api_get("playlistItems", params)
+
         for item in data.get("items", []):
+            published = item["snippet"].get("publishedAt", "")
             vid = item["snippet"]["resourceId"]["videoId"]
+
+            # 差分更新: sinceより古い動画が出たら停止
+            if since and published and published <= since:
+                stop_fetching = True
+                break
+
             video_ids.append(vid)
+
         page_token = data.get("nextPageToken")
         if not page_token:
             break
         time.sleep(0.1)
+
     return video_ids
 
 
@@ -106,17 +131,41 @@ def get_video_details(video_ids):
     return videos
 
 
-def fetch_all_channel_videos(channel_id):
-    """チャンネルの全動画を取得"""
+def fetch_all_channel_videos(channel_id, since=None):
+    """チャンネルの動画を取得
+
+    Args:
+        channel_id: YouTubeチャンネルID
+        since: この日時以降の動画のみ取得。Noneなら全件取得。
+    """
     playlist_id = get_uploads_playlist_id(channel_id)
     if not playlist_id:
         print(f"  [ERROR] アップロード再生リストが見つかりません")
         return []
-    video_ids = get_all_video_ids(playlist_id)
-    print(f"  動画ID取得: {len(video_ids)}件")
+    video_ids = get_all_video_ids(playlist_id, since=since)
+    if since:
+        print(f"  新規動画ID取得: {len(video_ids)}件 (since: {since[:10]})")
+    else:
+        print(f"  動画ID取得: {len(video_ids)}件")
+    if not video_ids:
+        return []
     videos = get_video_details(video_ids)
     print(f"  動画詳細取得: {len(videos)}件")
     return videos
+
+
+def load_fetch_state():
+    """前回の取得状態を読み込む"""
+    if os.path.exists(FETCH_STATE_FILE):
+        with open(FETCH_STATE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def save_fetch_state(state):
+    """取得状態を保存"""
+    with open(FETCH_STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
 
 
 # =============================================================================
@@ -282,6 +331,37 @@ def extract_book_info_list(summary, video_title=None):
         # PIVOTの参考書籍セクションがある場合は結果に関わらずここで返す
         # （パターン6のamzn.to汎用抽出に落ちないようにする）
         return results
+
+    # パターン5.5: flier「▼紹介した作品」セクション
+    # 形式: ▼紹介した作品
+    #       著者『タイトル』（出版社）
+    #       https://amzn.to/xxx
+    # 複数の場合: ①著者『タイトル』（出版社）
+    flier_section = re.search(
+        r'▼紹介した作品\s*\n(.*?)(?=\n▼[^紹]|\n※上記リンク|$)', summary, re.DOTALL
+    )
+    if flier_section:
+        section_text = flier_section.group(1).strip()
+        lines = section_text.split('\n')
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith('http') or line.startswith('※'):
+                continue
+            # ①②等の番号を除去
+            line = re.sub(r'^[①②③④⑤⑥⑦⑧⑨⑩]\s*', '', line)
+            # 著者『タイトル』（出版社）パターン
+            match = re.match(r'(.+?)『(.+?)』(?:（(.+?)）)?', line)
+            if match:
+                author = match.group(1).strip() if match.group(1) else None
+                title = match.group(2).strip()
+                publisher = match.group(3).strip() if match.group(3) else None
+                results.append({
+                    "title": title,
+                    "author": author,
+                    "publisher": publisher,
+                })
+        if results:
+            return results
 
     # パターン6: 七瀬アリーサ — amzn.toリンクから書籍タイトルを抽出
     # 形式A: 「タイトル　https://amzn.to/xxx」(同一行)
@@ -688,6 +768,10 @@ def is_valid_book_title(title):
         "The Rules of Everything Rules",
         "脳科学者　中野信子　総まとめ",
         "目標を立てても、なかなか行動に移せない",
+        # カードゲーム等の商品を除外
+        "XENO",
+        "通常版：",
+        "豪華版：",
     ]
 
     for ng in ng_words:
@@ -822,20 +906,56 @@ def load_channels():
 
 
 def main():
+    parser = argparse.ArgumentParser(description="YouTube動画から書籍情報を抽出")
+    parser.add_argument("--full", action="store_true", help="全件取得（差分更新ではなく）")
+    args = parser.parse_args()
+
     if not YOUTUBE_API_KEY:
         print("ERROR: YOUTUBE_API_KEY が設定されていません。.env または環境変数で設定してください。")
         sys.exit(1)
 
     os.makedirs(DATA_DIR, exist_ok=True)
     channels = load_channels()
-    all_books = {}
+
+    # 差分更新の状態を読み込み
+    fetch_state = load_fetch_state() if not args.full else {}
+    new_fetch_state = {}
+
+    # 既存の書籍データを読み込み（差分更新用）
+    books_file = os.path.join(DATA_DIR, "books.json")
+    if not args.full and os.path.exists(books_file):
+        with open(books_file, "r", encoding="utf-8") as f:
+            existing_books = json.load(f)
+        # 正規化キーでマップ化
+        all_books = {}
+        for b in existing_books:
+            norm_key = normalize_title_key(b["title"])
+            b["_title_variants"] = [b["title"]]
+            all_books[norm_key] = b
+        print(f"既存データ読み込み: {len(all_books)}件")
+    else:
+        all_books = {}
+
+    if args.full:
+        print("=== 全件取得モード ===")
+    else:
+        print("=== 差分更新モード ===")
 
     for ch in channels:
         channel_name = ch["name"]
         channel_id = ch["channel_id"]
         print(f"\n=== {channel_name} (ID: {channel_id}) ===")
 
-        videos = fetch_all_channel_videos(channel_id)
+        # 差分更新: 前回の最新動画日時以降のみ取得
+        since = fetch_state.get(channel_id) if not args.full else None
+        videos = fetch_all_channel_videos(channel_id, since=since)
+
+        # このチャンネルの最新動画日時を記録
+        if videos:
+            latest = max(v["published"] for v in videos)
+            new_fetch_state[channel_id] = latest
+        elif channel_id in fetch_state:
+            new_fetch_state[channel_id] = fetch_state[channel_id]
 
         for video in videos:
             summary = video.get("summary", "")
@@ -992,6 +1112,9 @@ def main():
     print(f"\n--- TOP10（いいね順）---")
     for i, book in enumerate(books_by_likes[:10], 1):
         print(f"  {i}. 『{book['title']}』 (いいね{book['total_likes']:,} / 紹介{book['count']}回)")
+
+    # --- 取得状態を保存 ---
+    save_fetch_state(new_fetch_state)
 
     print(f"\nデータを {DATA_DIR} に保存しました。")
 
