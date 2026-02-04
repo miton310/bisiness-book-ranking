@@ -6,9 +6,11 @@ export function Layout({ children }: { children: ReactNode }) {
     <div className="app">
       <header className="header">
         <div className="container">
-          <Link to="/" className="site-title">
-            ビジネス書ランキング
-          </Link>
+          <h1>
+            <Link to="/" className="site-title">
+              ビジネス書ランキング - 本要約系YouTuberが紹介したビジネス書や人生に役に立つ本を集計・ランキング化
+            </Link>
+          </h1>
           <nav className="nav">
             <Link to="/">トップ</Link>
             <Link to="/ranking">ランキング</Link>
@@ -20,7 +22,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>本要約系YouTuberが紹介した書籍を集計・ランキング化</p>
+          <p>本要約系YouTuberが紹介したビジネス書や人生に役に立つ本を集計・ランキング化</p>
         </div>
       </footer>
     </div>
