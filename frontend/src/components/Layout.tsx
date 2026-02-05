@@ -14,6 +14,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
           <nav className="nav">
             <Link to="/">トップ</Link>
+            <Link to="/channels">チャンネル一覧</Link>
           </nav>
         </div>
       </header>

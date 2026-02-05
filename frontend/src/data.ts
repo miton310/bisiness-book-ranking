@@ -1,4 +1,4 @@
-import type { Book, RankingEntry } from './types'
+import type { Book, Channel, RankingEntry } from './types'
 
 const BASE = import.meta.env.BASE_URL + 'data'
 
@@ -25,4 +25,10 @@ export async function fetchBooks(): Promise<Book[]> {
 export async function fetchBookById(id: string): Promise<Book | null> {
   const books = await fetchBooks()
   return books.find(b => b.id === id) || null
+}
+
+export async function fetchChannels(): Promise<Channel[]> {
+  const res = await fetch(`${BASE}/channels.json`)
+  const data = await res.json()
+  return data.channels
 }
