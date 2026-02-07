@@ -17,7 +17,7 @@
        ├→ 書籍情報抽出（チャンネル別パターン対応）
        └→ JSON ファイル生成 → git commit & push
 
-[Vite + React SPA (Cloudflare Pages)]
+[Vike + React SSR (Cloudflare Workers)]
   └→ ビルド時に public/data/*.json を同梱
        ├ rankings.json       (紹介回数ランキング)
        ├ rankings_views.json (再生回数ランキング)
@@ -29,12 +29,14 @@
 
 | 要素 | 選択 | 費用 | 理由 |
 |------|------|------|------|
-| Frontend | Vite + React + Cloudflare Pages | 無料 | SPA。静的配信で高速 |
+| Frontend | Vike + React + Cloudflare Workers | 無料 | SSR。SEO対応 |
+| フレームワーク | Vike (vike-react + vike-photon) | 無料 | SSR/SSGフレームワーク |
 | データ収集 | Python (GitHub Actions) | 無料 | YouTube Data APIで全動画取得 |
 | 書籍情報取得 | NDLサーチ + openBD（フォールバック: Google Books API） | 無料 | ISBN→画像・著者・出版社取得 |
 | データ保存 | JSON ファイル (git管理) | 無料 | DB不要。シンプル |
 | 定期実行 | GitHub Actions Cron | 無料 | Pythonで JSON生成 → auto commit |
-| ホスティング | Cloudflare Pages | 無料 | GitHub連携で自動デプロイ |
+| ホスティング | Cloudflare Workers | 無料 | SSR対応。wrangler deployでデプロイ |
+| DNS | Cloudflare DNS | 無料 | ムームードメインからネームサーバーを移管済み |
 
 ## 対象チャンネル
 
@@ -82,11 +84,24 @@ YouTube Data APIで全チャンネルの動画を取得し、概要欄から書�
 ### scripts/fetch_amazon.py
 書籍情報（画像・著者・出版社・出版日・ISBN）を取得するスクリプト。
 
+#### タイトル正規化（NDL検索前）
+`normalize_title_for_search()` で以下を除去してからNDL検索:
+- サブタイトル: `――` `―` `—` `:` `：` 以降
+- 版表記: `新版` `改訂版` `[第〇版]` `【...】`
+- 形態プレフィックス: `新書：` `文庫：`
+- 括弧注釈: `（新潮文庫）` `(ソフトカバー)`
+- `『』` の囲み
+
 #### 取得フロー
 1. **NDLサーチ**（国立国会図書館）でタイトル → ISBN取得
-2. **openBD** でISBN → 画像・著者・出版社・出版日取得
+2. **openBD** でISBN → 画像・著者・出版社・出版日取得（正式タイトルで統一）
 3. 取れなかった場合 → **Google Books API** にフォールバック（クォータ制限あり: 1日1,000リクエスト）
 4. ISBNが取得できた書籍は `https://www.amazon.co.jp/dp/{ISBN}?tag=business-book-ranking02-22` に変換
+
+#### CSV連携（books_no_isbn_edit.csv）
+- `search_title` 列: NDL検索用の別タイトルを指定
+- `delete` 列: `1` で書籍を削除
+- `isbn` 列: 手動入力のISBN
 
 #### 実行方法
 ```bash
@@ -109,14 +124,25 @@ python3 scripts/fetch_videos.py
 
 # 2. 書籍情報（画像・ISBN等）取得
 python3 scripts/fetch_amazon.py
-# または Google Books APIクォータ切れの場合:
+# または Google Books APIクォータ切れの場合（NDL+openBDのみ）:
 GOOGLE_BOOKS_API_KEY="" python3 scripts/fetch_amazon.py
 
-# 3. フロントエンドにコピー
-cp data/books.json frontend/public/data/books.json
-cp data/rankings.json frontend/public/data/rankings.json
-cp data/rankings_views.json frontend/public/data/rankings_views.json
-cp data/rankings_likes.json frontend/public/data/rankings_likes.json
+# 3. ISBN-13 → ASIN変換
+python3 scripts/add_asin_from_isbn.py
+
+# 4. ISBN重複統合
+python3 scripts/merge_by_isbn.py
+
+# 5. フロントエンドにコピー
+cp data/*.json frontend/public/data/
+
+# 6. ビルド＆デプロイ
+cd frontend && npm run build && npx wrangler deploy
+```
+
+### デプロイのみ（データ更新なし）
+```bash
+cd frontend && npm run build && npx wrangler deploy
 ```
 
 ### 表記ゆれ統合
@@ -125,11 +151,16 @@ cp data/rankings_likes.json frontend/public/data/rankings_likes.json
 - `『』` で囲まれたタイトルは外して統合
 - ISBNがない表記ゆれは手動対応が必要
 
-## ページ構成（React）
+## ページ構成（Vike + React）
 
-- `/` — トップ（総合ランキング TOP20）
-- `/ranking/` — 全ランキング（紹介回数順 / 再生回数順 / いいね順 切り替え）
-- `/book/:id` — 書籍詳細（書籍カバー画像、紹介動画一覧）
+- `/` — トップ（総合ランキング）  → `pages/index/+Page.tsx`
+- `/book/:id` — 書籍詳細（書籍カバー画像、紹介動画一覧）  → `pages/book/@id/+Page.tsx`
+- `/channels` — チャンネル一覧  → `pages/channels/+Page.tsx`
+
+### Vike設定
+- `pages/+config.ts` — グローバル設定（`ssr: true`, `prerender: false`）
+- `pages/+Layout.tsx` — 共通レイアウト
+- `pages/+Head.tsx` — HTML head
 
 ## JSONデータ設計
 
@@ -169,7 +200,11 @@ id, title, author, count, total_views, total_likes, amazon_url, image_url, publi
 - YouTube Data API Key: `.env` の `YOUTUBE_API_KEY`（git管理外）
 - Google Books API Key: `.env` の `GOOGLE_BOOKS_API_KEY`（YouTube APIキーと同じでOK）
 - Amazon アソシエイトタグ: `business-book-ranking02-22`（全リンクのtagパラメータで使用）
-- Cloudflare Pages プロジェクト名: `business-book-ranking`
+- Cloudflare Workers プロジェクト名: `bisiness-book-ranking`
+- Cloudflare Workers URL: `bisiness-book-ranking.shinsuke-mito.workers.dev`
+- カスタムドメイン: `business.douga-summary.jp`
+- DNS: Cloudflare DNS（ムームードメインからネームサーバー移管済み）
+  - ネームサーバー: `benedict.ns.cloudflare.com`, `lorna.ns.cloudflare.com`
 
 ### .env の形式
 ```
