@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  update-data:
+  update-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,23 +28,10 @@ jobs:
         run: python scripts/fetch_videos.py
 
       - name: Copy data to frontend
-        run: cp data/{books,rankings,rankings_views,rankings_likes}.json frontend/public/data/
+        run: cp data/{books,rankings,rankings_views,rankings_likes,channels}.json frontend/public/data/
 
       - name: Generate sitemap
         run: python scripts/generate_sitemap.py
-
-      # data/*.jsonはコミットしない（ローカルで管理）
-
-  deploy:
-    needs: update-data
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Pull latest data
-        run: git pull origin main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
