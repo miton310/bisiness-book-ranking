@@ -6,6 +6,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": "./dist/client",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none"
   }
 }
