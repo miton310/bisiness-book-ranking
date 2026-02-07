@@ -3,3 +3,4 @@ resources/
 frontend/node_modules/
 frontend/dist/
 frontend/.wrangler/
+.DS_Store
