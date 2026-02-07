@@ -26,6 +26,7 @@ def generate_sitemap():
     static_pages = [
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/ranking/", "priority": "0.9", "changefreq": "daily"},
+        {"loc": "/channels", "priority": "0.8", "changefreq": "weekly"},
     ]
     
     for page in static_pages:

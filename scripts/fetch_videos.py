@@ -557,12 +557,21 @@ def clean_book_title(title):
         return m.group(1).strip()
 
     # 「タイトル」＋後続テキスト → 「」内だけ抽出
+    # ネストした「」にも対応: 「タイトル「サブ」続き」著者名
+    bracket_match = re.match(r'^「(.+)」(.*)$', title)
+    if bracket_match:
+        inner = bracket_match.group(1).strip()
+        after = bracket_match.group(2).strip()
+        # 後ろが空 or 著者名らしいテキスト → タイトルを抽出
+        if not after or not after.startswith('「'):
+            return inner
+
+    # 途中に「」がある場合: 著者「タイトル」
     m = re.search(r'「(.+?)」', title)
     if m:
         inner = m.group(1).strip()
         before = title[:m.start()].strip()
         after = title[m.end():].strip()
-        # 前に「著書」「著者」等、後ろに▷や(著)等がある場合
         if re.match(r'^(著書|著者)', before) or (after and re.match(r'[▷▶→(（]', after)):
             return inner
 

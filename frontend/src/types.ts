@@ -23,6 +23,13 @@ export interface Book {
   isbn?: string
 }
 
+export interface Channel {
+  name: string
+  channel_id: string
+  subscribers: string
+  note: string
+}
+
 export interface RankingEntry {
   id: string
   title: string

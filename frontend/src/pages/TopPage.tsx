@@ -3,13 +3,29 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { fetchBooks } from '../data'
 import type { Book } from '../types'
 
-type SortMode = 'count' | 'views' | 'likes'
+type SortMode = 'point' | 'count' | 'views' | 'likes'
 
 const SORT_OPTIONS: { key: SortMode; label: string }[] = [
+  { key: 'point', label: 'ポイント順' },
   { key: 'count', label: '紹介回数順' },
   { key: 'views', label: '再生回数順' },
   { key: 'likes', label: 'いいね順' },
 ]
+
+// ポイント計算: ユニークチャンネル5pt + 同チャンネル2本目以降1pt
+function calcPoint(book: Book): { point: number; channels: number } {
+  const channelVideos = new Map<string, number>()
+  for (const v of book.videos || []) {
+    if (v.channel) {
+      channelVideos.set(v.channel, (channelVideos.get(v.channel) || 0) + 1)
+    }
+  }
+  let point = 0
+  for (const count of channelVideos.values()) {
+    point += 5 + (count - 1)
+  }
+  return { point, channels: channelVideos.size }
+}
 
 const ITEMS_PER_PAGE = 20
 
@@ -89,7 +105,7 @@ function filterBooksByChannel(books: Book[], channel: string | null): Book[] {
 
 export function TopPage() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const sortMode = (searchParams.get('sort') as SortMode) || 'count'
+  const sortMode = (searchParams.get('sort') as SortMode) || 'point'
   const currentPage = parseInt(searchParams.get('page') || '1', 10)
   const searchQuery = searchParams.get('q') || ''
   const yearParam = searchParams.get('year')
@@ -119,11 +135,17 @@ export function TopPage() {
   // 利用可能なチャンネルのリスト
   const availableChannels = useMemo(() => getChannelsFromBooks(allBooks), [allBooks])
 
+  // 総投稿数（動画数）
+  const totalVideos = useMemo(() => {
+    return allBooks.reduce((sum, b) => sum + (b.videos?.length || 0), 0)
+  }, [allBooks])
+
   // 年・チャンネルでフィルタリング → ソート
   const books = useMemo(() => {
     let filtered = filterBooksByYear(allBooks, selectedYear)
     filtered = filterBooksByChannel(filtered, selectedChannel)
     const sorted = [...filtered].sort((a, b) => {
+      if (sortMode === 'point') return calcPoint(b).point - calcPoint(a).point
       if (sortMode === 'views') return b.total_views - a.total_views
       if (sortMode === 'likes') return b.total_likes - a.total_likes
       return b.count - a.count
@@ -238,6 +260,12 @@ export function TopPage() {
 
   return (
     <div>
+      {!loading && (
+        <div className="summary-stats">
+          <span>投稿数: <strong>{totalVideos.toLocaleString()}</strong></span>
+          <span>書籍数: <strong>{allBooks.length.toLocaleString()}</strong></span>
+        </div>
+      )}
       <form className="search-form" onSubmit={handleSearch}>
         <input
           type="text"
@@ -320,6 +348,9 @@ export function TopPage() {
                   {book.author && <span className="book-author">{book.author}</span>}
                   {book.publisher && <span className="book-publisher">{book.publisher}</span>}
                   <div className="book-stats">
+                    {(() => { const { point, channels } = calcPoint(book); return (
+                      <span>📊 <span className="stat-value">{point}pt</span>（{channels}ch）</span>
+                    )})()}
                     <span>📚 紹介: <span className="stat-value">{book.count}回</span></span>
                     <span>▶️ 再生回数: <span className="stat-value">{book.total_views.toLocaleString()}</span></span>
                     <span>👍 いいね: <span className="stat-value">{book.total_likes.toLocaleString()}</span></span>
