@@ -1,5 +1,2 @@
-import books from '../../../public/data/books.json'
-
-export async function onBeforePrerenderStart() {
-  return books.map((book: { id: string }) => `/book/${book.id}`)
-}
+// prerender: false のため、このファイルは使用されない
+// SSGを有効にする場合のみ必要
