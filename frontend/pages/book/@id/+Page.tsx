@@ -1,23 +1,9 @@
-import { useEffect, useState } from 'react'
-import { usePageContext } from 'vike-react/usePageContext'
-import { fetchBookById } from '../../../src/data'
-import type { Book } from '../../../src/types'
+import { useData } from 'vike-react/useData'
+import type { Data } from './+data'
 
 export default function Page() {
-  const pageContext = usePageContext()
-  const id = pageContext.routeParams?.id as string
-  const [book, setBook] = useState<Book | null>(null)
-  const [loading, setLoading] = useState(true)
+  const { book } = useData<Data>()
 
-  useEffect(() => {
-    if (!id) return
-    fetchBookById(id).then(data => {
-      setBook(data)
-      setLoading(false)
-    })
-  }, [id])
-
-  if (loading) return <p>読み込み中...</p>
   if (!book) return <p>書籍が見つかりません。<a href="/">トップに戻る</a></p>
 
   return (
