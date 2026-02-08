@@ -105,16 +105,35 @@ def get_all_video_ids(playlist_id, since=None):
     return video_ids
 
 
+def parse_iso8601_duration(duration_str):
+    """ISO 8601のduration文字列を秒数に変換（例: PT1M30S → 90）"""
+    match = re.match(r'PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', duration_str or '')
+    if not match:
+        return 0
+    hours = int(match.group(1) or 0)
+    minutes = int(match.group(2) or 0)
+    seconds = int(match.group(3) or 0)
+    return hours * 3600 + minutes * 60 + seconds
+
+
 def get_video_details(video_ids):
-    """動画IDリストから詳細情報を取得（50件ずつバッチ処理）"""
+    """動画IDリストから詳細情報を取得（50件ずつバッチ処理）
+    60秒以下のショート動画は除外する"""
     videos = []
+    shorts_count = 0
     for i in range(0, len(video_ids), 50):
         batch = video_ids[i:i+50]
         data = api_get("videos", {
-            "part": "snippet,statistics",
+            "part": "snippet,statistics,contentDetails",
             "id": ",".join(batch),
         })
         for item in data.get("items", []):
+            # ショート動画を除外（60秒以下）
+            duration_str = item.get("contentDetails", {}).get("duration", "")
+            duration_sec = parse_iso8601_duration(duration_str)
+            if duration_sec <= 60:
+                shorts_count += 1
+                continue
             snippet = item["snippet"]
             stats = item.get("statistics", {})
             videos.append({
@@ -128,6 +147,8 @@ def get_video_details(video_ids):
                 "like_count": int(stats.get("likeCount", 0)),
             })
         time.sleep(0.1)
+    if shorts_count > 0:
+        print(f"  ショート動画を除外: {shorts_count}件")
     return videos
 
 
