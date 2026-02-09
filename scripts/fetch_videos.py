@@ -675,6 +675,7 @@ def is_valid_book_title(title):
         '人生を変える 哲学者の言葉366',
         '瞬間英作文',
         "呪術廻戦",
+        "https://www.amazon.co.jp/dp/4594096158",
         # 化粧品・美容用品を除外
         'Etude House BB cream',
         'Biooil',
