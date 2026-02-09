@@ -1,24 +1,8 @@
-import { useEffect, useState } from 'react'
-import { fetchChannels } from '../../src/data'
-import type { Channel } from '../../src/types'
+import { useData } from 'vike-react/useData'
+import type { Data } from './+data'
 
 export default function Page() {
-  const [channels, setChannels] = useState<Channel[]>([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    fetchChannels()
-      .then(data => {
-        setChannels(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Failed to fetch data:', err)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) return <p>読み込み中...</p>
+  const { channels } = useData<Data>()
 
   return (
     <div>

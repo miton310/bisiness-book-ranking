@@ -1,6 +1,8 @@
 import { useEffect, useState, useMemo } from 'react'
+import { useData } from 'vike-react/useData'
 import { fetchBooks } from '../../src/data'
-import type { Book } from '../../src/types'
+import type { Data } from './+data'
+import type { Book, RankingEntry } from '../../src/types'
 
 type SortMode = 'point' | 'count' | 'views' | 'likes'
 
@@ -117,6 +119,7 @@ function useSearchParams() {
 }
 
 export default function Page() {
+  const { rankings } = useData<Data>()
   const [searchParams, setSearchParams] = useSearchParams()
   const sortMode = (searchParams.get('sort') as SortMode) || 'point'
   const currentPage = parseInt(searchParams.get('page') || '1', 10)
@@ -125,40 +128,41 @@ export default function Page() {
   const selectedYear = yearParam ? parseInt(yearParam, 10) : null
   const selectedChannel = searchParams.get('channel') || null
 
-  const [allBooks, setAllBooks] = useState<Book[]>([])
-  const [loading, setLoading] = useState(true)
+  // Full book data loaded client-side for filtering/sorting
+  const [allBooks, setAllBooks] = useState<Book[] | null>(null)
   const [inputValue, setInputValue] = useState(searchQuery)
 
   useEffect(() => {
-    setLoading(true)
     fetchBooks()
-      .then(data => {
-        setAllBooks(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Failed to fetch books:', err)
-        setLoading(false)
-      })
+      .then(data => setAllBooks(data))
+      .catch(err => console.error('Failed to fetch books:', err))
   }, [])
 
-  const availableYears = useMemo(() => getYearsFromBooks(allBooks), [allBooks])
-  const availableChannels = useMemo(() => getChannelsFromBooks(allBooks), [allBooks])
+  // Use full book data when available, fall back to SSR rankings
+  const hasFullData = allBooks !== null
+
+  const availableYears = useMemo(() => hasFullData ? getYearsFromBooks(allBooks) : [], [allBooks, hasFullData])
+  const availableChannels = useMemo(() => hasFullData ? getChannelsFromBooks(allBooks) : [], [allBooks, hasFullData])
   const totalVideos = useMemo(() => {
+    if (!hasFullData) return 0
     return allBooks.reduce((sum, b) => sum + (b.videos?.length || 0), 0)
-  }, [allBooks])
+  }, [allBooks, hasFullData])
 
   const books = useMemo(() => {
-    let filtered = filterBooksByYear(allBooks, selectedYear)
-    filtered = filterBooksByChannel(filtered, selectedChannel)
-    const sorted = [...filtered].sort((a, b) => {
-      if (sortMode === 'point') return calcPoint(b).point - calcPoint(a).point
-      if (sortMode === 'views') return b.total_views - a.total_views
-      if (sortMode === 'likes') return b.total_likes - a.total_likes
-      return b.count - a.count
-    })
-    return sorted
-  }, [allBooks, selectedYear, selectedChannel, sortMode])
+    if (hasFullData) {
+      let filtered = filterBooksByYear(allBooks, selectedYear)
+      filtered = filterBooksByChannel(filtered, selectedChannel)
+      const sorted = [...filtered].sort((a, b) => {
+        if (sortMode === 'point') return calcPoint(b).point - calcPoint(a).point
+        if (sortMode === 'views') return b.total_views - a.total_views
+        if (sortMode === 'likes') return b.total_likes - a.total_likes
+        return b.count - a.count
+      })
+      return sorted
+    }
+    // SSR: use rankings data (already sorted by count)
+    return rankings as (RankingEntry & { videos?: never })[]
+  }, [allBooks, hasFullData, selectedYear, selectedChannel, sortMode, rankings])
 
   const filteredBooks = searchQuery
     ? books.filter(book =>
@@ -266,12 +270,10 @@ export default function Page() {
 
   return (
     <div>
-      {!loading && (
-        <div className="summary-stats">
-          <span>投稿数: <strong>{totalVideos.toLocaleString()}</strong></span>
-          <span>書籍数: <strong>{allBooks.length.toLocaleString()}</strong></span>
-        </div>
-      )}
+      <div className="summary-stats">
+        <span>投稿数: <strong>{hasFullData ? totalVideos.toLocaleString() : '...'}</strong></span>
+        <span>書籍数: <strong>{hasFullData ? allBooks.length.toLocaleString() : rankings.length.toLocaleString()}</strong></span>
+      </div>
       <form className="search-form" onSubmit={handleSearch}>
         <input
           type="text"
@@ -331,51 +333,45 @@ export default function Page() {
           : {filteredBooks.length}件
         </p>
       )}
-      {loading ? (
-        <p>読み込み中...</p>
-      ) : (
-        <>
-          <div className="ranking-list">
-            {currentBooks.map((book, i) => (
-              <div key={book.id} className="ranking-card">
-                <span className="rank">{startIndex + i + 1}</span>
-                {book.image_url && (
-                  <img
-                    src={book.image_url}
-                    alt={book.title}
-                    className="book-cover"
-                    loading="lazy"
-                  />
-                )}
-                <div className="book-info">
-                  <a href={`/book/${book.id}`} className="book-title">
-                    {book.title}
-                  </a>
-                  {book.author && <span className="book-author">{book.author}</span>}
-                  {book.publisher && <span className="book-publisher">{book.publisher}</span>}
-                  <div className="book-stats">
-                    {(() => { const { point, channels } = calcPoint(book); return (
-                      <span>📊 <span className="stat-value">{point}pt</span>（{channels}ch）</span>
-                    )})()}
-                    <span>📚 紹介: <span className="stat-value">{book.count}回</span></span>
-                    <span>▶️ 再生回数: <span className="stat-value">{book.total_views.toLocaleString()}</span></span>
-                    <span>👍 いいね: <span className="stat-value">{book.total_likes.toLocaleString()}</span></span>
-                  </div>
-                </div>
-                <a
-                  href={book.amazon_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="amazon-btn"
-                >
-                  Amazon
-                </a>
+      <div className="ranking-list">
+        {currentBooks.map((book, i) => (
+          <div key={book.id} className="ranking-card">
+            <span className="rank">{startIndex + i + 1}</span>
+            {book.image_url && (
+              <img
+                src={book.image_url}
+                alt={book.title}
+                className="book-cover"
+                loading="lazy"
+              />
+            )}
+            <div className="book-info">
+              <a href={`/book/${book.id}`} className="book-title">
+                {book.title}
+              </a>
+              {book.author && <span className="book-author">{book.author}</span>}
+              {'publisher' in book && book.publisher && <span className="book-publisher">{book.publisher}</span>}
+              <div className="book-stats">
+                {hasFullData && 'videos' in book && (() => { const { point, channels } = calcPoint(book as Book); return (
+                  <span>📊 <span className="stat-value">{point}pt</span>（{channels}ch）</span>
+                )})()}
+                <span>📚 紹介: <span className="stat-value">{book.count}回</span></span>
+                <span>▶️ 再生回数: <span className="stat-value">{book.total_views.toLocaleString()}</span></span>
+                <span>👍 いいね: <span className="stat-value">{book.total_likes.toLocaleString()}</span></span>
               </div>
-            ))}
+            </div>
+            <a
+              href={book.amazon_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="amazon-btn"
+            >
+              Amazon
+            </a>
           </div>
-          {renderPagination()}
-        </>
-      )}
+        ))}
+      </div>
+      {renderPagination()}
     </div>
   )
 }
