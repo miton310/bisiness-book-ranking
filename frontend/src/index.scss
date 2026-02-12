@@ -670,6 +670,39 @@ a {
   }
 }
 
+// ASIN Tool
+.asin-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.asin-result {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.asin-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.asin-output {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  word-break: break-all;
+
+  a {
+    font-size: 0.9rem;
+  }
+}
+
 // Footer
 .footer {
   border-top: 1px solid var(--border);
