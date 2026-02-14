@@ -16,7 +16,7 @@ CSV_FILE = os.path.join(DATA_DIR, "books_no_isbn_edit.csv")
 GOOGLE_BOOKS_API = "https://www.googleapis.com/books/v1/volumes"
 OPENBD_API = "https://api.openbd.jp/v1/get"
 
-AMAZON_ASSOCIATE_TAG = "miton31003"
+AMAZON_ASSOCIATE_TAG = "miton31003-22"
 AMAZON_TRACKING_ID = "business-book-ranking02-22"
 
 

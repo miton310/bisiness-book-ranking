@@ -34,7 +34,7 @@ if not YOUTUBE_API_KEY:
                 if line.startswith("YOUTUBE_API_KEY="):
                     YOUTUBE_API_KEY = line.strip().split("=", 1)[1]
 
-AMAZON_ASSOCIATE_TAG = "miton31003"
+AMAZON_ASSOCIATE_TAG = "miton31003-22"
 AMAZON_TRACKING_ID = "business-book-ranking02-22"
 
 YOUTUBE_API_BASE = "https://www.googleapis.com/youtube/v3"
