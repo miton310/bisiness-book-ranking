@@ -37,6 +37,16 @@ def isbn13_to_asin(isbn13: str) -> str | None:
         cd_str = str(check_digit)
     return core + cd_str
 
+
+def isbn10_to_isbn13(isbn10: str) -> str | None:
+    """ISBN-10(ASIN)をISBN-13に変換する"""
+    if not isbn10 or len(isbn10) != 10:
+        return None
+    core = '978' + isbn10[:9]
+    total = sum(int(d) * (1 if i % 2 == 0 else 3) for i, d in enumerate(core))
+    check = (10 - total % 10) % 10
+    return core + str(check)
+
 # Google Books APIキーを取得（.envから）
 # 環境変数で明示的に空文字が設定された場合はGoogle Books APIを無効化
 GOOGLE_BOOKS_API_KEY = os.environ.get("GOOGLE_BOOKS_API_KEY")
@@ -338,10 +348,20 @@ def main():
             isbn = manual_isbn
             print(f"(手動ISBN: {isbn})", end=" ")
         else:
-            if override.get("search_title"):
-                print(f"(検索: {search_title[:20]})", end=" ")
-            # 1. NDLサーチでISBNを取得
-            isbn = search_ndl(search_title)
+            # 0.5. ASINが既にある場合（resolve_amazon_books.pyで取得済み）→ ISBN-13に変換
+            if book.get("asin") and not isbn:
+                asin = book["asin"]
+                # ISBN-10形式のASINをISBN-13に変換
+                if len(asin) == 10 and asin[:9].isdigit() and (asin[9].isdigit() or asin[9] == 'X'):
+                    isbn = isbn10_to_isbn13(asin)
+                    if isbn:
+                        print(f"(ASIN→ISBN-13: {isbn})", end=" ")
+
+            if not isbn:
+                if override.get("search_title"):
+                    print(f"(検索: {search_title[:20]})", end=" ")
+                # 1. NDLサーチでISBNを取得
+                isbn = search_ndl(search_title)
 
         # 2. ISBNが取れたらopenBDで詳細取得
         if isbn:

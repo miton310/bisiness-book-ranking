@@ -437,7 +437,11 @@ def extract_book_info_list(summary, video_title=None):
                     'テラヘルツ', 'イヤホン', 'キーボード', 'マウス',
                     'ディスプレイ', 'モニター', 'チェア', 'ライト付き',
                     '金フレ', 'キクタン', 'でる1000問', '公式問題集',
-                    '精選問題集', '精選模試']
+                    '精選問題集', '精選模試',
+                    # セクションヘッダー系（新R25等）
+                    '書籍一覧', '書籍をチェック', '著書一覧', '著書をチェック',
+                    'の情報はこちら', 'の書籍', 'その他著書',
+                    ]
 
         for i, line in enumerate(lines):
             line_stripped = line.strip()
@@ -473,6 +477,13 @@ def extract_book_info_list(summary, video_title=None):
             if not title_candidate:
                 continue
 
+            # セクションヘッダー・ラベル行を除外（「■〇〇」「▼〇〇」、短すぎるテキスト）
+            if re.match(r'^[■▼●◆▶►]', title_candidate):
+                continue
+            # 「〇〇さんの書籍」「〇〇先生の書籍」等の人名+書籍パターンを除外
+            if re.search(r'(さん|先生|氏)の(書籍|本|著書)', title_candidate):
+                continue
+
             # NGワードチェック
             if any(ng in title_candidate for ng in ng_words):
                 continue
@@ -481,17 +492,26 @@ def extract_book_info_list(summary, video_title=None):
             cleaned = re.sub(r'^[*\s・※❤️📕📗📘📙🔽▽↓]+', '', title_candidate).strip()
             # 括弧付きの補足を除去: 「タイトル(Amazon)」→「タイトル」
             cleaned = re.sub(r'[（(](?:Amazon|Amazonリンク|アマゾン)[）)]$', '', cleaned).strip()
-            # 『』「」で囲まれている場合は外す
-            if cleaned.startswith('『') and cleaned.endswith('』'):
-                cleaned = cleaned[1:-1]
-            if cleaned.startswith('「') and cleaned.endswith('」'):
-                cleaned = cleaned[1:-1]
+
+            author_extracted = None
+            # 『タイトル』著者名 パターンを分離（新R25等）
+            kakko_match = re.match(r'^『(.+?)』(.+)$', cleaned)
+            if kakko_match:
+                cleaned = kakko_match.group(1).strip()
+                author_extracted = kakko_match.group(2).strip()
+            else:
+                # 『』「」で囲まれている場合は外す
+                if cleaned.startswith('『') and cleaned.endswith('』'):
+                    cleaned = cleaned[1:-1]
+                if cleaned.startswith('「') and cleaned.endswith('」'):
+                    cleaned = cleaned[1:-1]
 
             if cleaned and len(cleaned) > 2:
                 results.append({
                     "title": cleaned,
-                    "author": None,
+                    "author": author_extracted,
                     "publisher": None,
+                    "amzn_url": amazon_url,
                 })
 
         if results:
@@ -529,6 +549,13 @@ def extract_book_info_list(summary, video_title=None):
                 title = book_match.group(1).strip()
                 author = book_match.group(2).strip() if book_match.group(2) else None
                 publisher = book_match.group(3).strip() if book_match.group(3) else None
+                # 次の行がamzn.toリンクなら取得
+                amzn_url = None
+                if i + 1 < len(lines):
+                    next_line = lines[i + 1].strip()
+                    amzn_match = re.match(r'https?://amzn\.to/[A-Za-z0-9]+', next_line)
+                    if amzn_match:
+                        amzn_url = amzn_match.group(0)
                 if title not in seen_titles:
                     seen_titles.add(title)
                     results.append({
@@ -536,6 +563,7 @@ def extract_book_info_list(summary, video_title=None):
                         "author": author,
                         "publisher": publisher,
                         "_is_first": is_first,
+                        "amzn_url": amzn_url,
                     })
                 is_first = False
             i += 1
@@ -645,6 +673,11 @@ def is_valid_book_title(title):
         # '簡易版',
         'Audible版',
         'Kindle端末',
+        # セクションヘッダー系（新R25等）
+        '書籍一覧',
+        '書籍をチェック',
+        '著書一覧',
+        'その他著書',
         # '本を聴く',
         # '分解説',
         # '要約',
@@ -1062,6 +1095,7 @@ def main():
                         "author": book_info.get("author"),
                         "publisher": book_info.get("publisher"),
                         "amazon_url": amazon_url,
+                        "amzn_url": book_info.get("amzn_url"),
                         "count": 0,
                         "total_views": 0,
                         "total_likes": 0,
@@ -1076,6 +1110,9 @@ def main():
                         all_books[norm_key]["author"] = book_info["author"]
                     if not all_books[norm_key]["publisher"] and book_info.get("publisher"):
                         all_books[norm_key]["publisher"] = book_info["publisher"]
+                    # amzn_urlが未設定なら補完
+                    if not all_books[norm_key].get("amzn_url") and book_info.get("amzn_url"):
+                        all_books[norm_key]["amzn_url"] = book_info["amzn_url"]
 
                 all_books[norm_key]["count"] += 1
                 all_books[norm_key]["total_views"] += video.get("view_count", 0)
@@ -1123,7 +1160,7 @@ def main():
                 norm_key = normalize_title_key(book["title"])
                 existing = existing_by_title.get(norm_key)
             if existing:
-                for key in ["isbn", "asin", "image_url", "publication_date", "openbd_title"]:
+                for key in ["isbn", "asin", "image_url", "publication_date", "openbd_title", "amzn_url"]:
                     if existing.get(key) and not book.get(key):
                         book[key] = existing[key]
                 # amazon_urlはASIN付きのものを優先

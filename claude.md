@@ -243,7 +243,7 @@ GOOGLE_BOOKS_API_KEY=AIzaSy...
 
 ### Amazonアソシエイト注意事項
 
-- タグは `business-book-ranking02-22` を使用（`miton31003` ではない）
+- タグは `business-book-ranking02-22` を使用（`miton31003-22` ではない）
 - アソシエイト管理画面でサイトのドメインを登録する必要あり
 - localhost からのクリックはトラッキング対象外
 
