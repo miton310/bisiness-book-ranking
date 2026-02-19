@@ -337,14 +337,16 @@ export default function Page() {
         {currentBooks.map((book, i) => (
           <div key={book.id} className="ranking-card">
             <span className="rank">{startIndex + i + 1}</span>
-            {book.image_url && (
-              <img
-                src={book.image_url}
-                alt={book.title}
-                className="book-cover"
-                loading="lazy"
-              />
-            )}
+            <a href={`/book/${book.id}`} className="book-title">
+              {book.image_url && (
+                <img
+                  src={book.image_url}
+                  alt={book.title}
+                  className="book-cover"
+                  loading="lazy"
+                />
+              )}
+            </a>
             <div className="book-info">
               <a href={`/book/${book.id}`} className="book-title">
                 {book.title}
@@ -366,7 +368,7 @@ export default function Page() {
               rel="noopener noreferrer"
               className="amazon-btn"
             >
-              Amazon
+              Amazonで購入する
             </a>
           </div>
         ))}
