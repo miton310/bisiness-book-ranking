@@ -8,6 +8,124 @@
 
 バックエンド・DB不要。Python → JSON生成 → 静的サイトとして配信。
 
+### ドキュメントの分類
+
+#### 1. 永続的ドキュメント（`/docs`）
+
+アプリケーション全体の「**何をやるか**」「どう作るか」を定義する恒久的なドキュメント。
+アプリケーションの基本設計や方針が変わらない限り更新されません。
+
+- **product-requirements.md** - プロダクト要求定義書
+	- プロダクトビジョンと目的
+	- 主要な機能一覧
+	- 成功の定義
+	- ビジネス要件
+	- ユーザーストーリー
+	- 受け入れ条件
+	- 機能要件
+	- 非機能要件
+
+- **functional-design.md** - 機能設計書
+	- 機能ごとのアーキテクチャ
+	- システム構成図
+	- データモデル定義（ER図含む）
+	- コンポーネント設計
+	- ユースケース図、画面遷移図、ワイヤーフレーム
+	- API設計（将来的にバックエンドと連携する場合）
+
+- **architecture.md** - 技術仕様書
+	- テクノロジースタック
+	- 開発ツールと手法
+	- 技術製薬と要件
+	- パフォーマンス要件
+
+- **repository-structure.md** - リポジトリ構造定義書
+	- フォルダ・ファイル構成
+	- ディレクトリの役割
+	- ファイル配置ルール
+
+- **development-guidelines.md** - 開発ガイドライン
+	- コーディング規約
+	- 命名規則
+	- スタイリング規約
+	- テスト規約
+	- Git規約
+
+- **glossary.md** - ユビキタス言語定義
+	- ドメイン用語
+	- ビジネス用語の定義
+	- UI/UX用語の定義
+	- コード上の命名規則
+
+#### 2. 作業単位のドキュメント（`.steering/[YYYMMDD]-[開発タイトル]`）
+
+特定の開発作業における「**今回何をするか**」を定義する一時的なステアリングファイル
+作業完了後は参照用として保持されますが、新しい作業では新しいディレクトリを作成
+
+- **requirements.md** - 今回の作業の要求内容
+	- 変更・追加する機能の説明
+	- ユーザーストーリー
+	- 受け入れ条件
+	- 制約事項
+
+- **design.md** - 変更内容の設計
+	- 実装アプローチ
+	- 変更するコンポーネント
+	- データ構造の変更
+	- 影響範囲の分析
+
+- **tasklist.md** タスクリスト
+	- 具体的な実装タスク
+	- タスクの進行状況
+	- 完了条件
+
+### ステアリングディレクトリの命名規則
+
+```
+.steering/[YYYMMDDD]-[開発タイトル]/
+```
+
+**例：**
+- `.steering/20250103-initial-implementation/`
+- `.steering/20250103-add-tag-feature/`
+- `.steering/20250103-fix-filter-bug/`
+- `.steering/20250103-improve-performance/`
+
+## 開発プロセス
+
+### 初回セットアップ時の手順
+
+#### 1. フォルダ作成
+``` bash
+mkdir -p docs
+mkdir -p .steering
+```
+
+#### 2. 永続的ドキュメント作成（`docs/`）
+
+アプリケーション全体の設計を定義します。
+各ドキュメントを作成後、必ず確認・承認を得てから次に進みます。
+
+1. `docs/product-requirements.md` - プロダクト要求定義書
+2. `docs/functional-design.md` - 機能設計書
+3. `docs/architecrure.md` - 技術仕様書
+4. `docs/repository-strucrure.md` - リポジトリ構造定義書
+5. `docs/development-guidelines.md` - 開発ガイドライン
+6. `docs/glossay.md` - ユビキタス言語定義
+
+**重要** 1ファイルごとに作成後、必ず確認・承認を得てから次のファイル作成を行う
+
+### 3. 初回実装用のステアリングファイルの作成
+
+```bash
+mkdir -p .steering/[YYYYMMDD]20250103-initial-implementation
+```
+
+作成するドキュメント
+1. `.steering/[YYYYMMDD]-initial-implementation/requirements.md` - 初回実装の要求
+2. `.steering/[YYYYMMDD]-initial-implementation/design.md` - 実装設計
+3. `.steering/[YYYYMMDD]-initial-implementation/tasklist.md` - 実装タスク
+
 ## アーキテクチャ
 
 ```
@@ -32,7 +150,7 @@
 | Frontend       | Vike + React + Cloudflare Workers                      | 無料 | SSR。SEO対応                                 |
 | フレームワーク | Vike (vike-react + vike-photon)                        | 無料 | SSR/SSGフレームワーク                        |
 | データ収集     | Python (GitHub Actions)                                | 無料 | YouTube Data APIで全動画取得                 |
-| 書籍情報取得   | NDLサーチ + openBD（フォールバック: Google Books API） | 無料 | ISBN→画像・著者・出版社取得                  |
+| 書籍情報取得   | Amazon PA-API                                          | 無料 | Amazonリンク→書籍情報取得（書籍以外は自動除外）|
 | データ保存     | JSON ファイル (git管理)                                | 無料 | DB不要。シンプル                             |
 | 定期実行       | GitHub Actions Cron                                    | 無料 | Pythonで JSON生成 → auto commit              |
 | ホスティング   | Cloudflare Workers                                     | 無料 | SSR対応。wrangler deployでデプロイ           |
@@ -60,32 +178,25 @@
 
 ### scripts/fetch_videos.py
 
-YouTube Data APIで全チャンネルの動画を取得し、概要欄から書籍情報を抽出してJSONを生成。
+YouTube Data APIで全チャンネルの動画を取得し、概要欄のAmazonリンクからPA-APIで書籍情報を取得してJSONを生成。
 
-#### 書籍抽出パターン（優先順）
+#### 処理フロー
 
-1. **パターン1**: 本要約チャンネル/サラタメ — `タイトル：` `著者：` `出版社：`
-2. **パターン2**: フェルミ漫画大学 — `参考：書名 著者名 さま`
-3. **パターン3**: 学識サロン — `【amazonリンク】` + `『書名』著者 / 出版社`
-4. **パターン4**: サムの本解説ch — `【今回の参考書籍📚】` セクション（タイトル行と著者行を分離、`(著)` `(編集)` を解析）
-5. **パターン5**: PIVOT — `＜参考書籍＞` セクション（`『タイトル』` を抽出、`「」` の場合は後続テキストも含める、`『』` がない行はスキップ）
-6. **パターン6**: 七瀬アリーサ/汎用 — amzn.toリンクベース抽出（同一行 or 前行のテキストをタイトルとして取得）
-7. **パターン7**: アバタロー — `【書籍の購入】` `▼書籍の購入` セクション
+1. YouTube APIで動画取得（概要欄含む）
+2. 概要欄からAmazonリンク抽出（amzn.to, amazon.co.jp/dp/）
+3. amzn.to短縮URLはリダイレクト解決してASIN取得
+4. PA-API GetItemsでASINから商品情報取得
+5. Binding（製本形態）で書籍判定、書籍以外は除外
+6. 書籍情報（タイトル、著者、出版社、画像URL、ASIN）をJSONに保存
 
-#### NGワード（is_valid_book_title）
+#### 書籍判定（Binding）
 
-タイトルに以下が含まれる場合は除外:
+**書籍として認識:**
+- 単行本, 文庫, 新書, ハードカバー, ペーパーバック, コミック, ムック
+- Kindle版, Paperback, Hardcover
 
-- セクションヘッダー系: おすすめ動画, チャンネル登録, 関連動画, 動画一覧, SNS, Twitter, Instagram, LINE
-- 非書籍系: Audible, Kindle, エッセンシャル版, 簡易版, 本を聴く, 分解説, 要約, 解説, まとめ
-- 宣伝系: プレゼント, キャンペーン, 無料, プロフィール, お問い合わせ, メンバーシップ, サブチャンネル
-- 七瀬アリーサ宣伝: 七瀬制作, 商品紹介, メッセージカード, Success Book, Your Success, 購入ページ, 特典, 概要欄, デジタル版, 冊子版
-- YouTuber自著: OUTPUT読書術
-- パターン6のNG（amzn.to抽出時）: TOEIC, 勉強本, 手帳, プランナー, オンライン英会話, AQUES, 金フレ, キクタン, でる1000問, 公式問題集, 精選問題集, 精選模試, タイマー, トレーナー, ボードゲーム, かっさ, テラヘルツ, イヤホン, キーボード, マウス, ディスプレイ, モニター, チェア, ライト付き, Meta Quest, Kindle端末, 本棚デスク 等
-
-#### YouTuber名がタイトルに含まれる場合も除外
-
-アバタロー, サラタメ, 本要約チャンネル, 学識サロン, フェルミ, 三宅, 七瀬, アリーサ
+**除外:**
+- CD, DVD, Blu-ray, Audible版, Video Game, Electronics など
 
 ### scripts/fetch_amazon.py
 
@@ -124,49 +235,62 @@ python3 scripts/fetch_amazon.py
 GOOGLE_BOOKS_API_KEY="" python3 scripts/fetch_amazon.py
 ```
 
+### scripts/paapi_utils.py
+
+PA-API（Product Advertising API）ユーティリティモジュール。
+
+- `PaapiClient`: PA-APIクライアント（認証、商品情報取得、書籍判定）
+- `resolve_amzn_redirect()`: amzn.to短縮URL → ASIN変換
+- `extract_asins_from_text()`: テキストからAmazonリンクのASIN抽出
+
 ### scripts/fetch_amazon_info.py
 
-Amazonリンクから書籍情報を取得（現在未使用、将来PA-API対応時に活用予定）
+PA-APIを使用してAmazonリンクから書籍情報を取得。fetch_videos.pyから呼び出される。
+
+- `extract_books_from_amazon_links()`: URLリストから書籍情報取得（書籍以外は自動除外）
 
 ## データ運用手順
 
-### データ更新（手動）
+### 定期更新（差分のみ）
 
 ```bash
-# 1. YouTube APIで動画取得 → 書籍抽出 → JSON生成
+# 1. YouTube動画取得 → Amazonリンク抽出 → PA-APIで書籍情報取得 → JSON生成
 python3 scripts/fetch_videos.py
 
-# 2. 書籍情報（画像・ISBN等）取得
-python3 scripts/fetch_amazon.py
-# または Google Books APIクォータ切れの場合（NDL+openBDのみ）:
-GOOGLE_BOOKS_API_KEY="" python3 scripts/fetch_amazon.py
-
-# 3. ISBN-13 → ASIN変換
-python3 scripts/add_asin_from_isbn.py
-
-# 4. ISBN重複統合
-python3 scripts/merge_by_isbn.py
-
-# 5. フロントエンドにコピー
+# 2. フロントエンドにコピー
 cp data/*.json frontend/public/data/
 
-# 6. ビルド＆デプロイ
+# 3. ビルド＆デプロイ
 cd frontend && npm run build && npx wrangler deploy
 ```
+
+### 初回・リセット時（全件取得）
+
+```bash
+# チャンネルごとに処理（時間がかかるため）
+python3 scripts/fetch_videos.py --channel "サラタメ" --full
+python3 scripts/fetch_videos.py --channel "本要約" --full
+# ... 全チャンネル完了後 ...
+
+# フロントエンドに反映
+cp data/*.json frontend/public/data/
+cd frontend && npm run build && npx wrangler deploy
+```
+
+### fetch_videos.py オプション
+
+| オプション | 用途 |
+|-----------|------|
+| なし | 差分更新（前回以降の新動画のみ） |
+| `--full` | 全件取得（初回・リセット時） |
+| `--channel "名前"` | 指定チャンネルのみ処理（部分一致） |
+| `--list` | チャンネル一覧を表示 |
 
 ### デプロイのみ（データ更新なし）
 
 ```bash
 cd frontend && npm run build && npx wrangler deploy
 ```
-
-### 表記ゆれ統合
-
-`fetch_amazon.py` 実行後、ISBNベースで同一書籍を統合する。
-
-- ISBNが同じ書籍は自動統合（動画をマージ、count/views/likes を合算）
-- `『』` で囲まれたタイトルは外して統合
-- ISBNがない表記ゆれは手動対応が必要
 
 ## ページ構成（Vike + React）
 
@@ -230,7 +354,8 @@ id, title, author, count, total_views, total_likes, amazon_url, image_url, publi
 
 ```
 YOUTUBE_API_KEY=AIzaSy...
-GOOGLE_BOOKS_API_KEY=AIzaSy...
+AMAZON_ACCESS_KEY=AKIA...
+AMAZON_SECRET_KEY=...
 ```
 
 ## 収益化
@@ -243,19 +368,11 @@ GOOGLE_BOOKS_API_KEY=AIzaSy...
 
 ### Amazonアソシエイト注意事項
 
-- タグは `business-book-ranking02-22` を使用（`miton31003` ではない）
+- タグは `business-book-ranking02-22` を使用（`miton31003-22` ではない）
 - アソシエイト管理画面でサイトのドメインを登録する必要あり
 - localhost からのクリックはトラッキング対象外
 
 ## 将来対応
-
-### Amazon PA-API対応（アソシエイト売上実績後）
-
-- ISBNまたはタイトル → PA-API SearchItems → ASIN + 書籍情報 + 正式アフィリエイトリンク
-- amzn.toのリダイレクト変換は不要（ISBN/タイトル検索で代替可能）
-- 現在のNDL+openBDで取れない洋書・新刊もカバー可能
-
-### その他
 
 - [ ] カテゴリの自動分類
 - [ ] SEO対策

@@ -24,6 +24,14 @@ export default function Page() {
             {book.publisher && <p>出版社: {book.publisher}</p>}
             {book.publication_date && <p>出版日: {book.publication_date}</p>}
           </div>
+          <a
+            href={book.amazon_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="amazon-btn-large"
+          >
+            Amazonで探す
+          </a>
         </div>
       </div>
       <div className="detail-stats">
@@ -40,14 +48,6 @@ export default function Page() {
           <span className="stat-label">総いいね数</span>
         </div>
       </div>
-      <a
-        href={book.amazon_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="amazon-btn-large"
-      >
-        Amazonで探す
-      </a>
 
       <h2>紹介動画一覧</h2>
       <div className="video-list">

@@ -321,8 +321,8 @@ a {
 }
 
 .book-cover {
-  width: 60px;
-  height: 90px;
+  width: 120px; // 2 : 3
+  height: 180px;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
