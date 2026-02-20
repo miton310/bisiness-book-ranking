@@ -11,8 +11,38 @@ export default function Page() {
 
   if (!book) return <p>書籍が見つかりません。<a href="/">トップに戻る</a></p>
 
+  // 構造化データ（JSON-LD）
+  const bookStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": book.title,
+    "author": book.author ? { "@type": "Person", "name": book.author } : undefined,
+    "publisher": book.publisher ? { "@type": "Organization", "name": book.publisher } : undefined,
+    "datePublished": book.publication_date ? book.publication_date.split('T')[0] : undefined,
+    "image": book.image_url,
+    "url": `https://business.douga-summary.jp/book/${book.id}`,
+    "genre": book.category,
+  }
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://business.douga-summary.jp/" },
+      { "@type": "ListItem", "position": 2, "name": book.title, "item": `https://business.douga-summary.jp/book/${book.id}` }
+    ]
+  }
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <a href="/" className="back-link">← トップに戻る</a>
       <div className="detail-header">
         {book.image_url && (

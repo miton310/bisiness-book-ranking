@@ -375,8 +375,47 @@ export default function Page() {
     )
   }
 
+  // 構造化データ（JSON-LD）
+  const structuredData = useMemo(() => {
+    const top10 = filteredBooks.slice(0, 10)
+    return {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "社会人におすすめのビジネス書ランキング",
+      "description": "YouTuberが紹介したビジネス書をランキング化",
+      "numberOfItems": top10.length,
+      "itemListElement": top10.map((book, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "Book",
+          "name": book.title,
+          "author": book.author ? { "@type": "Person", "name": book.author } : undefined,
+          "url": `https://business.douga-summary.jp/book/${book.id}`,
+          "image": book.image_url,
+        }
+      }))
+    }
+  }, [filteredBooks])
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://business.douga-summary.jp/" }
+    ]
+  }
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="summary-stats">
         <span>投稿数: <strong>{hasFullData ? totalVideos.toLocaleString() : '...'}</strong></span>
         <span>書籍数: <strong>{hasFullData ? allBooks.length.toLocaleString() : rankings.length.toLocaleString()}</strong></span>
