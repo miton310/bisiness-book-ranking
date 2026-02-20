@@ -46,11 +46,11 @@
   - [ ] 七瀬アリーサ
   - [x] サムの本解説ch
   - [x] PIVOT
-  - [ ] flier
-  - [ ] 中田敦彦のYouTube大学
-  - [ ] TBS CROSS DIG
+  - [x] flier
+  - [x] 中田敦彦のYouTube大学
+  - [x] TBS CROSS DIG
   - [ ] マナビジネス
-  - [ ] 新R25
+  - [x] 新R25
 
 ### Phase 5: 検証・デプロイ
 

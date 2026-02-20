@@ -24,6 +24,7 @@ YOUTUBER_AUTHORS = [
     'フェルミ',
     '中田敦彦',
     'オリエンタルラジオ',
+    'マナビジネス'
 ]
 
 def is_youtuber_book(title: str, author: str = None) -> bool:
@@ -122,6 +123,7 @@ def extract_books_from_amazon_links(amazon_urls: list[str], max_books: int = 10)
                 "publisher": item.get("publisher"),
                 "image_url": item.get("image_url"),
                 "publication_date": item.get("publication_date"),
+                "category": item.get("category"),
                 "amazon_url": item.get("amazon_url"),
             })
 

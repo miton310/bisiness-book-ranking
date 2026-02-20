@@ -214,7 +214,72 @@ class PaapiClient:
         # 商品URL
         result["amazon_url"] = f"https://www.amazon.co.jp/dp/{item.asin}?tag={self.associate_tag}"
 
+        # カテゴリー (BrowseNodeInfo) - 階層パスを取得
+        if hasattr(item, 'browse_node_info') and item.browse_node_info:
+            if hasattr(item.browse_node_info, 'browse_nodes') and item.browse_node_info.browse_nodes:
+                category_path = self._extract_category_path(item.browse_node_info.browse_nodes)
+                if category_path:
+                    result["category"] = category_path
+
         return result
+
+    def _extract_category_path(self, browse_nodes) -> Optional[str]:
+        """BrowseNodesから有用なカテゴリーパスを抽出
+
+        許可リスト方式で、実際のジャンルカテゴリーのみを取得。
+        例: "ビジネス・経済 > 自己啓発"
+        """
+        # 有効なジャンルカテゴリー（これらを含むパスのみ許可）
+        valid_categories = {
+            # ビジネス系
+            'ビジネス・経済', '経営学・キャリア・MBA', 'マネジメント・人材管理',
+            '投資・金融・会社経営', '自己啓発', 'ビジネス実用',
+            # 人文系
+            '人文・思想', '哲学・思想', '心理学', '倫理学・道徳',
+            '宗教', '社会・政治', '社会学', '歴史・地理',
+            # 科学系
+            '科学・テクノロジー', 'コンピュータ・IT', 'サイエンス',
+            # その他
+            'ノンフィクション', '趣味・実用', '暮らし・健康・子育て',
+            '教育・学参・受験', '語学・辞事典・年鑑', '文学・評論',
+            'アート・建築・デザイン', 'スポーツ・アウトドア',
+            '医学・薬学', '資格・検定・就職',
+        }
+
+        best_category = None
+
+        for node in browse_nodes:
+            # ancestorを辿って有効なカテゴリーを探す
+            category = self._find_valid_category(node, valid_categories)
+            if category:
+                # より具体的なカテゴリーを優先
+                if best_category is None or len(category) > len(best_category):
+                    best_category = category
+
+        return best_category
+
+    def _find_valid_category(self, node, valid_categories: set) -> Optional[str]:
+        """ノードから有効なカテゴリーを探す"""
+        path = []
+        current = node
+
+        while current:
+            if hasattr(current, 'display_name') and current.display_name:
+                name = current.display_name
+
+                # 有効なカテゴリーかチェック
+                if name in valid_categories:
+                    path.insert(0, name)
+
+            # 親ノードへ
+            if hasattr(current, 'ancestor') and current.ancestor:
+                current = current.ancestor
+            else:
+                break
+
+        if path:
+            return ' > '.join(path)
+        return None
 
     def _is_book_binding(self, binding: str) -> bool:
         """製本形態が書籍かどうかを判定"""
