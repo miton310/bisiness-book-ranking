@@ -55,6 +55,13 @@ export default function Page() {
         </div>
       </div>
 
+      {book.description && (
+        <div className="book-description">
+          <h2>この本について</h2>
+          <p>{book.description}</p>
+        </div>
+      )}
+
       <h2>紹介動画一覧</h2>
       <div className="video-list">
         {book.videos.map(video => (
