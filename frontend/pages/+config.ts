@@ -5,5 +5,5 @@ import vikePhoton from 'vike-photon/config'
 export default {
   extends: [vikeReact, vikePhoton],
   ssr: true,
-  prerender: false,
+  prerender: true,
 } satisfies Config
