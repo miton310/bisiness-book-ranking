@@ -321,8 +321,8 @@ a {
 }
 
 .book-cover {
-  width: 120px; // 2 : 3
-  height: 180px;
+  width: 180px; // 2 : 3
+  height: 270px;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
@@ -357,6 +357,20 @@ a {
 }
 
 .book-publisher {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.book-pubdate {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.book-category {
   font-size: 0.75rem;
   color: var(--text-muted);
   display: block;

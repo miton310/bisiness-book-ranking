@@ -20,6 +20,7 @@ export interface Book {
   videos: Video[]
   image_url?: string
   publication_date?: string
+  category?: string
   isbn?: string
 }
 
@@ -41,4 +42,5 @@ export interface RankingEntry {
   image_url?: string
   publisher?: string
   publication_date?: string
+  category?: string
 }

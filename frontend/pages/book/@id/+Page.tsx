@@ -1,6 +1,11 @@
 import { useData } from 'vike-react/useData'
 import type { Data } from './+data'
 
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr)
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`
+}
+
 export default function Page() {
   const { book } = useData<Data>()
 
@@ -22,7 +27,8 @@ export default function Page() {
           <div className="detail-meta">
             {book.author && <p>著者: {book.author}</p>}
             {book.publisher && <p>出版社: {book.publisher}</p>}
-            {book.publication_date && <p>出版日: {book.publication_date}</p>}
+            {book.publication_date && <p>出版日: {formatDate(book.publication_date)}</p>}
+            {book.category && <p>カテゴリ: {book.category}</p>}
           </div>
           <a
             href={book.amazon_url}
