@@ -21,6 +21,8 @@ export interface Book {
   image_url?: string
   publication_date?: string
   category?: string
+  description?: string
+  keywords?: string[]
   isbn?: string
 }
 
@@ -43,4 +45,6 @@ export interface RankingEntry {
   publisher?: string
   publication_date?: string
   category?: string
+  description?: string
+  keywords?: string[]
 }
