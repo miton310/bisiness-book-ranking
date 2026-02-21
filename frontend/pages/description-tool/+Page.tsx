@@ -8,21 +8,25 @@ interface Book {
   category?: string
   image_url?: string
   description?: string
+  keywords?: string[]
 }
 
 interface SavedDescription {
   id: string
   title: string
   description: string
+  keywords: string[]
   savedAt: string
 }
 
 export default function Page() {
   const [books, setBooks] = useState<Book[]>([])
+  const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState<Book[]>([])
   const [selectedBook, setSelectedBook] = useState<Book | null>(null)
   const [description, setDescription] = useState('')
+  const [keywordsInput, setKeywordsInput] = useState('')
   const [savedDescriptions, setSavedDescriptions] = useState<SavedDescription[]>([])
   const [message, setMessage] = useState('')
 
@@ -30,8 +34,14 @@ export default function Page() {
   useEffect(() => {
     fetch('/data/books.json')
       .then(res => res.json())
-      .then(data => setBooks(data))
-      .catch(err => console.error('Failed to load books:', err))
+      .then(data => {
+        setBooks(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Failed to load books:', err)
+        setLoading(false)
+      })
   }, [])
 
   // localStorageから保存済みの紹介文を読み込み
@@ -66,6 +76,7 @@ export default function Page() {
     // 既に保存済みの紹介文があれば読み込む
     const saved = savedDescriptions.find(s => s.id === book.id)
     setDescription(saved?.description || book.description || '')
+    setKeywordsInput((saved?.keywords || book.keywords || []).join(', '))
   }
 
   // 保存
@@ -75,10 +86,16 @@ export default function Page() {
       return
     }
 
+    const keywords = keywordsInput
+      .split(/[,、]/)
+      .map(k => k.trim())
+      .filter(k => k.length > 0)
+
     const newSaved: SavedDescription = {
       id: selectedBook.id,
       title: selectedBook.title,
       description: description.trim(),
+      keywords,
       savedAt: new Date().toISOString(),
     }
 
@@ -116,6 +133,8 @@ export default function Page() {
     <div>
       <h2 className="page-heading">本の紹介文入力ツール</h2>
       <p className="subtitle">Perplexity等で生成した紹介文を入力・管理</p>
+      {loading && <p>書籍データ読み込み中...</p>}
+      {!loading && <p className="subtitle">書籍データ: {books.length}件読み込み済み</p>}
 
       {/* 検索 */}
       <div className="search-section">
@@ -180,10 +199,29 @@ export default function Page() {
               rows={6}
             />
             <div className="char-count">{description.length}文字</div>
-            <button className="save-btn" onClick={handleSave}>
-              保存
-            </button>
           </div>
+
+          <div className="description-input" style={{ marginTop: 16 }}>
+            <label>キーワードタグ</label>
+            <input
+              type="text"
+              className="search-input"
+              value={keywordsInput}
+              onChange={(e) => setKeywordsInput(e.target.value)}
+              placeholder="カンマ区切りで入力（例: リーダーシップ, 自己啓発, 習慣）"
+            />
+            {keywordsInput.trim() && (
+              <div className="book-keywords" style={{ marginTop: 8 }}>
+                {keywordsInput.split(/[,、]/).map(k => k.trim()).filter(k => k).map(keyword => (
+                  <span key={keyword} className="keyword-tag">{keyword}</span>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button className="save-btn" onClick={handleSave}>
+            保存
+          </button>
         </div>
       )}
 
@@ -204,6 +242,13 @@ export default function Page() {
               <div key={saved.id} className="saved-item">
                 <div className="saved-title">{saved.title}</div>
                 <div className="saved-description">{saved.description}</div>
+                {saved.keywords && saved.keywords.length > 0 && (
+                  <div className="book-keywords" style={{ marginBottom: 8 }}>
+                    {saved.keywords.map(keyword => (
+                      <span key={keyword} className="keyword-tag">{keyword}</span>
+                    ))}
+                  </div>
+                )}
                 <div className="saved-actions">
                   <button
                     className="edit-btn"

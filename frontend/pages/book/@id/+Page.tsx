@@ -62,6 +62,19 @@ export default function Page() {
         </div>
       )}
 
+      {book.keywords && book.keywords.length > 0 && (
+        <div className="book-keywords-section">
+          <h2>キーワード</h2>
+          <div className="book-keywords">
+            {book.keywords.map(keyword => (
+              <a key={keyword} href={`/?tag=${encodeURIComponent(keyword)}`} className="keyword-tag">
+                {keyword}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
       <h2>紹介動画一覧</h2>
       <div className="video-list">
         {book.videos.map(video => (

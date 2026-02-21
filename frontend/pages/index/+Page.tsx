@@ -210,6 +210,7 @@ export default function Page() {
   const selectedPubYear = pubYearParam ? parseInt(pubYearParam, 10) : null
   const selectedPublisher = searchParams.get('publisher') || null
   const selectedCategory = searchParams.get('category') || null
+  const selectedTag = searchParams.get('tag') || null
 
   // Full book data loaded client-side for filtering/sorting
   const [allBooks, setAllBooks] = useState<Book[] | null>(null)
@@ -241,6 +242,9 @@ export default function Page() {
       filtered = filterBooksByPublicationYear(filtered, selectedPubYear)
       filtered = filterBooksByPublisher(filtered, selectedPublisher)
       filtered = filterBooksByCategory(filtered, selectedCategory)
+      if (selectedTag) {
+        filtered = filtered.filter(book => book.keywords?.includes(selectedTag))
+      }
       const sorted = [...filtered].sort((a, b) => {
         if (sortMode === 'point') return calcPoint(b).point - calcPoint(a).point
         if (sortMode === 'views') return b.total_views - a.total_views
@@ -251,7 +255,7 @@ export default function Page() {
     }
     // SSR: use rankings data (already sorted by count)
     return rankings as (RankingEntry & { videos?: never })[]
-  }, [allBooks, hasFullData, selectedYear, selectedChannel, selectedPubYear, selectedPublisher, selectedCategory, sortMode, rankings])
+  }, [allBooks, hasFullData, selectedYear, selectedChannel, selectedPubYear, selectedPublisher, selectedCategory, selectedTag, sortMode, rankings])
 
   const filteredBooks = searchQuery
     ? books.filter(book =>
@@ -264,7 +268,7 @@ export default function Page() {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
   const currentBooks = filteredBooks.slice(startIndex, startIndex + ITEMS_PER_PAGE)
 
-  const buildParams = (overrides: Partial<{ sort: string; page: string; q: string; year: string; channel: string; pubYear: string; publisher: string; category: string }>) => {
+  const buildParams = (overrides: Partial<{ sort: string; page: string; q: string; year: string; channel: string; pubYear: string; publisher: string; category: string; tag: string }>) => {
     const params: Record<string, string> = {}
     const sort = overrides.sort ?? sortMode
     const page = overrides.page ?? '1'
@@ -274,6 +278,7 @@ export default function Page() {
     const pubYear = overrides.pubYear !== undefined ? overrides.pubYear : (selectedPubYear?.toString() || '')
     const publisher = overrides.publisher !== undefined ? overrides.publisher : (selectedPublisher || '')
     const category = overrides.category !== undefined ? overrides.category : (selectedCategory || '')
+    const tag = overrides.tag !== undefined ? overrides.tag : (selectedTag || '')
 
     params.sort = sort
     params.page = page
@@ -283,6 +288,7 @@ export default function Page() {
     if (pubYear) params.pubYear = pubYear
     if (publisher) params.publisher = publisher
     if (category) params.category = category
+    if (tag) params.tag = tag
     return params
   }
 
@@ -323,6 +329,10 @@ export default function Page() {
 
   const handleCategoryChange = (category: string | null) => {
     setSearchParams(buildParams({ category: category || '', page: '1' }))
+  }
+
+  const handleTagChange = (tag: string | null) => {
+    setSearchParams(buildParams({ tag: tag || '', page: '1' }))
   }
 
   const renderPagination = () => {
@@ -398,84 +408,101 @@ export default function Page() {
         <p className="search-result">「{searchQuery}」の検索結果: {filteredBooks.length}件</p>
       )}
       <div className="filter-row">
-        <div className="sort-tabs">
-          {SORT_OPTIONS.map(opt => (
-            <button
-              key={opt.key}
-              className={`sort-tab ${sortMode === opt.key ? 'active' : ''}`}
-              onClick={() => handleSort(opt.key)}
+        <div className="filter-group">
+          <label className="filter-label">並び替え</label>
+          <div className="sort-tabs">
+            {SORT_OPTIONS.map(opt => (
+              <button
+                key={opt.key}
+                className={`sort-tab ${sortMode === opt.key ? 'active' : ''}`}
+                onClick={() => handleSort(opt.key)}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="filter-group">
+          <label className="filter-label">紹介動画で絞り込み</label>
+          <div className="filter-selects">
+            <select
+              className="filter-select"
+              value={selectedYear || ''}
+              onChange={(e) => handleYearChange(e.target.value ? parseInt(e.target.value, 10) : null)}
             >
-              {opt.label}
-            </button>
-          ))}
+              <option value="">全期間</option>
+              {availableYears.map(year => (
+                <option key={year} value={year}>{year}年</option>
+              ))}
+            </select>
+            <select
+              className="filter-select"
+              value={selectedChannel || ''}
+              onChange={(e) => handleChannelChange(e.target.value || null)}
+            >
+              <option value="">全チャンネル</option>
+              {availableChannels.map(ch => (
+                <option key={ch.name} value={ch.name}>{ch.name}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="filter-selects">
-          <select
-            className="filter-select"
-            value={selectedYear || ''}
-            onChange={(e) => handleYearChange(e.target.value ? parseInt(e.target.value, 10) : null)}
-          >
-            <option value="">全期間</option>
-            {availableYears.map(year => (
-              <option key={year} value={year}>{year}年</option>
-            ))}
-          </select>
-          <select
-            className="filter-select"
-            value={selectedChannel || ''}
-            onChange={(e) => handleChannelChange(e.target.value || null)}
-          >
-            <option value="">全チャンネル</option>
-            {availableChannels.map(ch => (
-              <option key={ch.name} value={ch.name}>{ch.name}</option>
-            ))}
-          </select>
-        </div>
-        {/* 3段目: 出版年・出版社・ジャンル */}
-        <div className="filter-selects">
-          <select
-            className="filter-select"
-            value={selectedPubYear || ''}
-            onChange={(e) => handlePubYearChange(e.target.value ? parseInt(e.target.value, 10) : null)}
-          >
-            <option value="">出版年: 全て</option>
-            {availablePubYears.map(year => (
-              <option key={year} value={year}>{year}年</option>
-            ))}
-          </select>
-          <select
-            className="filter-select"
-            value={selectedPublisher || ''}
-            onChange={(e) => handlePublisherChange(e.target.value || null)}
-          >
-            <option value="">出版社: 全て</option>
-            {availablePublishers.slice(0, 50).map(pub => (
-              <option key={pub.name} value={pub.name}>{pub.name} ({pub.count})</option>
-            ))}
-          </select>
-          <select
-            className="filter-select"
-            value={selectedCategory || ''}
-            onChange={(e) => handleCategoryChange(e.target.value || null)}
-          >
-            <option value="">ジャンル: 全て</option>
-            {availableCategories.map(cat => (
-              <option key={cat.name} value={cat.name}>{cat.name} ({cat.count})</option>
-            ))}
-          </select>
+        <div className="filter-group">
+          <label className="filter-label">書籍情報で絞り込み</label>
+          <div className="filter-selects">
+            <select
+              className="filter-select"
+              value={selectedPubYear || ''}
+              onChange={(e) => handlePubYearChange(e.target.value ? parseInt(e.target.value, 10) : null)}
+            >
+              <option value="">出版年: 全て</option>
+              {availablePubYears.map(year => (
+                <option key={year} value={year}>{year}年</option>
+              ))}
+            </select>
+            <select
+              className="filter-select"
+              value={selectedPublisher || ''}
+              onChange={(e) => handlePublisherChange(e.target.value || null)}
+            >
+              <option value="">出版社: 全て</option>
+              {availablePublishers.slice(0, 50).map(pub => (
+                <option key={pub.name} value={pub.name}>{pub.name} ({pub.count})</option>
+              ))}
+            </select>
+            <select
+              className="filter-select"
+              value={selectedCategory || ''}
+              onChange={(e) => handleCategoryChange(e.target.value || null)}
+            >
+              <option value="">ジャンル: 全て</option>
+              {availableCategories.map(cat => (
+                <option key={cat.name} value={cat.name}>{cat.name} ({cat.count})</option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
-      {(selectedYear || selectedChannel || selectedPubYear || selectedPublisher || selectedCategory) && (
-        <p className="filter-result">
-          {[
-            selectedYear && `紹介年:${selectedYear}年`,
-            selectedChannel,
-            selectedPubYear && `出版:${selectedPubYear}年`,
-            selectedPublisher,
-            selectedCategory,
-          ].filter(Boolean).join(' / ')}
-          : {filteredBooks.length}件
-        </p>
+      {(selectedYear || selectedChannel || selectedPubYear || selectedPublisher || selectedCategory || selectedTag) && (
+        <div className="filter-result">
+          <span>
+            {[
+              selectedYear && `紹介年:${selectedYear}年`,
+              selectedChannel,
+              selectedPubYear && `出版:${selectedPubYear}年`,
+              selectedPublisher,
+              selectedCategory,
+              selectedTag && `タグ:${selectedTag}`,
+            ].filter(Boolean).join(' / ')}
+            : {filteredBooks.length}件
+          </span>
+          <button
+            className="filter-clear"
+            onClick={() => setSearchParams(buildParams({ year: '', channel: '', pubYear: '', publisher: '', category: '', tag: '', page: '1' }))}
+          >
+            絞り込みをクリア
+          </button>
+        </div>
       )}
       <div className="ranking-list">
         {currentBooks.map((book, i) => (
@@ -502,6 +529,24 @@ export default function Page() {
               )}
               {'category' in book && book.category && (
                 <span className="book-category">{book.category}</span>
+              )}
+              {'description' in book && book.description && (
+                <p className="book-description-excerpt">
+                  {book.description.length > 120 ? book.description.slice(0, 120) + '...' : book.description}
+                </p>
+              )}
+              {'keywords' in book && book.keywords && book.keywords.length > 0 && (
+                <div className="book-keywords">
+                  {book.keywords.map(keyword => (
+                    <button
+                      key={keyword}
+                      className="keyword-tag"
+                      onClick={(e) => { e.preventDefault(); handleTagChange(keyword) }}
+                    >
+                      {keyword}
+                    </button>
+                  ))}
+                </div>
               )}
               <div className="book-stats">
                 {hasFullData && 'videos' in book && (() => { const { point, channels } = calcPoint(book as Book); return (

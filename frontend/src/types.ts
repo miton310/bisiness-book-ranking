@@ -22,6 +22,7 @@ export interface Book {
   publication_date?: string
   category?: string
   description?: string
+  keywords?: string[]
   isbn?: string
 }
 
@@ -45,4 +46,5 @@ export interface RankingEntry {
   publication_date?: string
   category?: string
   description?: string
+  keywords?: string[]
 }

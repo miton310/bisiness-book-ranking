@@ -42,12 +42,15 @@ def main():
     print(f"書籍データ: {len(books)}件")
 
     # マージ
-    desc_map = {d["id"]: d["description"] for d in descriptions}
+    desc_map = {d["id"]: d for d in descriptions}
     updated_count = 0
 
     for book in books:
         if book["id"] in desc_map:
-            book["description"] = desc_map[book["id"]]
+            d = desc_map[book["id"]]
+            book["description"] = d["description"]
+            if d.get("keywords"):
+                book["keywords"] = d["keywords"]
             updated_count += 1
             print(f"  更新: {book['title'][:40]}")
 
