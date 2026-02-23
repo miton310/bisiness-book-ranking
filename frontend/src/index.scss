@@ -58,16 +58,13 @@ a {
 .l-header {
   &__inner {
     padding: 12px 0;
-    // display: flex;
-    // align-items: center;
-    // gap: 1rem;
-    // justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
 
     @media (max-width: 767px) {
       padding: 8px 0;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
     }
   }
 }
@@ -92,6 +89,8 @@ a {
   &__title {
     &--sub {
       font-size: 0.75rem;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
   }
 }
@@ -219,6 +218,7 @@ a {
 .sort-tabs {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .sort-tab {
@@ -249,6 +249,19 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .filter-selects {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-select {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .filter-select {
@@ -759,7 +772,9 @@ a {
 // Responsive
 @media (max-width: 600px) {
   .ranking-card {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
   }
 
   .rank {
@@ -767,13 +782,36 @@ a {
   }
 
   .book-cover {
-    width: 50px;
-    height: 75px;
+    width: 160px;
+    height: 240px;
+  }
+
+  .book-info {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .book-title {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .book-description-excerpt {
+    word-break: break-word;
+  }
+
+  .book-keywords {
+    max-width: 100%;
   }
 
   .book-stats {
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .amazon-btn {
+    width: 100%;
+    text-align: center;
   }
 
   .detail-header {
@@ -782,8 +820,14 @@ a {
   }
 
   .detail-cover {
-    width: 120px;
-    height: 180px;
+    width: 200px;
+    height: 300px;
+  }
+
+  .amazon-btn-large {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .detail-stats {
