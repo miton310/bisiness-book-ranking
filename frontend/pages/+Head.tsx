@@ -11,7 +11,6 @@ export function Head() {
       <meta property="og:image" content="https://business.douga-summary.jp/og-image.png" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://business.douga-summary.jp/og-image.png" />
-      <link rel="canonical" href="https://business.douga-summary.jp/" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />

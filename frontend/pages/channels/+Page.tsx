@@ -6,7 +6,7 @@ export default function Page() {
 
   return (
     <div>
-      <h2 className="page-heading">チャンネル一覧</h2>
+      <h1 className="page-heading">チャンネル一覧</h1>
       <p className="subtitle">書籍紹介系YouTubeチャンネル: {channels.length}件</p>
       <div className="channel-list">
         {channels.map(ch => (

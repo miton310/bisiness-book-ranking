@@ -530,12 +530,12 @@ export default function Page() {
               {'category' in book && book.category && (
                 <span className="book-category">{book.category}</span>
               )}
-              {'description' in book && book.description && (
+              {book.description && (
                 <p className="book-description-excerpt">
                   {book.description.length > 120 ? book.description.slice(0, 120) + '...' : book.description}
                 </p>
               )}
-              {'keywords' in book && book.keywords && book.keywords.length > 0 && (
+              {book.keywords && book.keywords.length > 0 && (
                 <div className="book-keywords">
                   {book.keywords.map(keyword => (
                     <button
