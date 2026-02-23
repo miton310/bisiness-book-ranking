@@ -35,7 +35,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </main>
       <footer className="footer">
         <div className="container">
-          <p>本要約系YouTuberが紹介したビジネス書や人生に役に立つ本を集計・ランキング化</p>
+          <p>YouTuberが紹介した社会人におすすめのビジネス書や人生に役立つ本を集計・ランキング化</p>
         </div>
       </footer>
     </div>
