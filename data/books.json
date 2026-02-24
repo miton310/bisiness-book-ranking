@@ -923,7 +923,20 @@
       }
     ],
     "publication_date": "2024-12-27T00:00:01Z",
-    "category": "ノンフィクション > ビジネス・経済"
+    "category": "ノンフィクション > ビジネス・経済",
+    "description": "本の概要\nバブル崩壊後の採用縮小・長期デフレ・賃金停滞が、なぜ1990〜2000年代前半卒の世代に集中したのかを、雇用・賃金・消費・生活の統計データで徹底検証した一冊。「自己責任論」で片付けられがちな氷河期世代の不遇を、政策と企業行動の観点から構造的に解き明かします。\n\n目次レベルの構成\n第1章「就職氷河期世代」はなぜ生まれたのか ― 超売り手市場（バブル期）から一転した採用縮小の経緯\n\n第2章 雇用事情 ― 大企業勤務の少なさ、低賃金、非正規・派遣比率の高さ\n\n第3章 経済事情 ― 貧困・格差、貯蓄志向の強さと低消費が日本経済に与える影響\n\n第4章 生活事情 ― 物価上昇に対する低消費支出、高い未婚率、老後不安の実態\n\nどんな人に刺さるか\n自分がまさに氷河期世代で「なぜこんなに割を食っているのか」を言語化したい人\n\n若い世代・政策サイドが世代間格差を構造的に理解したい人\n\nマクロ経済（金融・財政政策）と個人のキャリア・賃金のつながりに興味がある人\n\nまとめ\n感覚的な「ロスジェネつらい…」ではなく、データで裏付けられた分析なので、読後は「あの時代に何が起きたのか」がすっきり腑に落ちる一冊です。",
+    "keywords": [
+      "就職氷河期",
+      "ロストジェネレーション",
+      "非正規雇用",
+      "世代格差",
+      "経済格差",
+      "老後不安",
+      "少子化",
+      "雇用政策",
+      "社会問題",
+      "永濱利廣"
+    ]
   },
   {
     "id": "19b79ee57f97",
@@ -2916,17 +2929,17 @@
     ]
   },
   {
-    "id": "29d5fa0a49f9",
-    "title": "１％の努力",
+    "id": "d8e384980755",
+    "title": "1%の努力",
     "author": "ひろゆき",
     "publisher": "ダイヤモンド社",
     "amazon_url": "https://www.amazon.co.jp/dp/B084MF2QDM?tag=business-book-ranking02-22",
     "amzn_url": null,
     "asin": "B084MF2QDM",
     "image_url": "https://m.media-amazon.com/images/I/51d0qW2jDZL._SL500_.jpg",
-    "count": 11,
-    "total_views": 2409920,
-    "total_likes": 37097,
+    "count": 14,
+    "total_views": 2681196,
+    "total_likes": 42223,
     "videos": [
       {
         "video_id": "Qnqm0YoGAAw",
@@ -3026,10 +3039,50 @@
         "published": "2021-05-11T10:01:00Z",
         "view_count": 574891,
         "like_count": 8604
+      },
+      {
+        "video_id": "usoQsbe4jJE",
+        "video_title": "【8分で解説】ひろゆき「1％の努力」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=usoQsbe4jJE",
+        "published": "2020-04-10T12:00:28Z",
+        "view_count": 20479,
+        "like_count": 489
+      },
+      {
+        "video_id": "bWScY2C3ewo",
+        "video_title": "【8分で解説】ひろゆき「１％の努力」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=bWScY2C3ewo",
+        "published": "2020-03-19T12:00:31Z",
+        "view_count": 117494,
+        "like_count": 2700
+      },
+      {
+        "video_id": "OvVpaHVWFYs",
+        "video_title": "【事故映像】ひろゆきさんにインタビュアーが洗脳されてしまいました",
+        "channel": "新R25チャンネル",
+        "link": "https://www.youtube.com/watch?v=OvVpaHVWFYs",
+        "published": "2021-06-16T11:15:00Z",
+        "view_count": 133303,
+        "like_count": 1937
       }
     ],
     "publication_date": "2020-03-04T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
+    "category": "人文・思想 > 倫理学・道徳",
+    "description": "『１％の努力』は、ひろゆき（西村博之）が自身の人生エピソードを通じて、「99%の努力は無駄、1%の賢い努力で最大の成果を出す」考え方を説く一冊です。前提条件・優先順位・ニーズ把握など7つの軸で、努力神話を捨て、コスパの高い「思考」と「サボる力」を重視。頑張っても報われないと感じるビジネスパーソン、効率的な人生設計を求める人、常識に縛られたくない人に特におすすめです。読者は、「徹底的に調べる」「余白を作る」「世のニーズに合わせる」思考を学び、無駄な努力を避け楽しく成功に近づく実践力を得られます。",
+    "keywords": [
+      "1%の努力",
+      "ひろゆき",
+      "努力神話",
+      "コスパ思考",
+      "優先順位",
+      "サボる力",
+      "ニーズ把握",
+      "人生ハック",
+      "効率化",
+      "世渡り術"
+    ]
   },
   {
     "id": "c742babb1270",
@@ -4253,9 +4306,9 @@
     "amzn_url": null,
     "asin": "4140816619",
     "image_url": "https://m.media-amazon.com/images/I/41JmFUQjmIL._SL500_.jpg",
-    "count": 9,
-    "total_views": 2844260,
-    "total_likes": 63375,
+    "count": 12,
+    "total_views": 3223840,
+    "total_likes": 69721,
     "videos": [
       {
         "video_id": "7oEqqBExl5w",
@@ -4337,6 +4390,33 @@
         "published": "2020-08-20T22:30:00Z",
         "view_count": 29213,
         "like_count": 848
+      },
+      {
+        "video_id": "i9D5PG_CwFE",
+        "video_title": "【要約】GO WILD 野生の体を取り戻せ！　科学が教えるトレイルラン、低炭水化物食、マインドフルネス【ジョンＪ．レイティ】",
+        "channel": "フェルミ漫画大学",
+        "link": "https://www.youtube.com/watch?v=i9D5PG_CwFE",
+        "published": "2022-05-14T11:00:31Z",
+        "view_count": 149628,
+        "like_count": 2516
+      },
+      {
+        "video_id": "Q9uFItC94iM",
+        "video_title": "【総まとめ】謎の不調をまとめて治す5つの方法【GO WILD 野生の体を取り戻せ！ほか】",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=Q9uFItC94iM",
+        "published": "2025-03-02T10:00:26Z",
+        "view_count": 14726,
+        "like_count": 208
+      },
+      {
+        "video_id": "_9U8dbbyXu8",
+        "video_title": "【25分で解説】謎の不調をまとめて治す5つの方法【GO WILD 野生の体を取り戻せ！】",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=_9U8dbbyXu8",
+        "published": "2020-12-19T11:19:43Z",
+        "view_count": 215226,
+        "like_count": 3622
       }
     ],
     "publication_date": "2014-12-19T00:00:01Z",
@@ -11477,9 +11557,9 @@
     "amzn_url": null,
     "asin": "447810221X",
     "image_url": "https://m.media-amazon.com/images/I/61LvC8CsTwL._SL500_.jpg",
-    "count": 5,
-    "total_views": 2495582,
-    "total_likes": 46320,
+    "count": 6,
+    "total_views": 2586334,
+    "total_likes": 47836,
     "videos": [
       {
         "video_id": "irOR4aA6uds",
@@ -11525,6 +11605,15 @@
         "published": "2021-09-25T22:30:03Z",
         "view_count": 155959,
         "like_count": 4506
+      },
+      {
+        "video_id": "0tG90TOgZO4",
+        "video_title": "【6分で解説】「医者が教える食事術」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=0tG90TOgZO4",
+        "published": "2020-01-11T12:00:00Z",
+        "view_count": 90752,
+        "like_count": 1516
       }
     ],
     "publication_date": "2017-09-22T00:00:01Z",
@@ -11787,9 +11876,9 @@
     "amzn_url": null,
     "asin": "4065289327",
     "image_url": "https://m.media-amazon.com/images/I/41qbAfM+B+L._SL500_.jpg",
-    "count": 5,
-    "total_views": 356472,
-    "total_likes": 6118,
+    "count": 7,
+    "total_views": 481120,
+    "total_likes": 8416,
     "videos": [
       {
         "video_id": "mBRR5m2_hG0",
@@ -11835,6 +11924,24 @@
         "published": "2023-07-18T22:00:23Z",
         "view_count": 76522,
         "like_count": 1072
+      },
+      {
+        "video_id": "q36jyZJeuaE",
+        "video_title": "【要約】絶対悲観主義【楠木建】",
+        "channel": "フェルミ漫画大学",
+        "link": "https://www.youtube.com/watch?v=q36jyZJeuaE",
+        "published": "2022-10-07T11:00:37Z",
+        "view_count": 108612,
+        "like_count": 2041
+      },
+      {
+        "video_id": "wtaTbnKhRBk",
+        "video_title": "【13分で解説】絶対悲観主義　楠木建",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=wtaTbnKhRBk",
+        "published": "2023-09-16T10:00:42Z",
+        "view_count": 16036,
+        "like_count": 257
       }
     ],
     "publication_date": "2022-06-22T00:00:01Z",
@@ -12964,9 +13071,9 @@
     "amzn_url": null,
     "asin": "B094X7JLCC",
     "image_url": "https://m.media-amazon.com/images/I/51dGbPwVUaL._SL500_.jpg",
-    "count": 5,
-    "total_views": 2297978,
-    "total_likes": 30361,
+    "count": 7,
+    "total_views": 2887239,
+    "total_likes": 35367,
     "videos": [
       {
         "video_id": "JNuj7415ok0",
@@ -13012,6 +13119,24 @@
         "published": "2022-02-05T10:00:00Z",
         "view_count": 480533,
         "like_count": 6792
+      },
+      {
+        "video_id": "m3DMXhmr1vo",
+        "video_title": "【高級車はダメ】AV男優しみけん直伝「セッ◯スを引き寄せるお金の使い方」",
+        "channel": "新R25チャンネル",
+        "link": "https://www.youtube.com/watch?v=m3DMXhmr1vo",
+        "published": "2020-12-04T11:15:05Z",
+        "view_count": 147675,
+        "like_count": 1787
+      },
+      {
+        "video_id": "cylFrhdaU6w",
+        "video_title": "【AV界の収入構造】しみけんさん、ぶっちゃけいくら稼いでます？",
+        "channel": "新R25チャンネル",
+        "link": "https://www.youtube.com/watch?v=cylFrhdaU6w",
+        "published": "2020-12-03T11:15:01Z",
+        "view_count": 441586,
+        "like_count": 3219
       }
     ],
     "publication_date": "2021-04-01T00:00:00.000Z",
@@ -13820,7 +13945,20 @@
       }
     ],
     "publication_date": "2019-11-13T00:00:01Z",
-    "category": "ノンフィクション"
+    "category": "ノンフィクション",
+    "description": "『日本の戦後を知るための12人 池上彰の〈夜間授業〉』は、2018〜2019年に文藝春秋西館で行われた池上彰の講義を書籍化した現代史入門の決定版です。田中角栄・小泉純一郎・堀江貴文・池田大作・上皇陛下など、毀誉褒貶ありながらも戦後日本を決定づけたキーパーソン12人を「功罪」両面から解説し、人物評論の形で戦後史を学べます。現代史に苦手意識があるビジネスパーソン、日本社会の仕組みや政治経済の背景を理解したい人、教科書には載らない踏み込んだ話を知りたい人に特におすすめ。読者は、12人の人物像と時代への影響を通じて、現代日本の政治・経済・宗教・メディアの構造を立体的に理解し、「歴史は繰り返す」という視点で現代を読み解く教養と洞察力を身につけられます。",
+    "keywords": [
+      "戦後日本",
+      "現代史",
+      "池上彰",
+      "夜間授業",
+      "人物評論",
+      "功罪",
+      "政治経済",
+      "田中角栄",
+      "歴史入門",
+      "教養"
+    ]
   },
   {
     "id": "d4139708b3e2",
@@ -18629,9 +18767,9 @@
     "amzn_url": null,
     "asin": "4569851975",
     "image_url": "https://m.media-amazon.com/images/I/51rrIvv6h8L._SL500_.jpg",
-    "count": 4,
-    "total_views": 5578913,
-    "total_likes": 64353,
+    "count": 5,
+    "total_views": 7649180,
+    "total_likes": 74489,
     "videos": [
       {
         "video_id": "e2KJvcnJQpg",
@@ -18668,6 +18806,15 @@
         "published": "2023-04-08T10:00:08Z",
         "view_count": 2668215,
         "like_count": 27379
+      },
+      {
+        "video_id": "xOdukGIFVJA",
+        "video_title": "５０歳で、この３つの特徴が無い人は残念な人生になってしまう・・・。『50歳から花開く人 50歳で止まる人』",
+        "channel": "学識サロン",
+        "link": "https://www.youtube.com/watch?v=xOdukGIFVJA",
+        "published": "2023-04-01T08:00:24Z",
+        "view_count": 2070267,
+        "like_count": 10136
       }
     ],
     "publication_date": "2022-05-19T00:00:01Z",
@@ -20103,9 +20250,9 @@
     "amzn_url": null,
     "asin": "B08CTVL6K2",
     "image_url": "https://m.media-amazon.com/images/I/51XHRjUwwiL._SL500_.jpg",
-    "count": 3,
-    "total_views": 3429115,
-    "total_likes": 48994,
+    "count": 5,
+    "total_views": 3457116,
+    "total_likes": 49437,
     "videos": [
       {
         "video_id": "AJg2oOOSVrw",
@@ -20133,6 +20280,24 @@
         "published": "2021-01-13T11:00:16Z",
         "view_count": 1735686,
         "like_count": 23546
+      },
+      {
+        "video_id": "TMebCMuan2o",
+        "video_title": "【特別編】３つの蓄積をしないと将来ヤバい。49歳以下は全員必読。人生100年時代の攻略本【ライフピボット】ほか",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=TMebCMuan2o",
+        "published": "2025-05-24T23:00:34Z",
+        "view_count": 15282,
+        "like_count": 243
+      },
+      {
+        "video_id": "ZFsKdd9fpZ0",
+        "video_title": "【13分で解説】ネオライフハック１００　圧倒的に自由で快適な未来が手に入る　勝間式ネオライフハック１００",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=ZFsKdd9fpZ0",
+        "published": "2023-08-11T10:00:22Z",
+        "view_count": 12719,
+        "like_count": 200
       }
     ],
     "publication_date": "2020-07-29T00:00:00.000Z",
@@ -20719,9 +20884,9 @@
     "amzn_url": null,
     "asin": "B09HM2RJK7",
     "image_url": "https://m.media-amazon.com/images/I/41+gvhPKDEL._SL500_.jpg",
-    "count": 3,
-    "total_views": 384684,
-    "total_likes": 7510,
+    "count": 5,
+    "total_views": 2770675,
+    "total_likes": 37224,
     "videos": [
       {
         "video_id": "sVYxc-nPVqQ",
@@ -20749,6 +20914,24 @@
         "published": "2022-12-03T08:00:30Z",
         "view_count": 86797,
         "like_count": 1528
+      },
+      {
+        "video_id": "537KQMoY_b4",
+        "video_title": "【ベストセラー】「人は聞き方が９割」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=537KQMoY_b4",
+        "published": "2022-04-21T10:00:02Z",
+        "view_count": 112801,
+        "like_count": 2667
+      },
+      {
+        "video_id": "3UNSPk7oBxU",
+        "video_title": "【人は聞き方が9割①】会話を盛り上げる主役は聞き手である！",
+        "channel": "中田敦彦のYouTube大学 - NAKATA UNIVERSITY",
+        "link": "https://www.youtube.com/watch?v=3UNSPk7oBxU",
+        "published": "2022-02-22T10:00:01Z",
+        "view_count": 2273190,
+        "like_count": 27047
       }
     ],
     "publication_date": "2021-12-09T00:00:00.000Z",
@@ -23139,9 +23322,9 @@
     "amzn_url": null,
     "asin": "B08N9WXY18",
     "image_url": "https://m.media-amazon.com/images/I/41xAo9weOuL._SL500_.jpg",
-    "count": 3,
-    "total_views": 741340,
-    "total_likes": 12977,
+    "count": 5,
+    "total_views": 1521452,
+    "total_likes": 25397,
     "videos": [
       {
         "video_id": "zuZrr7_sv0s",
@@ -23169,6 +23352,24 @@
         "published": "2021-01-04T10:00:22Z",
         "view_count": 579404,
         "like_count": 10220
+      },
+      {
+        "video_id": "3xLf9yJG_gA",
+        "video_title": "【要約】99.9%は幸せの素人②【星渉】",
+        "channel": "フェルミ漫画大学",
+        "link": "https://www.youtube.com/watch?v=3xLf9yJG_gA",
+        "published": "2021-05-13T11:00:05Z",
+        "view_count": 253529,
+        "like_count": 4455
+      },
+      {
+        "video_id": "nDrirLMtvNQ",
+        "video_title": "【要約】99.9%は幸せの素人①【星渉】",
+        "channel": "フェルミ漫画大学",
+        "link": "https://www.youtube.com/watch?v=nDrirLMtvNQ",
+        "published": "2021-05-11T11:00:30Z",
+        "view_count": 526583,
+        "like_count": 7965
       }
     ],
     "publication_date": "2020-11-27T00:00:00.000Z",
@@ -27935,9 +28136,9 @@
     "amzn_url": null,
     "asin": "B089GPK9SZ",
     "image_url": "https://m.media-amazon.com/images/I/51LPFBZP0LL._SL500_.jpg",
-    "count": 3,
-    "total_views": 680382,
-    "total_likes": 10520,
+    "count": 4,
+    "total_views": 1375785,
+    "total_likes": 20129,
     "videos": [
       {
         "video_id": "7er0tEaOTkA",
@@ -27965,6 +28166,15 @@
         "published": "2021-11-18T10:00:04Z",
         "view_count": 89821,
         "like_count": 1665
+      },
+      {
+        "video_id": "dEeJKgL3emc",
+        "video_title": "【ベストセラー】「『朝1時間』ですべてが変わるモーニングルーティン」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=dEeJKgL3emc",
+        "published": "2021-07-22T10:00:30Z",
+        "view_count": 695403,
+        "like_count": 9609
       }
     ],
     "publication_date": "2020-04-10T00:00:00.000Z",
@@ -28013,50 +28223,6 @@
     ],
     "publication_date": "2021-07-17T00:00:00.000Z",
     "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
-    "id": "5b324c1815f9",
-    "title": "GO WILD 野生の体を取り戻せ！　科学が教えるトレイルラン、低炭水化物食、マインドフルネス",
-    "author": "ジョンＪ．レイティ、リチャード・マニング",
-    "publisher": "NHK出版",
-    "amazon_url": "https://www.amazon.co.jp/dp/B00R68RYM6?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B00R68RYM6",
-    "image_url": "https://m.media-amazon.com/images/I/51bmh4hdLLL._SL500_.jpg",
-    "count": 3,
-    "total_views": 379580,
-    "total_likes": 6346,
-    "videos": [
-      {
-        "video_id": "i9D5PG_CwFE",
-        "video_title": "【要約】GO WILD 野生の体を取り戻せ！　科学が教えるトレイルラン、低炭水化物食、マインドフルネス【ジョンＪ．レイティ】",
-        "channel": "フェルミ漫画大学",
-        "link": "https://www.youtube.com/watch?v=i9D5PG_CwFE",
-        "published": "2022-05-14T11:00:31Z",
-        "view_count": 149628,
-        "like_count": 2516
-      },
-      {
-        "video_id": "Q9uFItC94iM",
-        "video_title": "【総まとめ】謎の不調をまとめて治す5つの方法【GO WILD 野生の体を取り戻せ！ほか】",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=Q9uFItC94iM",
-        "published": "2025-03-02T10:00:26Z",
-        "view_count": 14726,
-        "like_count": 208
-      },
-      {
-        "video_id": "_9U8dbbyXu8",
-        "video_title": "【25分で解説】謎の不調をまとめて治す5つの方法【GO WILD 野生の体を取り戻せ！】",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=_9U8dbbyXu8",
-        "published": "2020-12-19T11:19:43Z",
-        "view_count": 215226,
-        "like_count": 3622
-      }
-    ],
-    "publication_date": "2014-12-24T00:00:00.000Z",
-    "category": "科学・テクノロジー"
   },
   {
     "id": "8d04e9d47be5",
@@ -29025,63 +29191,6 @@
     ],
     "publication_date": "2018-05-07T00:00:01Z",
     "category": "人文・思想 > 哲学・思想"
-  },
-  {
-    "id": "d8e384980755",
-    "title": "1%の努力",
-    "author": "ひろゆき",
-    "publisher": "ダイヤモンド社",
-    "amazon_url": "https://www.amazon.co.jp/dp/4478108498?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4478108498",
-    "image_url": "https://m.media-amazon.com/images/I/414nbYPtQiL._SL500_.jpg",
-    "count": 3,
-    "total_views": 271276,
-    "total_likes": 5126,
-    "videos": [
-      {
-        "video_id": "usoQsbe4jJE",
-        "video_title": "【8分で解説】ひろゆき「1％の努力」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=usoQsbe4jJE",
-        "published": "2020-04-10T12:00:28Z",
-        "view_count": 20479,
-        "like_count": 489
-      },
-      {
-        "video_id": "bWScY2C3ewo",
-        "video_title": "【8分で解説】ひろゆき「１％の努力」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=bWScY2C3ewo",
-        "published": "2020-03-19T12:00:31Z",
-        "view_count": 117494,
-        "like_count": 2700
-      },
-      {
-        "video_id": "OvVpaHVWFYs",
-        "video_title": "【事故映像】ひろゆきさんにインタビュアーが洗脳されてしまいました",
-        "channel": "新R25チャンネル",
-        "link": "https://www.youtube.com/watch?v=OvVpaHVWFYs",
-        "published": "2021-06-16T11:15:00Z",
-        "view_count": 133303,
-        "like_count": 1937
-      }
-    ],
-    "publication_date": "2020-03-05T00:00:01Z",
-    "category": "人文・思想 > 倫理学・道徳",
-    "description": "『１％の努力』は、ひろゆき（西村博之）が自身の人生エピソードを通じて、「99%の努力は無駄、1%の賢い努力で最大の成果を出す」考え方を説く一冊です。前提条件・優先順位・ニーズ把握など7つの軸で、努力神話を捨て、コスパの高い「思考」と「サボる力」を重視。頑張っても報われないと感じるビジネスパーソン、効率的な人生設計を求める人、常識に縛られたくない人に特におすすめです。読者は、「徹底的に調べる」「余白を作る」「世のニーズに合わせる」思考を学び、無駄な努力を避け楽しく成功に近づく実践力を得られます。",
-    "keywords": [
-      "1%の努力",
-      "ひろゆき",
-      "努力神話",
-      "コスパ思考",
-      "優先順位",
-      "サボる力",
-      "ニーズ把握",
-      "人生ハック",
-      "効率化",
-      "世渡り術"
-    ]
   },
   {
     "id": "0bf356848d7d",
@@ -32960,41 +33069,6 @@
     "category": "ノンフィクション"
   },
   {
-    "id": "9ea11e0eda41",
-    "title": "99.9%は幸せの素人",
-    "author": "星 渉、前野 隆司",
-    "publisher": "KADOKAWA",
-    "amazon_url": "https://www.amazon.co.jp/dp/4046050071?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4046050071",
-    "image_url": "https://m.media-amazon.com/images/I/51TJ4GOVNhL._SL500_.jpg",
-    "count": 2,
-    "total_views": 780112,
-    "total_likes": 12420,
-    "videos": [
-      {
-        "video_id": "3xLf9yJG_gA",
-        "video_title": "【要約】99.9%は幸せの素人②【星渉】",
-        "channel": "フェルミ漫画大学",
-        "link": "https://www.youtube.com/watch?v=3xLf9yJG_gA",
-        "published": "2021-05-13T11:00:05Z",
-        "view_count": 253529,
-        "like_count": 4455
-      },
-      {
-        "video_id": "nDrirLMtvNQ",
-        "video_title": "【要約】99.9%は幸せの素人①【星渉】",
-        "channel": "フェルミ漫画大学",
-        "link": "https://www.youtube.com/watch?v=nDrirLMtvNQ",
-        "published": "2021-05-11T11:00:30Z",
-        "view_count": 526583,
-        "like_count": 7965
-      }
-    ],
-    "publication_date": "2020-11-27T00:00:01Z",
-    "category": "ビジネス・経済 > ビジネス実用"
-  },
-  {
     "id": "c7142cdded44",
     "title": "進化心理学から考えるホモサピエンス　一万年変化しない価値観",
     "author": "アラン・S・ミラー",
@@ -35172,9 +35246,9 @@
     "amzn_url": null,
     "asin": "4763140892",
     "image_url": "https://m.media-amazon.com/images/I/51TRdLPSdCL._SL500_.jpg",
-    "count": 2,
-    "total_views": 157001,
-    "total_likes": 2265,
+    "count": 3,
+    "total_views": 167131,
+    "total_likes": 2435,
     "videos": [
       {
         "video_id": "5_445AVQGbc",
@@ -35193,6 +35267,15 @@
         "published": "2023-12-12T08:00:09Z",
         "view_count": 57319,
         "like_count": 1034
+      },
+      {
+        "video_id": "i1EaymwO89c",
+        "video_title": "【10分で解説】ChatGPT vs. 未来のない仕事をする人たち",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=i1EaymwO89c",
+        "published": "2024-02-08T10:00:36Z",
+        "view_count": 10130,
+        "like_count": 170
       }
     ],
     "publication_date": "2023-10-30T00:00:01Z",
@@ -38987,9 +39070,9 @@
     "amzn_url": null,
     "asin": "4478101620",
     "image_url": "https://m.media-amazon.com/images/I/41rAicffH0L._SL500_.jpg",
-    "count": 2,
-    "total_views": 558329,
-    "total_likes": 10848,
+    "count": 3,
+    "total_views": 625485,
+    "total_likes": 12349,
     "videos": [
       {
         "video_id": "VZZCSGCpjmY",
@@ -39008,6 +39091,15 @@
         "published": "2021-11-24T10:00:15Z",
         "view_count": 353133,
         "like_count": 7878
+      },
+      {
+        "video_id": "ZKAvlWoJdiA",
+        "video_title": "【睡眠】「SLEEP～最高の脳と身体をつくる睡眠の技術～」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=ZKAvlWoJdiA",
+        "published": "2020-08-18T22:30:00Z",
+        "view_count": 67156,
+        "like_count": 1501
       }
     ],
     "publication_date": "2017-02-24T00:00:01Z",
@@ -41647,9 +41739,9 @@
     "amzn_url": null,
     "asin": "4198659044",
     "image_url": "https://m.media-amazon.com/images/I/41F9ByvYYVL._SL500_.jpg",
-    "count": 2,
-    "total_views": 200534,
-    "total_likes": 2930,
+    "count": 4,
+    "total_views": 490840,
+    "total_likes": 5167,
     "videos": [
       {
         "video_id": "CyZubFELmT8",
@@ -41668,6 +41760,24 @@
         "published": "2025-04-17T10:01:25Z",
         "view_count": 145337,
         "like_count": 2026
+      },
+      {
+        "video_id": "mx1jO-iPHOI",
+        "video_title": "【投資家が年末に注意すべき点】元ゴールドマンサックス田中渓参戦／プロが考える投資ポートフォリオ／日銀利上げと不動産の関係／シナリオ別の日経平均／年末のマーケット大予測【ECONOMICS101】",
+        "channel": "PIVOT",
+        "link": "https://www.youtube.com/watch?v=mx1jO-iPHOI",
+        "published": "2025-10-01T11:01:26Z",
+        "view_count": 117329,
+        "like_count": 922
+      },
+      {
+        "video_id": "erGVvdRtzGI",
+        "video_title": "【田中渓vs永濱利廣】年末マーケット大予測／不動産規制による経済リスク／総裁選の行方／小泉政権50%／林政権30%／高市政権20%／トランプ関税の影響／株価とドル円の今後【ECONOMICS101】",
+        "channel": "PIVOT",
+        "link": "https://www.youtube.com/watch?v=erGVvdRtzGI",
+        "published": "2025-09-30T11:01:13Z",
+        "view_count": 172977,
+        "like_count": 1315
       }
     ],
     "publication_date": "2024-11-27T00:00:01Z",
@@ -43187,9 +43297,9 @@
     "amzn_url": null,
     "asin": "4828422714",
     "image_url": "https://m.media-amazon.com/images/I/51rwIx84kJL._SL500_.jpg",
-    "count": 2,
-    "total_views": 2088742,
-    "total_likes": 44956,
+    "count": 4,
+    "total_views": 2102125,
+    "total_likes": 45205,
     "videos": [
       {
         "video_id": "0bT16D2TVPM",
@@ -43208,6 +43318,24 @@
         "published": "2021-04-18T10:00:09Z",
         "view_count": 1329211,
         "like_count": 24058
+      },
+      {
+        "video_id": "geF8hBJgDX0",
+        "video_title": "【重要】塩だけはこだわって！今日からこの塩にしてください。いかに塩が重要かを解説　すごい塩　長生きできて料理もおいしい！",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=geF8hBJgDX0",
+        "published": "2025-01-12T10:00:42Z",
+        "view_count": 6969,
+        "like_count": 122
+      },
+      {
+        "video_id": "hn1BWLXXciA",
+        "video_title": "【13分で解説】危険な添加物！がんがイヤならこれは食べるな　ハム、コーラ、ワイン、ソーセージ",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=hn1BWLXXciA",
+        "published": "2024-07-27T10:00:43Z",
+        "view_count": 6414,
+        "like_count": 127
       }
     ],
     "publication_date": "2021-04-05T00:00:01Z",
@@ -43257,9 +43385,9 @@
     "amzn_url": null,
     "asin": "4492046453",
     "image_url": "https://m.media-amazon.com/images/I/51PLyKObjpL._SL500_.jpg",
-    "count": 2,
-    "total_views": 1373578,
-    "total_likes": 25294,
+    "count": 3,
+    "total_views": 1384335,
+    "total_likes": 25470,
     "videos": [
       {
         "video_id": "oPoGobJJzLg",
@@ -43278,6 +43406,15 @@
         "published": "2021-04-17T10:00:31Z",
         "view_count": 867009,
         "like_count": 12453
+      },
+      {
+        "video_id": "ZncY7-LJA5I",
+        "video_title": "【14分で解説】意外と気づかないから危険　内臓脂肪を落とす最強メソッド 　体脂肪率10％の名医が教える　50歳を過ぎても",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=ZncY7-LJA5I",
+        "published": "2023-01-31T10:00:27Z",
+        "view_count": 10757,
+        "like_count": 176
       }
     ],
     "publication_date": "2019-04-12T00:00:01Z",
@@ -45939,41 +46076,6 @@
     ],
     "publication_date": "2015-08-24T00:00:01Z",
     "category": "ビジネス・経済 > マネジメント・人材管理"
-  },
-  {
-    "id": "c7e554c5488a",
-    "title": "億までの人　億からの人　ゴールドマン・サックス勤続１７年の投資家が明かす「兆人」のマインド",
-    "author": "田中渓",
-    "publisher": "徳間書店",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0DNSW2XSP?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0DNSW2XSP",
-    "image_url": "https://m.media-amazon.com/images/I/41r8ior2vrL._SL500_.jpg",
-    "count": 2,
-    "total_views": 290306,
-    "total_likes": 2237,
-    "videos": [
-      {
-        "video_id": "mx1jO-iPHOI",
-        "video_title": "【投資家が年末に注意すべき点】元ゴールドマンサックス田中渓参戦／プロが考える投資ポートフォリオ／日銀利上げと不動産の関係／シナリオ別の日経平均／年末のマーケット大予測【ECONOMICS101】",
-        "channel": "PIVOT",
-        "link": "https://www.youtube.com/watch?v=mx1jO-iPHOI",
-        "published": "2025-10-01T11:01:26Z",
-        "view_count": 117329,
-        "like_count": 922
-      },
-      {
-        "video_id": "erGVvdRtzGI",
-        "video_title": "【田中渓vs永濱利廣】年末マーケット大予測／不動産規制による経済リスク／総裁選の行方／小泉政権50%／林政権30%／高市政権20%／トランプ関税の影響／株価とドル円の今後【ECONOMICS101】",
-        "channel": "PIVOT",
-        "link": "https://www.youtube.com/watch?v=erGVvdRtzGI",
-        "published": "2025-09-30T11:01:13Z",
-        "view_count": 172977,
-        "like_count": 1315
-      }
-    ],
-    "publication_date": "2024-11-27T00:00:00.000Z",
-    "category": "投資・金融・会社経営"
   },
   {
     "id": "3a760840d83f",
@@ -50525,41 +50627,6 @@
     "category": "社会・政治 > 社会学"
   },
   {
-    "id": "b4572db52d62",
-    "title": "絶対悲観主義 (講談社＋α新書)",
-    "author": "楠木建",
-    "publisher": "講談社",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0B3XFSKJ2?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0B3XFSKJ2",
-    "image_url": "https://m.media-amazon.com/images/I/41DDvJltjPL._SL500_.jpg",
-    "count": 2,
-    "total_views": 124648,
-    "total_likes": 2298,
-    "videos": [
-      {
-        "video_id": "q36jyZJeuaE",
-        "video_title": "【要約】絶対悲観主義【楠木建】",
-        "channel": "フェルミ漫画大学",
-        "link": "https://www.youtube.com/watch?v=q36jyZJeuaE",
-        "published": "2022-10-07T11:00:37Z",
-        "view_count": 108612,
-        "like_count": 2041
-      },
-      {
-        "video_id": "wtaTbnKhRBk",
-        "video_title": "【13分で解説】絶対悲観主義　楠木建",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=wtaTbnKhRBk",
-        "published": "2023-09-16T10:00:42Z",
-        "view_count": 16036,
-        "like_count": 257
-      }
-    ],
-    "publication_date": "2022-06-22T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
     "id": "882e3396aeb4",
     "title": "お金と自由を手に入れる投資家思考",
     "author": "鈴木 優平",
@@ -50603,9 +50670,9 @@
     "amzn_url": null,
     "asin": "B09HGX65C1",
     "image_url": "https://m.media-amazon.com/images/I/41Ve+N+qmuL._SL500_.jpg",
-    "count": 2,
-    "total_views": 405873,
-    "total_likes": 7057,
+    "count": 4,
+    "total_views": 5066008,
+    "total_likes": 56452,
     "videos": [
       {
         "video_id": "mWAvIEyjCuA",
@@ -50624,6 +50691,24 @@
         "published": "2021-12-25T10:00:06Z",
         "view_count": 157529,
         "like_count": 2967
+      },
+      {
+        "video_id": "Xj41YNLFuv8",
+        "video_title": "【NFTとメタバース②】NFTはゲーム・ファッション・スポーツ・音楽業界の未来をどう変えるのか？",
+        "channel": "中田敦彦のYouTube大学 - NAKATA UNIVERSITY",
+        "link": "https://www.youtube.com/watch?v=Xj41YNLFuv8",
+        "published": "2021-11-07T10:00:11Z",
+        "view_count": 1408661,
+        "like_count": 16876
+      },
+      {
+        "video_id": "4WaOfTkOh3U",
+        "video_title": "【NFTとメタバース①】デジタル資産になぜ数十億円もの価値がつくのか？世界の未来はどう変わる？",
+        "channel": "中田敦彦のYouTube大学 - NAKATA UNIVERSITY",
+        "link": "https://www.youtube.com/watch?v=4WaOfTkOh3U",
+        "published": "2021-11-06T10:00:01Z",
+        "view_count": 3251474,
+        "like_count": 32519
       }
     ],
     "publication_date": "2021-10-20T00:00:00.000Z",
@@ -53570,41 +53655,6 @@
     "category": "ビジネス・経済"
   },
   {
-    "id": "70247b5ce3d3",
-    "title": "圧倒的に自由で快適な未来が手に入る! 勝間式ネオ・ライフハック100",
-    "author": "勝間 和代",
-    "publisher": "KADOKAWA",
-    "amazon_url": "https://www.amazon.co.jp/dp/4046047895?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4046047895",
-    "image_url": "https://m.media-amazon.com/images/I/51cgQRkusyL._SL500_.jpg",
-    "count": 2,
-    "total_views": 28001,
-    "total_likes": 443,
-    "videos": [
-      {
-        "video_id": "TMebCMuan2o",
-        "video_title": "【特別編】３つの蓄積をしないと将来ヤバい。49歳以下は全員必読。人生100年時代の攻略本【ライフピボット】ほか",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=TMebCMuan2o",
-        "published": "2025-05-24T23:00:34Z",
-        "view_count": 15282,
-        "like_count": 243
-      },
-      {
-        "video_id": "ZFsKdd9fpZ0",
-        "video_title": "【13分で解説】ネオライフハック１００　圧倒的に自由で快適な未来が手に入る　勝間式ネオライフハック１００",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=ZFsKdd9fpZ0",
-        "published": "2023-08-11T10:00:22Z",
-        "view_count": 12719,
-        "like_count": 200
-      }
-    ],
-    "publication_date": "2020-07-29T00:00:01Z",
-    "category": "ビジネス・経済 > ビジネス実用"
-  },
-  {
     "id": "fe6ce8318e7f",
     "title": "地頭が劇的に良くなるスタンフォード式超ノート術",
     "author": "柏野 尊徳",
@@ -54060,41 +54110,6 @@
     "category": "投資・金融・会社経営"
   },
   {
-    "id": "96e804d8f8a0",
-    "title": "危険な添加物！　がんがイヤなら、これは食べるな",
-    "author": "渡辺雄二",
-    "publisher": "ビジネス社",
-    "amazon_url": "https://www.amazon.co.jp/dp/B08ZCW2K4L?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B08ZCW2K4L",
-    "image_url": "https://m.media-amazon.com/images/I/51881mJMP-L._SL500_.jpg",
-    "count": 2,
-    "total_views": 13383,
-    "total_likes": 249,
-    "videos": [
-      {
-        "video_id": "geF8hBJgDX0",
-        "video_title": "【重要】塩だけはこだわって！今日からこの塩にしてください。いかに塩が重要かを解説　すごい塩　長生きできて料理もおいしい！",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=geF8hBJgDX0",
-        "published": "2025-01-12T10:00:42Z",
-        "view_count": 6969,
-        "like_count": 122
-      },
-      {
-        "video_id": "hn1BWLXXciA",
-        "video_title": "【13分で解説】危険な添加物！がんがイヤならこれは食べるな　ハム、コーラ、ワイン、ソーセージ",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=hn1BWLXXciA",
-        "published": "2024-07-27T10:00:43Z",
-        "view_count": 6414,
-        "like_count": 127
-      }
-    ],
-    "publication_date": "2021-04-05T00:00:00.000Z",
-    "category": "暮らし・健康・子育て"
-  },
-  {
     "id": "3d1edd94e7dc",
     "title": "食品の裏と表",
     "author": "小薮浩二郎",
@@ -54243,9 +54258,9 @@
     "amzn_url": null,
     "asin": "B08PKGVX1V",
     "image_url": "https://m.media-amazon.com/images/I/51VAxvbDQOS._SL500_.jpg",
-    "count": 2,
-    "total_views": 55960,
-    "total_likes": 1075,
+    "count": 3,
+    "total_views": 201329,
+    "total_likes": 3482,
     "videos": [
       {
         "video_id": "yOBQahbjsLM",
@@ -54264,6 +54279,15 @@
         "published": "2021-09-11T10:00:12Z",
         "view_count": 41901,
         "like_count": 801
+      },
+      {
+        "video_id": "ka0_avcZ_b8",
+        "video_title": "【要約】HAPPY STRESS （ハッピーストレス） ストレスがあなたの脳を進化させる【青砥 瑞人】",
+        "channel": "フェルミ漫画大学",
+        "link": "https://www.youtube.com/watch?v=ka0_avcZ_b8",
+        "published": "2022-11-30T11:00:22Z",
+        "view_count": 145369,
+        "like_count": 2407
       }
     ],
     "publication_date": "2021-04-22T00:00:00.000Z",
@@ -55355,41 +55379,6 @@
     "category": "趣味・実用"
   },
   {
-    "id": "489929ba3ef8",
-    "title": "1万人抱いてわかった! モテる男39の法則",
-    "author": "しみけん",
-    "publisher": "清談社Publico",
-    "amazon_url": "https://www.amazon.co.jp/dp/4909979107?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4909979107",
-    "image_url": "https://m.media-amazon.com/images/I/51GzOyciGAL._SL500_.jpg",
-    "count": 2,
-    "total_views": 589261,
-    "total_likes": 5006,
-    "videos": [
-      {
-        "video_id": "m3DMXhmr1vo",
-        "video_title": "【高級車はダメ】AV男優しみけん直伝「セッ◯スを引き寄せるお金の使い方」",
-        "channel": "新R25チャンネル",
-        "link": "https://www.youtube.com/watch?v=m3DMXhmr1vo",
-        "published": "2020-12-04T11:15:05Z",
-        "view_count": 147675,
-        "like_count": 1787
-      },
-      {
-        "video_id": "cylFrhdaU6w",
-        "video_title": "【AV界の収入構造】しみけんさん、ぶっちゃけいくら稼いでます？",
-        "channel": "新R25チャンネル",
-        "link": "https://www.youtube.com/watch?v=cylFrhdaU6w",
-        "published": "2020-12-03T11:15:01Z",
-        "view_count": 441586,
-        "like_count": 3219
-      }
-    ],
-    "publication_date": "2020-10-25T00:00:01Z",
-    "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
     "id": "ed211f69a17a",
     "title": "AV男優しみけん仕事論0.01 極薄!",
     "author": "しみけん",
@@ -55528,41 +55517,6 @@
     ],
     "publication_date": "2020-01-21T00:00:00.000Z",
     "category": "ビジネス・経済"
-  },
-  {
-    "id": "430bbd676f02",
-    "title": "人は聞き方が9割",
-    "author": "永松 茂久",
-    "publisher": "すばる舎",
-    "amazon_url": "https://www.amazon.co.jp/dp/479911008X?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "479911008X",
-    "image_url": "https://m.media-amazon.com/images/I/41sRs0erPhL._SL500_.jpg",
-    "count": 2,
-    "total_views": 2385991,
-    "total_likes": 29714,
-    "videos": [
-      {
-        "video_id": "537KQMoY_b4",
-        "video_title": "【ベストセラー】「人は聞き方が９割」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=537KQMoY_b4",
-        "published": "2022-04-21T10:00:02Z",
-        "view_count": 112801,
-        "like_count": 2667
-      },
-      {
-        "video_id": "3UNSPk7oBxU",
-        "video_title": "【人は聞き方が9割①】会話を盛り上げる主役は聞き手である！",
-        "channel": "中田敦彦のYouTube大学 - NAKATA UNIVERSITY",
-        "link": "https://www.youtube.com/watch?v=3UNSPk7oBxU",
-        "published": "2022-02-22T10:00:01Z",
-        "view_count": 2273190,
-        "like_count": 27047
-      }
-    ],
-    "publication_date": "2021-12-09T00:00:01Z",
-    "category": "ビジネス・経済 > ビジネス実用"
   },
   {
     "id": "41fd37f0e127",
@@ -57337,41 +57291,6 @@
     ],
     "publication_date": "2012-10-16T00:00:01Z",
     "category": "ノンフィクション"
-  },
-  {
-    "id": "aa9d198a9132",
-    "title": "NFTの教科書 ビジネス・ブロックチェーン・法律・会計まで デジタルデータが資産になる未来",
-    "author": null,
-    "publisher": "朝日新聞出版",
-    "amazon_url": "https://www.amazon.co.jp/dp/4022517972?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4022517972",
-    "image_url": "https://m.media-amazon.com/images/I/41llXUme5-L._SL500_.jpg",
-    "count": 2,
-    "total_views": 4660135,
-    "total_likes": 49395,
-    "videos": [
-      {
-        "video_id": "Xj41YNLFuv8",
-        "video_title": "【NFTとメタバース②】NFTはゲーム・ファッション・スポーツ・音楽業界の未来をどう変えるのか？",
-        "channel": "中田敦彦のYouTube大学 - NAKATA UNIVERSITY",
-        "link": "https://www.youtube.com/watch?v=Xj41YNLFuv8",
-        "published": "2021-11-07T10:00:11Z",
-        "view_count": 1408661,
-        "like_count": 16876
-      },
-      {
-        "video_id": "4WaOfTkOh3U",
-        "video_title": "【NFTとメタバース①】デジタル資産になぜ数十億円もの価値がつくのか？世界の未来はどう変わる？",
-        "channel": "中田敦彦のYouTube大学 - NAKATA UNIVERSITY",
-        "link": "https://www.youtube.com/watch?v=4WaOfTkOh3U",
-        "published": "2021-11-06T10:00:01Z",
-        "view_count": 3251474,
-        "like_count": 32519
-      }
-    ],
-    "publication_date": "2021-10-20T00:00:01Z",
-    "category": "投資・金融・会社経営"
   },
   {
     "id": "75c9f6833f1f",
@@ -63274,9 +63193,9 @@
     "amzn_url": null,
     "asin": "4908925593",
     "image_url": "https://m.media-amazon.com/images/I/51NrNKyDDHL._SL500_.jpg",
-    "count": 1,
-    "total_views": 1273185,
-    "total_likes": 19289,
+    "count": 2,
+    "total_views": 1793545,
+    "total_likes": 31175,
     "videos": [
       {
         "video_id": "IQ2yOgnNyBo",
@@ -63286,6 +63205,15 @@
         "published": "2023-03-15T11:00:20Z",
         "view_count": 1273185,
         "like_count": 19289
+      },
+      {
+        "video_id": "dA-NSRrgTjc",
+        "video_title": "【最新刊】「医師や薬に頼らない！ すべての不調は自分で治せる」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=dA-NSRrgTjc",
+        "published": "2021-03-29T10:00:09Z",
+        "view_count": 520360,
+        "like_count": 11886
       }
     ],
     "publication_date": "2019-12-02T00:00:01Z",
@@ -63524,32 +63452,6 @@
     ],
     "publication_date": "2022-10-26T00:00:01Z",
     "category": "ノンフィクション > ビジネス・経済"
-  },
-  {
-    "id": "abae95026d7a",
-    "title": "HAPPY STRESS (ハッピーストレス) ストレスがあなたの脳を進化させる",
-    "author": "青砥瑞人",
-    "publisher": "SBクリエイティブ",
-    "amazon_url": "https://www.amazon.co.jp/dp/4815604762?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4815604762",
-    "image_url": "https://m.media-amazon.com/images/I/51li7yXGrQS._SL500_.jpg",
-    "count": 1,
-    "total_views": 145369,
-    "total_likes": 2407,
-    "videos": [
-      {
-        "video_id": "ka0_avcZ_b8",
-        "video_title": "【要約】HAPPY STRESS （ハッピーストレス） ストレスがあなたの脳を進化させる【青砥 瑞人】",
-        "channel": "フェルミ漫画大学",
-        "link": "https://www.youtube.com/watch?v=ka0_avcZ_b8",
-        "published": "2022-11-30T11:00:22Z",
-        "view_count": 145369,
-        "like_count": 2407
-      }
-    ],
-    "publication_date": "2021-04-23T00:00:01Z",
-    "category": "ビジネス・経済 > ビジネス実用"
   },
   {
     "id": "1f9cbdadd71a",
@@ -64002,9 +63904,9 @@
     "amzn_url": null,
     "asin": "B07FCK4WM5",
     "image_url": "https://m.media-amazon.com/images/I/41Sa4XSPcxL._SL500_.jpg",
-    "count": 1,
-    "total_views": 190789,
-    "total_likes": 3243,
+    "count": 2,
+    "total_views": 219898,
+    "total_likes": 3806,
     "videos": [
       {
         "video_id": "0jDthsbUGzo",
@@ -64014,6 +63916,15 @@
         "published": "2022-11-02T11:00:01Z",
         "view_count": 190789,
         "like_count": 3243
+      },
+      {
+        "video_id": "-CpyKmgAK3M",
+        "video_title": "1％の運で人生が変わる！その運の掴み方がこの本読めば分かります。『99%の人生を決める 1%の運の開き方』",
+        "channel": "学識サロン",
+        "link": "https://www.youtube.com/watch?v=-CpyKmgAK3M",
+        "published": "2025-08-05T08:00:00Z",
+        "view_count": 29109,
+        "like_count": 563
       }
     ],
     "publication_date": "2018-04-25T00:00:00.000Z",
@@ -65068,9 +64979,9 @@
     "amzn_url": null,
     "asin": "B09VGNCN68",
     "image_url": "https://m.media-amazon.com/images/I/41jwCfqPu8L._SL500_.jpg",
-    "count": 1,
-    "total_views": 208588,
-    "total_likes": 2981,
+    "count": 2,
+    "total_views": 506507,
+    "total_likes": 6496,
     "videos": [
       {
         "video_id": "5zPQpBKLTGA",
@@ -65080,6 +64991,15 @@
         "published": "2022-08-09T11:00:06Z",
         "view_count": 208588,
         "like_count": 2981
+      },
+      {
+        "video_id": "Zaa_Ir6oF-o",
+        "video_title": "【ベストセラー】「60歳までに「お金の自由」を手に入れる!」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=Zaa_Ir6oF-o",
+        "published": "2023-01-29T10:00:27Z",
+        "view_count": 297919,
+        "like_count": 3515
       }
     ],
     "publication_date": "2022-03-15T00:00:00.000Z",
@@ -65353,9 +65273,9 @@
     "amzn_url": null,
     "asin": "B09WD4Y525",
     "image_url": "https://m.media-amazon.com/images/I/41uFq4WLtBL._SL500_.jpg",
-    "count": 1,
-    "total_views": 77304,
-    "total_likes": 1183,
+    "count": 2,
+    "total_views": 688744,
+    "total_likes": 13679,
     "videos": [
       {
         "video_id": "Vyf-zSVSOZ4",
@@ -65365,6 +65285,15 @@
         "published": "2022-07-20T11:00:16Z",
         "view_count": 77304,
         "like_count": 1183
+      },
+      {
+        "video_id": "HihevZW9E9E",
+        "video_title": "【ベストセラー】「８０歳の壁 和田 秀樹（著）」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=HihevZW9E9E",
+        "published": "2022-05-20T10:00:20Z",
+        "view_count": 611440,
+        "like_count": 12496
       }
     ],
     "publication_date": "2022-03-28T00:00:00.000Z",
@@ -65509,9 +65438,9 @@
     "amzn_url": null,
     "asin": "B07VRZFNX9",
     "image_url": "https://m.media-amazon.com/images/I/51NYO8VPQ3L._SL500_.jpg",
-    "count": 1,
-    "total_views": 649444,
-    "total_likes": 11685,
+    "count": 2,
+    "total_views": 931157,
+    "total_likes": 17636,
     "videos": [
       {
         "video_id": "XMTVqTUu738",
@@ -65521,6 +65450,15 @@
         "published": "2022-07-09T11:00:16Z",
         "view_count": 649444,
         "like_count": 11685
+      },
+      {
+        "video_id": "pGyiLr-fn0k",
+        "video_title": "【ベストセラー】「0秒で動け 「わかってはいるけど動けない」人のための 自分を瞬時に動かす最強の方法」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=pGyiLr-fn0k",
+        "published": "2021-12-16T10:00:18Z",
+        "view_count": 281713,
+        "like_count": 5951
       }
     ],
     "publication_date": "2019-08-21T00:00:00.000Z",
@@ -66731,9 +66669,9 @@
     "amzn_url": null,
     "asin": "4799327909",
     "image_url": "https://m.media-amazon.com/images/I/51tBxnTqD1L._SL500_.jpg",
-    "count": 1,
-    "total_views": 187746,
-    "total_likes": 3420,
+    "count": 2,
+    "total_views": 223551,
+    "total_likes": 4055,
     "videos": [
       {
         "video_id": "3WvZ08vR3e4",
@@ -66743,6 +66681,15 @@
         "published": "2022-04-26T11:00:01Z",
         "view_count": 187746,
         "like_count": 3420
+      },
+      {
+        "video_id": "uIXBwbLb_a0",
+        "video_title": "【13分で解説】なぜかうまくいく人の秘密の習慣",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=uIXBwbLb_a0",
+        "published": "2022-10-27T10:00:36Z",
+        "view_count": 35805,
+        "like_count": 635
       }
     ],
     "publication_date": "2021-11-19T00:00:01Z",
@@ -68888,9 +68835,9 @@
     "amzn_url": null,
     "asin": "4799109103",
     "image_url": "https://m.media-amazon.com/images/I/51ErTqqgc0L._SL500_.jpg",
-    "count": 1,
-    "total_views": 492810,
-    "total_likes": 8882,
+    "count": 2,
+    "total_views": 2011959,
+    "total_likes": 29166,
     "videos": [
       {
         "video_id": "bRGqhFhJbIM",
@@ -68900,6 +68847,15 @@
         "published": "2021-10-05T11:00:15Z",
         "view_count": 492810,
         "like_count": 8882
+      },
+      {
+        "video_id": "JNuj7415ok0",
+        "video_title": "【要約】1万人抱いてわかった！ モテる男39の法則【しみけん】",
+        "channel": "フェルミ漫画大学",
+        "link": "https://www.youtube.com/watch?v=JNuj7415ok0",
+        "published": "2021-07-15T11:00:17Z",
+        "view_count": 1519149,
+        "like_count": 20284
       }
     ],
     "publication_date": "2020-07-06T00:00:01Z",
@@ -68984,17 +68940,17 @@
     "category": "ビジネス・経済"
   },
   {
-    "id": "058f03f5a7d9",
-    "title": "年収９０万円で東京ハッピーライフ",
+    "id": "9f32fb50a8b7",
+    "title": "年収90万円で東京ハッピーライフ",
     "author": "大原扁理",
     "publisher": "太田出版",
     "amazon_url": "https://www.amazon.co.jp/dp/B01MPXWKKV?tag=business-book-ranking02-22",
     "amzn_url": null,
     "asin": "B01MPXWKKV",
     "image_url": "https://m.media-amazon.com/images/I/51Qutels2ZL._SL500_.jpg",
-    "count": 1,
-    "total_views": 570358,
-    "total_likes": 6983,
+    "count": 2,
+    "total_views": 1083109,
+    "total_likes": 17823,
     "videos": [
       {
         "video_id": "pIoKztfRZZM",
@@ -69004,8 +68960,18 @@
         "published": "2021-09-07T11:00:32Z",
         "view_count": 570358,
         "like_count": 6983
+      },
+      {
+        "video_id": "d_Ms_I-WZI0",
+        "video_title": "【ベストセラー】「年収90万円で東京ハッピーライフ」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=d_Ms_I-WZI0",
+        "published": "2021-05-24T10:00:14Z",
+        "view_count": 512751,
+        "like_count": 10840
       }
     ],
+    "publication_date": "2016-07-20T00:00:01Z",
     "category": "社会・政治 > 社会学"
   },
   {
@@ -69162,32 +69128,6 @@
     ],
     "publication_date": "2018-09-14T00:00:00.000Z",
     "category": "投資・金融・会社経営"
-  },
-  {
-    "id": "7309cf446e61",
-    "title": "100％得する話し方",
-    "author": "新井 慶一",
-    "publisher": "すばる舎",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0894FDSGP?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0894FDSGP",
-    "image_url": "https://m.media-amazon.com/images/I/516uWOGZa6L._SL500_.jpg",
-    "count": 1,
-    "total_views": 1519149,
-    "total_likes": 20284,
-    "videos": [
-      {
-        "video_id": "JNuj7415ok0",
-        "video_title": "【要約】1万人抱いてわかった！ モテる男39の法則【しみけん】",
-        "channel": "フェルミ漫画大学",
-        "link": "https://www.youtube.com/watch?v=JNuj7415ok0",
-        "published": "2021-07-15T11:00:17Z",
-        "view_count": 1519149,
-        "like_count": 20284
-      }
-    ],
-    "publication_date": "2020-07-06T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
   },
   {
     "id": "553a666c755b",
@@ -72931,32 +72871,6 @@
     "category": "暮らし・健康・子育て"
   },
   {
-    "id": "514ef4eb8054",
-    "title": "99%の人生を決める 1%の運の開き方",
-    "author": "崔燎平",
-    "publisher": "内外出版社",
-    "amazon_url": "https://www.amazon.co.jp/dp/4862573525?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4862573525",
-    "image_url": "https://m.media-amazon.com/images/I/41twOA-S25L._SL500_.jpg",
-    "count": 1,
-    "total_views": 29109,
-    "total_likes": 563,
-    "videos": [
-      {
-        "video_id": "-CpyKmgAK3M",
-        "video_title": "1％の運で人生が変わる！その運の掴み方がこの本読めば分かります。『99%の人生を決める 1%の運の開き方』",
-        "channel": "学識サロン",
-        "link": "https://www.youtube.com/watch?v=-CpyKmgAK3M",
-        "published": "2025-08-05T08:00:00Z",
-        "view_count": 29109,
-        "like_count": 563
-      }
-    ],
-    "publication_date": "2018-04-25T00:00:01Z",
-    "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
     "id": "9f102250d036",
     "title": "読解力は最強の知性である １％の本質を一瞬でつかむ技術",
     "author": "山口拓朗",
@@ -74748,32 +74662,6 @@
     ],
     "publication_date": "2023-03-31T00:00:01Z",
     "category": "人文・思想 > 哲学・思想"
-  },
-  {
-    "id": "8bdbe7a7b77d",
-    "title": "５０歳から花開く人、５０歳で止まる人",
-    "author": "有川 真由美",
-    "publisher": "PHP研究所",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0B1CW9CQZ?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0B1CW9CQZ",
-    "image_url": "https://m.media-amazon.com/images/I/41MrmWTFFvL._SL500_.jpg",
-    "count": 1,
-    "total_views": 2070267,
-    "total_likes": 10136,
-    "videos": [
-      {
-        "video_id": "xOdukGIFVJA",
-        "video_title": "５０歳で、この３つの特徴が無い人は残念な人生になってしまう・・・。『50歳から花開く人 50歳で止まる人』",
-        "channel": "学識サロン",
-        "link": "https://www.youtube.com/watch?v=xOdukGIFVJA",
-        "published": "2023-04-01T08:00:24Z",
-        "view_count": 2070267,
-        "like_count": 10136
-      }
-    ],
-    "publication_date": "2022-05-18T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
   },
   {
     "id": "75a8e7f5cb49",
@@ -78112,9 +78000,9 @@
     "amzn_url": null,
     "asin": "4046065117",
     "image_url": "https://m.media-amazon.com/images/I/5185xpp5ojL._SL500_.jpg",
-    "count": 1,
-    "total_views": 51166,
-    "total_likes": 931,
+    "count": 2,
+    "total_views": 63566,
+    "total_likes": 1144,
     "videos": [
       {
         "video_id": "uFfFH9CbldE",
@@ -78124,6 +78012,15 @@
         "published": "2025-04-27T10:01:26Z",
         "view_count": 51166,
         "like_count": 931
+      },
+      {
+        "video_id": "I6JoHzJqLbQ",
+        "video_title": "【12分で解説】「カナダ式」で幸福度も資産も増え続ける　いつのまにか億り人になれる超マネーハック",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=I6JoHzJqLbQ",
+        "published": "2023-12-05T10:00:19Z",
+        "view_count": 12400,
+        "like_count": 213
       }
     ],
     "publication_date": "2023-09-22T00:00:01Z",
@@ -81536,32 +81433,6 @@
     "category": "暮らし・健康・子育て"
   },
   {
-    "id": "26455a5cc7bc",
-    "title": "60歳までに「お金の自由」を手に入れる! (PHPビジネス新書)",
-    "author": "榊原 正幸",
-    "publisher": "PHP研究所",
-    "amazon_url": "https://www.amazon.co.jp/dp/4569851940?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4569851940",
-    "image_url": "https://m.media-amazon.com/images/I/51ldneAG9FL._SL500_.jpg",
-    "count": 1,
-    "total_views": 297919,
-    "total_likes": 3515,
-    "videos": [
-      {
-        "video_id": "Zaa_Ir6oF-o",
-        "video_title": "【ベストセラー】「60歳までに「お金の自由」を手に入れる!」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=Zaa_Ir6oF-o",
-        "published": "2023-01-29T10:00:27Z",
-        "view_count": 297919,
-        "like_count": 3515
-      }
-    ],
-    "publication_date": "2022-03-16T00:00:01Z",
-    "category": "ビジネス・経済 > 経営学・キャリア・MBA"
-  },
-  {
     "id": "a0e8a4dc22a4",
     "title": "持たない幸福論 働きたくない、家族を作らない、お金に縛られない (幻冬舎文庫)",
     "author": "pha",
@@ -83468,9 +83339,9 @@
     "amzn_url": null,
     "asin": "429540683X",
     "image_url": "https://m.media-amazon.com/images/I/41hnLAsE7wL._SL500_.jpg",
-    "count": 1,
-    "total_views": 129018,
-    "total_likes": 3332,
+    "count": 2,
+    "total_views": 134388,
+    "total_likes": 3433,
     "videos": [
       {
         "video_id": "VzkerkrZcjk",
@@ -83480,6 +83351,15 @@
         "published": "2022-10-02T10:00:26Z",
         "view_count": 129018,
         "like_count": 3332
+      },
+      {
+        "video_id": "jvsfY1OcDN0",
+        "video_title": "【12分で解説】不調を根本から治す5つの方法　なぜ、人は病気になるのか？",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=jvsfY1OcDN0",
+        "published": "2025-03-01T10:00:54Z",
+        "view_count": 5370,
+        "like_count": 101
       }
     ],
     "publication_date": "2022-05-30T00:00:01Z",
@@ -83494,9 +83374,9 @@
     "amzn_url": null,
     "asin": "4822288668",
     "image_url": "https://m.media-amazon.com/images/I/51-DOv3CWZL._SL500_.jpg",
-    "count": 1,
-    "total_views": 294947,
-    "total_likes": 6882,
+    "count": 2,
+    "total_views": 2193752,
+    "total_likes": 23592,
     "videos": [
       {
         "video_id": "K7odMBNoUWI",
@@ -83506,6 +83386,15 @@
         "published": "2022-10-01T10:02:55Z",
         "view_count": 294947,
         "like_count": 6882
+      },
+      {
+        "video_id": "RRY0IcjuvAk",
+        "video_title": "【老化を遅らせる可能性の新研究】細胞が「新品」になるオートファジー／世界的権威が解説する100分／老化をしない生き物もいる／脳科学者 茂木健一郎と大激論／老化は止められる可能性",
+        "channel": "PIVOT",
+        "link": "https://www.youtube.com/watch?v=RRY0IcjuvAk",
+        "published": "2023-08-15T11:00:22Z",
+        "view_count": 1898805,
+        "like_count": 16710
       }
     ],
     "publication_date": "2020-12-17T00:00:01Z",
@@ -83546,9 +83435,9 @@
     "amzn_url": null,
     "asin": "429600008X",
     "image_url": "https://m.media-amazon.com/images/I/41yqHtY46PL._SL500_.jpg",
-    "count": 1,
-    "total_views": 294947,
-    "total_likes": 6882,
+    "count": 2,
+    "total_views": 706060,
+    "total_likes": 15955,
     "videos": [
       {
         "video_id": "K7odMBNoUWI",
@@ -83558,6 +83447,15 @@
         "published": "2022-10-01T10:02:55Z",
         "view_count": 294947,
         "like_count": 6882
+      },
+      {
+        "video_id": "TMCzxVtadik",
+        "video_title": "【最新作】「SWITCH オートファジーで手に入れる究極の健康長寿」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=TMCzxVtadik",
+        "published": "2021-03-27T10:00:07Z",
+        "view_count": 411113,
+        "like_count": 9073
       }
     ],
     "publication_date": "2021-01-08T00:00:01Z",
@@ -85383,32 +85281,6 @@
     "category": "暮らし・健康・子育て"
   },
   {
-    "id": "002457ef8f3f",
-    "title": "80歳の壁 (幻冬舎新書)",
-    "author": "和田 秀樹",
-    "publisher": "幻冬舎",
-    "amazon_url": "https://www.amazon.co.jp/dp/4344986520?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4344986520",
-    "image_url": "https://m.media-amazon.com/images/I/41e0NbzMw+L._SL500_.jpg",
-    "count": 1,
-    "total_views": 611440,
-    "total_likes": 12496,
-    "videos": [
-      {
-        "video_id": "HihevZW9E9E",
-        "video_title": "【ベストセラー】「８０歳の壁 和田 秀樹（著）」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=HihevZW9E9E",
-        "published": "2022-05-20T10:00:20Z",
-        "view_count": 611440,
-        "like_count": 12496
-      }
-    ],
-    "publication_date": "2022-03-28T00:00:01Z",
-    "category": "人文・思想 > 哲学・思想"
-  },
-  {
     "id": "74eabbce37ac",
     "title": "「お金」の法則--- 「貯まらない」「殖やせない」にはワケがある",
     "author": "千田 琢哉",
@@ -87098,32 +86970,6 @@
     "category": "暮らし・健康・子育て"
   },
   {
-    "id": "f05f93edb102",
-    "title": "0秒で動け 「わかってはいるけど動けない」人のための",
-    "author": "伊藤羊一",
-    "publisher": "SBクリエイティブ",
-    "amazon_url": "https://www.amazon.co.jp/dp/4815600244?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4815600244",
-    "image_url": "https://m.media-amazon.com/images/I/511wfOPvtJL._SL500_.jpg",
-    "count": 1,
-    "total_views": 281713,
-    "total_likes": 5951,
-    "videos": [
-      {
-        "video_id": "pGyiLr-fn0k",
-        "video_title": "【ベストセラー】「0秒で動け 「わかってはいるけど動けない」人のための 自分を瞬時に動かす最強の方法」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=pGyiLr-fn0k",
-        "published": "2021-12-16T10:00:18Z",
-        "view_count": 281713,
-        "like_count": 5951
-      }
-    ],
-    "publication_date": "2019-08-22T00:00:01Z",
-    "category": "ビジネス・経済 > 経営学・キャリア・MBA"
-  },
-  {
     "id": "4137c5bcf929",
     "title": "髪が増える術 成功率95%のプロが教えるすごいメソッド",
     "author": "辻敦哉",
@@ -88680,32 +88526,6 @@
     "category": "人文・思想 > 倫理学・道徳"
   },
   {
-    "id": "a2aa8177efec",
-    "title": "「朝1時間」ですべてが変わる モーニングルーティン",
-    "author": "池田 千恵",
-    "publisher": "日本実業出版社",
-    "amazon_url": "https://www.amazon.co.jp/dp/4534057741?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4534057741",
-    "image_url": "https://m.media-amazon.com/images/I/51dS0EmANPL._SL500_.jpg",
-    "count": 1,
-    "total_views": 695403,
-    "total_likes": 9609,
-    "videos": [
-      {
-        "video_id": "dEeJKgL3emc",
-        "video_title": "【ベストセラー】「『朝1時間』ですべてが変わるモーニングルーティン」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=dEeJKgL3emc",
-        "published": "2021-07-22T10:00:30Z",
-        "view_count": 695403,
-        "like_count": 9609
-      }
-    ],
-    "publication_date": "2020-04-09T00:00:01Z",
-    "category": "ノンフィクション > ビジネス・経済"
-  },
-  {
     "id": "2abab5a3d983",
     "title": "日本初「薬やめる科」の医師が教える 薬の9割はやめられる",
     "author": "松田 史彦",
@@ -89486,32 +89306,6 @@
     "category": "人文・思想 > 倫理学・道徳"
   },
   {
-    "id": "9f32fb50a8b7",
-    "title": "年収90万円で東京ハッピーライフ",
-    "author": "大原扁理",
-    "publisher": "太田出版",
-    "amazon_url": "https://www.amazon.co.jp/dp/4778315308?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4778315308",
-    "image_url": "https://m.media-amazon.com/images/I/51q9RSMWT4L._SL500_.jpg",
-    "count": 1,
-    "total_views": 512751,
-    "total_likes": 10840,
-    "videos": [
-      {
-        "video_id": "d_Ms_I-WZI0",
-        "video_title": "【ベストセラー】「年収90万円で東京ハッピーライフ」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=d_Ms_I-WZI0",
-        "published": "2021-05-24T10:00:14Z",
-        "view_count": 512751,
-        "like_count": 10840
-      }
-    ],
-    "publication_date": "2016-07-20T00:00:01Z",
-    "category": "社会・政治 > 社会学"
-  },
-  {
     "id": "fc38170fbeef",
     "title": "がんを克服した糖尿病医が考案! 弱った体を修復する内臓リセット健康法",
     "author": "青木 厚",
@@ -89520,9 +89314,9 @@
     "amzn_url": null,
     "asin": "4776211033",
     "image_url": "https://m.media-amazon.com/images/I/51qZ3qG5qgL._SL500_.jpg",
-    "count": 1,
-    "total_views": 404136,
-    "total_likes": 9601,
+    "count": 2,
+    "total_views": 428142,
+    "total_likes": 10103,
     "videos": [
       {
         "video_id": "lE3EwxZ0TzQ",
@@ -89532,6 +89326,15 @@
         "published": "2021-05-22T10:00:31Z",
         "view_count": 404136,
         "like_count": 9601
+      },
+      {
+        "video_id": "K8UnwG90E5Y",
+        "video_title": "【17分で解説】弱った体を修復する内臓リセット健康法　がんを克服した糖尿病医が考案！",
+        "channel": "サムの本解説ch",
+        "link": "https://www.youtube.com/watch?v=K8UnwG90E5Y",
+        "published": "2022-06-07T10:00:19Z",
+        "view_count": 24006,
+        "like_count": 502
       }
     ],
     "publication_date": "2020-10-24T00:00:01Z",
@@ -89796,58 +89599,6 @@
     ],
     "publication_date": "2020-03-07T00:00:01Z",
     "category": "暮らし・健康・子育て"
-  },
-  {
-    "id": "da1fe6c4ddd7",
-    "title": "医師や薬に頼らない！ すべての不調は自分で治せる",
-    "author": "藤川 徳美",
-    "publisher": "方丈社",
-    "amazon_url": "https://www.amazon.co.jp/dp/B082XN9WRL?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B082XN9WRL",
-    "image_url": "https://m.media-amazon.com/images/I/512olrKmJlL._SL500_.jpg",
-    "count": 1,
-    "total_views": 520360,
-    "total_likes": 11886,
-    "videos": [
-      {
-        "video_id": "dA-NSRrgTjc",
-        "video_title": "【最新刊】「医師や薬に頼らない！ すべての不調は自分で治せる」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=dA-NSRrgTjc",
-        "published": "2021-03-29T10:00:09Z",
-        "view_count": 520360,
-        "like_count": 11886
-      }
-    ],
-    "publication_date": "2019-12-12T00:00:00.000Z",
-    "category": "暮らし・健康・子育て"
-  },
-  {
-    "id": "c3f758b5a823",
-    "title": "SWITCH（スイッチ）オートファジーで手に入れる究極の健康長寿",
-    "author": "ジェームズ・Ｗ・クレメント、クリスティン・ロバーグ",
-    "publisher": "日経BP",
-    "amazon_url": "https://www.amazon.co.jp/dp/B08QTLX9GJ?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B08QTLX9GJ",
-    "image_url": "https://m.media-amazon.com/images/I/41x6EL8uRaL._SL500_.jpg",
-    "count": 1,
-    "total_views": 411113,
-    "total_likes": 9073,
-    "videos": [
-      {
-        "video_id": "TMCzxVtadik",
-        "video_title": "【最新作】「SWITCH オートファジーで手に入れる究極の健康長寿」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=TMCzxVtadik",
-        "published": "2021-03-27T10:00:07Z",
-        "view_count": 411113,
-        "like_count": 9073
-      }
-    ],
-    "publication_date": "2021-01-08T00:00:00.000Z",
-    "category": "科学・テクノロジー"
   },
   {
     "id": "1a7f4418a5fb",
@@ -91339,9 +91090,9 @@
     "amzn_url": null,
     "asin": "B07W5N2HK1",
     "image_url": "https://m.media-amazon.com/images/I/41bw+mwLHaL._SL500_.jpg",
-    "count": 1,
-    "total_views": 856399,
-    "total_likes": 17678,
+    "count": 2,
+    "total_views": 894516,
+    "total_likes": 18589,
     "videos": [
       {
         "video_id": "t5nE_X-FqV8",
@@ -91351,6 +91102,15 @@
         "published": "2020-10-14T10:00:12Z",
         "view_count": 856399,
         "like_count": 17678
+      },
+      {
+        "video_id": "qz2oXCLrv20",
+        "video_title": "【8分で解説】ホリエモン「時間革命」を世界一わかりやすく要約してみた【本要約】",
+        "channel": "本要約チャンネル",
+        "link": "https://www.youtube.com/watch?v=qz2oXCLrv20",
+        "published": "2020-04-27T11:00:24Z",
+        "view_count": 38117,
+        "like_count": 911
       }
     ],
     "publication_date": "2019-09-20T00:00:00.000Z",
@@ -91768,32 +91528,6 @@
     ],
     "publication_date": "2015-06-22T00:00:00.000Z",
     "category": "ビジネス・経済"
-  },
-  {
-    "id": "469e56873b5b",
-    "title": "ＳＬＥＥＰ　最高の脳と身体をつくる睡眠の技術",
-    "author": "ショーン・スティーブンソン",
-    "publisher": "ダイヤモンド社",
-    "amazon_url": "https://www.amazon.co.jp/dp/B06W9P5NND?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B06W9P5NND",
-    "image_url": "https://m.media-amazon.com/images/I/517uSDihzxL._SL500_.jpg",
-    "count": 1,
-    "total_views": 67156,
-    "total_likes": 1501,
-    "videos": [
-      {
-        "video_id": "ZKAvlWoJdiA",
-        "video_title": "【睡眠】「SLEEP～最高の脳と身体をつくる睡眠の技術～」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=ZKAvlWoJdiA",
-        "published": "2020-08-18T22:30:00Z",
-        "view_count": 67156,
-        "like_count": 1501
-      }
-    ],
-    "publication_date": "2017-02-23T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
   },
   {
     "id": "2627953dbd1d",
@@ -92237,32 +91971,6 @@
     "category": "ビジネス・経済 > ビジネス実用"
   },
   {
-    "id": "5f49bb48b67f",
-    "title": "時間革命 1秒もムダに生きるな",
-    "author": "堀江 貴文",
-    "publisher": "朝日新聞出版",
-    "amazon_url": "https://www.amazon.co.jp/dp/4023318302?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "4023318302",
-    "image_url": "https://m.media-amazon.com/images/I/510cHNxeWLL._SL500_.jpg",
-    "count": 1,
-    "total_views": 38117,
-    "total_likes": 911,
-    "videos": [
-      {
-        "video_id": "qz2oXCLrv20",
-        "video_title": "【8分で解説】ホリエモン「時間革命」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=qz2oXCLrv20",
-        "published": "2020-04-27T11:00:24Z",
-        "view_count": 38117,
-        "like_count": 911
-      }
-    ],
-    "publication_date": "2019-09-20T00:00:01Z",
-    "category": "ビジネス・経済 > ビジネス実用"
-  },
-  {
     "id": "265594507760",
     "title": "モチベーション革命　稼ぐために働きたくない世代の解体書 (NewsPicks Book)",
     "author": "尾原和啓",
@@ -92468,32 +92176,6 @@
     ],
     "publication_date": "2002-06-01T00:00:01Z",
     "category": "ビジネス・経済 > ビジネス実用"
-  },
-  {
-    "id": "979cd84efb5a",
-    "title": "医者が教える食事術　最強の教科書――２０万人を診てわかった医学的に正しい食べ方６８",
-    "author": "牧田 善二",
-    "publisher": "ダイヤモンド社",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0756W3ZR1?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0756W3ZR1",
-    "image_url": "https://m.media-amazon.com/images/I/61GvZ18jvOL._SL500_.jpg",
-    "count": 1,
-    "total_views": 90752,
-    "total_likes": 1516,
-    "videos": [
-      {
-        "video_id": "0tG90TOgZO4",
-        "video_title": "【6分で解説】「医者が教える食事術」を世界一わかりやすく要約してみた【本要約】",
-        "channel": "本要約チャンネル",
-        "link": "https://www.youtube.com/watch?v=0tG90TOgZO4",
-        "published": "2020-01-11T12:00:00Z",
-        "view_count": 90752,
-        "like_count": 1516
-      }
-    ],
-    "publication_date": "2017-09-21T00:00:00.000Z",
-    "category": "暮らし・健康・子育て"
   },
   {
     "id": "b5af662294b3",
@@ -97977,32 +97659,6 @@
     ],
     "publication_date": "2023-07-06T00:00:00.000Z",
     "category": "コンピュータ・IT"
-  },
-  {
-    "id": "0fb5a6cf5d0c",
-    "title": "LIFE SCIENCE（ライフサイエンス）　長生きせざるをえない時代の生命科学講義",
-    "author": "吉森 保",
-    "publisher": "日経BP",
-    "amazon_url": "https://www.amazon.co.jp/dp/B08QD5RP17?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B08QD5RP17",
-    "image_url": "https://m.media-amazon.com/images/I/410h8sP8ZnL._SL500_.jpg",
-    "count": 1,
-    "total_views": 1898805,
-    "total_likes": 16710,
-    "videos": [
-      {
-        "video_id": "RRY0IcjuvAk",
-        "video_title": "【老化を遅らせる可能性の新研究】細胞が「新品」になるオートファジー／世界的権威が解説する100分／老化をしない生き物もいる／脳科学者 茂木健一郎と大激論／老化は止められる可能性",
-        "channel": "PIVOT",
-        "link": "https://www.youtube.com/watch?v=RRY0IcjuvAk",
-        "published": "2023-08-15T11:00:22Z",
-        "view_count": 1898805,
-        "like_count": 16710
-      }
-    ],
-    "publication_date": "2020-12-17T00:00:00.000Z",
-    "category": "科学・テクノロジー"
   },
   {
     "id": "2ff988a11ca2",
@@ -103982,32 +103638,6 @@
     "category": "投資・金融・会社経営"
   },
   {
-    "id": "5e04f87d2fcd",
-    "title": "なぜ、人は病気になるのか？",
-    "author": "寺田武史",
-    "publisher": "クロスメディア・パブリッシング（インプレス）",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0B2NY2F5S?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0B2NY2F5S",
-    "image_url": "https://m.media-amazon.com/images/I/51aco88TWEL._SL500_.jpg",
-    "count": 1,
-    "total_views": 5370,
-    "total_likes": 101,
-    "videos": [
-      {
-        "video_id": "jvsfY1OcDN0",
-        "video_title": "【12分で解説】不調を根本から治す5つの方法　なぜ、人は病気になるのか？",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=jvsfY1OcDN0",
-        "published": "2025-03-01T10:00:54Z",
-        "view_count": 5370,
-        "like_count": 101
-      }
-    ],
-    "publication_date": "2022-05-30T00:00:00.000Z",
-    "category": "科学・テクノロジー"
-  },
-  {
     "id": "f413902c25ac",
     "title": "「誰もが儲かる、わけがない」をぶち壊す 投資革命 (投資の教科書)",
     "author": "堂瀬とうしろう",
@@ -106504,32 +106134,6 @@
     "category": "科学・テクノロジー"
   },
   {
-    "id": "00a7b9af890d",
-    "title": "ChatGPT vs. 未来のない仕事をする人たち",
-    "author": "堀江 貴文",
-    "publisher": null,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0CKKZPWN3?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0CKKZPWN3",
-    "image_url": "https://m.media-amazon.com/images/I/41ITG+ZK-SL._SL500_.jpg",
-    "count": 1,
-    "total_views": 10130,
-    "total_likes": 170,
-    "videos": [
-      {
-        "video_id": "i1EaymwO89c",
-        "video_title": "【10分で解説】ChatGPT vs. 未来のない仕事をする人たち",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=i1EaymwO89c",
-        "published": "2024-02-08T10:00:36Z",
-        "view_count": 10130,
-        "like_count": 170
-      }
-    ],
-    "publication_date": "2023-10-30T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
     "id": "7237a6eed9a5",
     "title": "リスキリング超入門　DXより重要なビジネスパーソンの「戦略的学び直し」",
     "author": "徳岡 晃一郎、房 広治",
@@ -106944,32 +106548,6 @@
     ],
     "publication_date": "2023-11-17T00:00:01Z",
     "category": "社会・政治 > 社会学"
-  },
-  {
-    "id": "051cfa21c5d3",
-    "title": "“カナダ式”で幸福度も資産も増え続ける！　いつのまにか億り人になれる超マネーハック",
-    "author": "品田一世",
-    "publisher": "KADOKAWA",
-    "amazon_url": "https://www.amazon.co.jp/dp/B0CHM55KHY?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B0CHM55KHY",
-    "image_url": "https://m.media-amazon.com/images/I/41gV3cfIZDL._SL500_.jpg",
-    "count": 1,
-    "total_views": 12400,
-    "total_likes": 213,
-    "videos": [
-      {
-        "video_id": "I6JoHzJqLbQ",
-        "video_title": "【12分で解説】「カナダ式」で幸福度も資産も増え続ける　いつのまにか億り人になれる超マネーハック",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=I6JoHzJqLbQ",
-        "published": "2023-12-05T10:00:19Z",
-        "view_count": 12400,
-        "like_count": 213
-      }
-    ],
-    "publication_date": "2023-09-22T00:00:00.000Z",
-    "category": "暮らし・健康・子育て"
   },
   {
     "id": "b6bd080593ce",
@@ -108763,32 +108341,6 @@
     "category": "人文・思想 > 心理学"
   },
   {
-    "id": "2a81b1003d7c",
-    "title": "５０歳を過ぎても体脂肪率１０％の名医が教える　内臓脂肪を落とす最強メソッド",
-    "author": "池谷 敏郎",
-    "publisher": "東洋経済新報社",
-    "amazon_url": "https://www.amazon.co.jp/dp/B07PZB1ZPL?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B07PZB1ZPL",
-    "image_url": "https://m.media-amazon.com/images/I/51klrBYmmuL._SL500_.jpg",
-    "count": 1,
-    "total_views": 10757,
-    "total_likes": 176,
-    "videos": [
-      {
-        "video_id": "ZncY7-LJA5I",
-        "video_title": "【14分で解説】意外と気づかないから危険　内臓脂肪を落とす最強メソッド 　体脂肪率10％の名医が教える　50歳を過ぎても",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=ZncY7-LJA5I",
-        "published": "2023-01-31T10:00:27Z",
-        "view_count": 10757,
-        "like_count": 176
-      }
-    ],
-    "publication_date": "2019-04-12T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
     "id": "17aae7e96059",
     "title": "スベらない商談力",
     "author": "小森康充",
@@ -109151,32 +108703,6 @@
     ],
     "publication_date": "2021-12-23T00:00:00.000Z",
     "category": "暮らし・健康・子育て"
-  },
-  {
-    "id": "3fa3886ec91e",
-    "title": "なぜかうまくいく人の「秘密の習慣」（ハンディ版）",
-    "author": "佐藤伝",
-    "publisher": "ディスカヴァー・トゥエンティワン",
-    "amazon_url": "https://www.amazon.co.jp/dp/B09JK16TTF?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B09JK16TTF",
-    "image_url": "https://m.media-amazon.com/images/I/51tBxnTqD1L._SL500_.jpg",
-    "count": 1,
-    "total_views": 35805,
-    "total_likes": 635,
-    "videos": [
-      {
-        "video_id": "uIXBwbLb_a0",
-        "video_title": "【13分で解説】なぜかうまくいく人の秘密の習慣",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=uIXBwbLb_a0",
-        "published": "2022-10-27T10:00:36Z",
-        "view_count": 35805,
-        "like_count": 635
-      }
-    ],
-    "publication_date": "2021-11-19T00:00:00.000Z",
-    "category": "人文・思想 > 倫理学・道徳"
   },
   {
     "id": "f9ac43585c67",
@@ -110061,32 +109587,6 @@
     ],
     "publication_date": "2021-09-09T00:00:00.000Z",
     "category": "人文・思想 > 倫理学・道徳"
-  },
-  {
-    "id": "8bdb939ba57b",
-    "title": "がんを克服した糖尿病医が考案！ 弱った体を修復する内臓リセット健康法",
-    "author": "青木 厚",
-    "publisher": "アスコム",
-    "amazon_url": "https://www.amazon.co.jp/dp/B08LPRKQX1?tag=business-book-ranking02-22",
-    "amzn_url": null,
-    "asin": "B08LPRKQX1",
-    "image_url": "https://m.media-amazon.com/images/I/51BojvZLInL._SL500_.jpg",
-    "count": 1,
-    "total_views": 24006,
-    "total_likes": 502,
-    "videos": [
-      {
-        "video_id": "K8UnwG90E5Y",
-        "video_title": "【17分で解説】弱った体を修復する内臓リセット健康法　がんを克服した糖尿病医が考案！",
-        "channel": "サムの本解説ch",
-        "link": "https://www.youtube.com/watch?v=K8UnwG90E5Y",
-        "published": "2022-06-07T10:00:19Z",
-        "view_count": 24006,
-        "like_count": 502
-      }
-    ],
-    "publication_date": "2020-10-24T00:00:00.000Z",
-    "category": "暮らし・健康・子育て"
   },
   {
     "id": "fee6f0830df9",
