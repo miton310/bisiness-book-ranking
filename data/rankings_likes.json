@@ -279,6 +279,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B092HL5Z5Z?tag=business-book-ranking02-22"
   },
   {
+    "id": "aa4a60805519",
+    "title": "50歳から花開く人、50歳で止まる人",
+    "author": "有川 真由美",
+    "count": 5,
+    "total_views": 7649180,
+    "total_likes": 74489,
+    "amazon_url": "https://www.amazon.co.jp/dp/4569851975?tag=business-book-ranking02-22"
+  },
+  {
     "id": "03a29f0ee10b",
     "title": "33歳で手取り22万円の僕が1億円を貯められた理由",
     "author": "井上はじめ",
@@ -351,6 +360,15 @@
     "amazon_url": "https://www.amazon.co.jp/s?k=%E6%9C%80%E9%AB%98%E3%81%AE%E4%BD%93%E8%AA%BF%E3%80%80%E9%80%B2%E5%8C%96%E5%8C%BB%E5%AD%A6%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81%E3%81%A7%E3%80%81%E9%81%8E%E5%8E%BB%E6%9C%80%E9%AB%98%E3%81%AE%E3%82%B3%E3%83%B3%E3%83%87%E3%82%A3%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E5%AE%9F%E7%8F%BE%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%20%28ACTIVE%20HEALTH%29&i=stripbooks&tag=business-book-ranking02-22"
   },
   {
+    "id": "166c3fb04103",
+    "title": "GO WILD 野生の体を取り戻せ! 科学が教えるトレイルラン、低炭水化物食、マインドフルネス",
+    "author": "ジョンJ.レイティ、リチャード・マニング",
+    "count": 12,
+    "total_views": 3223840,
+    "total_likes": 69721,
+    "amazon_url": "https://www.amazon.co.jp/dp/4140816619?tag=business-book-ranking02-22"
+  },
+  {
     "id": "db9e149c9b41",
     "title": "愛するということ 新訳版",
     "author": "エーリッヒ・フロム",
@@ -405,15 +423,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B0BQQTWB9R?tag=business-book-ranking02-22"
   },
   {
-    "id": "aa4a60805519",
-    "title": "50歳から花開く人、50歳で止まる人",
-    "author": "有川 真由美",
-    "count": 4,
-    "total_views": 5578913,
-    "total_likes": 64353,
-    "amazon_url": "https://www.amazon.co.jp/dp/4569851975?tag=business-book-ranking02-22"
-  },
-  {
     "id": "2cffb31ad248",
     "title": "影響力の武器[第三版]: なぜ、人は動かされるのか",
     "author": "ロバート・B・チャルディーニ",
@@ -466,15 +475,6 @@
     "total_views": 4962091,
     "total_likes": 63415,
     "amazon_url": "https://www.amazon.co.jp/s?k=%E4%BC%9D%E3%81%88%E6%96%B9%E3%81%8C9%E5%89%B2%202&i=stripbooks&tag=business-book-ranking02-22"
-  },
-  {
-    "id": "166c3fb04103",
-    "title": "GO WILD 野生の体を取り戻せ! 科学が教えるトレイルラン、低炭水化物食、マインドフルネス",
-    "author": "ジョンJ.レイティ、リチャード・マニング",
-    "count": 9,
-    "total_views": 2844260,
-    "total_likes": 63375,
-    "amazon_url": "https://www.amazon.co.jp/dp/4140816619?tag=business-book-ranking02-22"
   },
   {
     "id": "2c374a60ae93",
@@ -610,6 +610,15 @@
     "total_views": 4811764,
     "total_likes": 56538,
     "amazon_url": "https://www.amazon.co.jp/dp/4295406848?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "bf77fe43e465",
+    "title": "ＮＦＴの教科書　ビジネス・ブロックチェーン・法律・会計まで　デジタルデータが資産になる未来",
+    "author": "天羽健介、増田雅史",
+    "count": 4,
+    "total_views": 5066008,
+    "total_likes": 56452,
+    "amazon_url": "https://www.amazon.co.jp/dp/B09HGX65C1?tag=business-book-ranking02-22"
   },
   {
     "id": "b2809cc8fd3f",
@@ -846,13 +855,13 @@
     "amazon_url": "https://www.amazon.co.jp/s?k=LOVE%E7%90%86%E8%AB%96%20%EF%BC%9A%201%20%28%E3%82%A2%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%B3%E3%83%9F%E3%83%83%E3%82%AF%E3%82%B9%29&i=stripbooks&tag=business-book-ranking02-22"
   },
   {
-    "id": "aa9d198a9132",
-    "title": "NFTの教科書 ビジネス・ブロックチェーン・法律・会計まで デジタルデータが資産になる未来",
-    "author": null,
-    "count": 2,
-    "total_views": 4660135,
-    "total_likes": 49395,
-    "amazon_url": "https://www.amazon.co.jp/dp/4022517972?tag=business-book-ranking02-22"
+    "id": "f0766061c74d",
+    "title": "圧倒的に自由で快適な未来が手に入る！　勝間式ネオ・ライフハック１００",
+    "author": "勝間 和代",
+    "count": 5,
+    "total_views": 3457116,
+    "total_likes": 49437,
+    "amazon_url": "https://www.amazon.co.jp/dp/B08CTVL6K2?tag=business-book-ranking02-22"
   },
   {
     "id": "c98fd5fb16b0",
@@ -871,15 +880,6 @@
     "total_views": 2854112,
     "total_likes": 49255,
     "amazon_url": "https://www.amazon.co.jp/s?k=%E7%9C%A0%E3%82%8C%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E3%81%BB%E3%81%A9%E9%9D%A2%E7%99%BD%E3%81%84%20%E5%9B%B3%E8%A7%A3%20%E8%87%AA%E5%BE%8B%E7%A5%9E%E7%B5%8C%E3%81%AE%E8%A9%B1%3A%20%E8%87%AA%E5%BE%8B%E7%A5%9E%E7%B5%8C%E3%81%AE%E3%82%AE%E3%83%A2%E3%83%B3%E3%82%92%E5%B0%82%E9%96%80%E5%8C%BB%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E8%A7%A3%E8%AA%AC%21&i=stripbooks&tag=business-book-ranking02-22"
-  },
-  {
-    "id": "f0766061c74d",
-    "title": "圧倒的に自由で快適な未来が手に入る！　勝間式ネオ・ライフハック１００",
-    "author": "勝間 和代",
-    "count": 3,
-    "total_views": 3429115,
-    "total_likes": 48994,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08CTVL6K2?tag=business-book-ranking02-22"
   },
   {
     "id": "69f327337f09",
@@ -907,6 +907,15 @@
     "total_views": 4284005,
     "total_likes": 47984,
     "amazon_url": "https://www.amazon.co.jp/dp/4065316103?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "e741fc31a500",
+    "title": "医者が教える食事術 最強の教科書――20万人を診てわかった医学的に正しい食べ方68",
+    "author": "牧田 善二",
+    "count": 6,
+    "total_views": 2586334,
+    "total_likes": 47836,
+    "amazon_url": "https://www.amazon.co.jp/dp/447810221X?tag=business-book-ranking02-22"
   },
   {
     "id": "cf9e95b5fc5f",
@@ -954,15 +963,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4797369620?tag=business-book-ranking02-22"
   },
   {
-    "id": "e741fc31a500",
-    "title": "医者が教える食事術 最強の教科書――20万人を診てわかった医学的に正しい食べ方68",
-    "author": "牧田 善二",
-    "count": 5,
-    "total_views": 2495582,
-    "total_likes": 46320,
-    "amazon_url": "https://www.amazon.co.jp/dp/447810221X?tag=business-book-ranking02-22"
-  },
-  {
     "id": "b5a36340dc02",
     "title": "名医が教える内臓脂肪が落ちる究極の食事 高脂質・低糖質食で、みるみる腹が凹む",
     "author": "マーク・ハイマン",
@@ -993,9 +993,9 @@
     "id": "4c1546cdf9d1",
     "title": "危険な添加物! がんがイヤなら、これは食べるな",
     "author": "渡辺 雄二",
-    "count": 2,
-    "total_views": 2088742,
-    "total_likes": 44956,
+    "count": 4,
+    "total_views": 2102125,
+    "total_likes": 45205,
     "amazon_url": "https://www.amazon.co.jp/dp/4828422714?tag=business-book-ranking02-22"
   },
   {
@@ -1141,6 +1141,15 @@
     "total_views": 2450435,
     "total_likes": 42248,
     "amazon_url": "https://www.amazon.co.jp/dp/4800215315?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "d8e384980755",
+    "title": "1%の努力",
+    "author": "ひろゆき",
+    "count": 14,
+    "total_views": 2681196,
+    "total_likes": 42223,
+    "amazon_url": "https://www.amazon.co.jp/dp/B084MF2QDM?tag=business-book-ranking02-22"
   },
   {
     "id": "3196529fc53c",
@@ -1368,13 +1377,13 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B07J6NKTJF?tag=business-book-ranking02-22"
   },
   {
-    "id": "29d5fa0a49f9",
-    "title": "１％の努力",
-    "author": "ひろゆき",
-    "count": 11,
-    "total_views": 2409920,
-    "total_likes": 37097,
-    "amazon_url": "https://www.amazon.co.jp/dp/B084MF2QDM?tag=business-book-ranking02-22"
+    "id": "668ddaed0024",
+    "title": "人は聞き方が９割",
+    "author": "永松 茂久",
+    "count": 5,
+    "total_views": 2770675,
+    "total_likes": 37224,
+    "amazon_url": "https://www.amazon.co.jp/dp/B09HM2RJK7?tag=business-book-ranking02-22"
   },
   {
     "id": "05fe4f98fe41",
@@ -1483,6 +1492,15 @@
     "total_views": 2130672,
     "total_likes": 35728,
     "amazon_url": "https://www.amazon.co.jp/dp/4799105558?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "7b55d2e6f077",
+    "title": "1万人抱いてわかった！ モテる男39の法則",
+    "author": "しみけん",
+    "count": 7,
+    "total_views": 2887239,
+    "total_likes": 35367,
+    "amazon_url": "https://www.amazon.co.jp/dp/B094X7JLCC?tag=business-book-ranking02-22"
   },
   {
     "id": "757036e9d562",
@@ -2007,6 +2025,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4799323695?tag=business-book-ranking02-22"
   },
   {
+    "id": "988d1411269b",
+    "title": "医師や薬に頼らない! すべての不調は自分で治せる",
+    "author": "藤川 徳美",
+    "count": 2,
+    "total_views": 1793545,
+    "total_likes": 31175,
+    "amazon_url": "https://www.amazon.co.jp/dp/4908925593?tag=business-book-ranking02-22"
+  },
+  {
     "id": "cffee7a054c3",
     "title": "スマホ脳（新潮新書） （『スマホ脳』シリーズ）",
     "author": "アンデシュ・ハンセン",
@@ -2097,15 +2124,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4797390913?tag=business-book-ranking02-22"
   },
   {
-    "id": "7b55d2e6f077",
-    "title": "1万人抱いてわかった！ モテる男39の法則",
-    "author": "しみけん",
-    "count": 5,
-    "total_views": 2297978,
-    "total_likes": 30361,
-    "amazon_url": "https://www.amazon.co.jp/dp/B094X7JLCC?tag=business-book-ranking02-22"
-  },
-  {
     "id": "3ad8ab7ad40e",
     "title": "岸田ビジョン 分断から協調へ",
     "author": "岸田 文雄",
@@ -2176,15 +2194,6 @@
     "total_views": 2325167,
     "total_likes": 29727,
     "amazon_url": "https://www.amazon.co.jp/dp/477621220X?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "430bbd676f02",
-    "title": "人は聞き方が9割",
-    "author": "永松 茂久",
-    "count": 2,
-    "total_views": 2385991,
-    "total_likes": 29714,
-    "amazon_url": "https://www.amazon.co.jp/dp/479911008X?tag=business-book-ranking02-22"
   },
   {
     "id": "aaa0c000a082",
@@ -2284,6 +2293,15 @@
     "total_views": 1926398,
     "total_likes": 29176,
     "amazon_url": "https://www.amazon.co.jp/dp/4844378627?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "8c51cd02f25f",
+    "title": "100%得する話し方",
+    "author": "新井 慶一",
+    "count": 2,
+    "total_views": 2011959,
+    "total_likes": 29166,
+    "amazon_url": "https://www.amazon.co.jp/dp/4799109103?tag=business-book-ranking02-22"
   },
   {
     "id": "b2b26e6abddc",
@@ -2772,6 +2790,24 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B089SNF3MS?tag=business-book-ranking02-22"
   },
   {
+    "id": "e18c8103ff00",
+    "title": "50歳を過ぎても体脂肪率10%の名医が教える 内臓脂肪を落とす最強メソッド",
+    "author": "池谷 敏郎",
+    "count": 3,
+    "total_views": 1384335,
+    "total_likes": 25470,
+    "amazon_url": "https://www.amazon.co.jp/dp/4492046453?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "bb9b0136e595",
+    "title": "99.9％は幸せの素人",
+    "author": "星 渉、前野 隆司",
+    "count": 5,
+    "total_views": 1521452,
+    "total_likes": 25397,
+    "amazon_url": "https://www.amazon.co.jp/dp/B08N9WXY18?tag=business-book-ranking02-22"
+  },
+  {
     "id": "e72a728d7930",
     "title": "はじめての統計学　レジの行列が早く進むのは、どっち？",
     "author": "サトウマイ",
@@ -2779,15 +2815,6 @@
     "total_views": 1506704,
     "total_likes": 25304,
     "amazon_url": "https://www.amazon.co.jp/dp/B08VNTLMF5?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "e18c8103ff00",
-    "title": "50歳を過ぎても体脂肪率10%の名医が教える 内臓脂肪を落とす最強メソッド",
-    "author": "池谷 敏郎",
-    "count": 2,
-    "total_views": 1373578,
-    "total_likes": 25294,
-    "amazon_url": "https://www.amazon.co.jp/dp/4492046453?tag=business-book-ranking02-22"
   },
   {
     "id": "41fd37f0e127",
@@ -3175,6 +3202,15 @@
     "total_views": 2248840,
     "total_likes": 23704,
     "amazon_url": "https://www.amazon.co.jp/dp/4800592895?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "874106252764",
+    "title": "LIFE SCIENCE(ライフサイエンス) 長生きせざるをえない時代の生命科学講義",
+    "author": "吉森 保",
+    "count": 2,
+    "total_views": 2193752,
+    "total_likes": 23592,
+    "amazon_url": "https://www.amazon.co.jp/dp/4822288668?tag=business-book-ranking02-22"
   },
   {
     "id": "262671171800",
@@ -3852,15 +3888,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4837927955?tag=business-book-ranking02-22"
   },
   {
-    "id": "7309cf446e61",
-    "title": "100％得する話し方",
-    "author": "新井 慶一",
-    "count": 1,
-    "total_views": 1519149,
-    "total_likes": 20284,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0894FDSGP?tag=business-book-ranking02-22"
-  },
-  {
     "id": "4954f9a2c59d",
     "title": "美容常識の9割はウソ",
     "author": "落合 博子",
@@ -3886,6 +3913,15 @@
     "total_views": 1724764,
     "total_likes": 20200,
     "amazon_url": "https://www.amazon.co.jp/dp/B08HCY4PH8?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "be86482abe8f",
+    "title": "「朝１時間」ですべてが変わる　モーニングルーティン",
+    "author": "池田千恵",
+    "count": 4,
+    "total_views": 1375785,
+    "total_likes": 20129,
+    "amazon_url": "https://www.amazon.co.jp/dp/B089GPK9SZ?tag=business-book-ranking02-22"
   },
   {
     "id": "3944b19a746e",
@@ -4131,15 +4167,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B09L4KPJWT?tag=business-book-ranking02-22"
   },
   {
-    "id": "988d1411269b",
-    "title": "医師や薬に頼らない! すべての不調は自分で治せる",
-    "author": "藤川 徳美",
-    "count": 1,
-    "total_views": 1273185,
-    "total_likes": 19289,
-    "amazon_url": "https://www.amazon.co.jp/dp/4908925593?tag=business-book-ranking02-22"
-  },
-  {
     "id": "2a3f30abce1b",
     "title": "新訳 武士道 ビギナーズ 日本の思想 (角川ソフィア文庫)",
     "author": "新渡戸 稲造",
@@ -4356,6 +4383,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4478066116?tag=business-book-ranking02-22"
   },
   {
+    "id": "8ee317a78d18",
+    "title": "時間革命　１秒もムダに生きるな",
+    "author": "堀江　貴文",
+    "count": 2,
+    "total_views": 894516,
+    "total_likes": 18589,
+    "amazon_url": "https://www.amazon.co.jp/dp/B07W5N2HK1?tag=business-book-ranking02-22"
+  },
+  {
     "id": "eda1b947105a",
     "title": "モモ",
     "author": "ミヒャエル・エンデ",
@@ -4500,6 +4536,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/481560147X?tag=business-book-ranking02-22"
   },
   {
+    "id": "9f32fb50a8b7",
+    "title": "年収90万円で東京ハッピーライフ",
+    "author": "大原扁理",
+    "count": 2,
+    "total_views": 1083109,
+    "total_likes": 17823,
+    "amazon_url": "https://www.amazon.co.jp/dp/B01MPXWKKV?tag=business-book-ranking02-22"
+  },
+  {
     "id": "0cdbc7a70885",
     "title": "「便秘解消」「ダイエット」「免疫力アップ」さまざまな健康効果を最大化する! 「善玉酵素」で腸内革命",
     "author": "國澤 純",
@@ -4516,15 +4561,6 @@
     "total_views": 1681203,
     "total_likes": 17740,
     "amazon_url": "https://www.amazon.co.jp/dp/4163919872?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "8ee317a78d18",
-    "title": "時間革命　１秒もムダに生きるな",
-    "author": "堀江　貴文",
-    "count": 1,
-    "total_views": 856399,
-    "total_likes": 17678,
-    "amazon_url": "https://www.amazon.co.jp/dp/B07W5N2HK1?tag=business-book-ranking02-22"
   },
   {
     "id": "51aa5de72890",
@@ -4561,6 +4597,15 @@
     "total_views": 924389,
     "total_likes": 17637,
     "amazon_url": "https://www.amazon.co.jp/dp/B01EH12AJ6?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "ceccd11d9c90",
+    "title": "０秒で動け　「わかってはいるけど動けない」人のための",
+    "author": "伊藤 羊一",
+    "count": 2,
+    "total_views": 931157,
+    "total_likes": 17636,
+    "amazon_url": "https://www.amazon.co.jp/dp/B07VRZFNX9?tag=business-book-ranking02-22"
   },
   {
     "id": "8e51aef6ba75",
@@ -4923,15 +4968,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4794223293?tag=business-book-ranking02-22"
   },
   {
-    "id": "0fb5a6cf5d0c",
-    "title": "LIFE SCIENCE（ライフサイエンス）　長生きせざるをえない時代の生命科学講義",
-    "author": "吉森 保",
-    "count": 1,
-    "total_views": 1898805,
-    "total_likes": 16710,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08QD5RP17?tag=business-book-ranking02-22"
-  },
-  {
     "id": "666782183f5b",
     "title": "心が疲れない「正しい」休み方",
     "author": "るろうに",
@@ -5101,6 +5137,15 @@
     "total_views": 1188068,
     "total_likes": 16003,
     "amazon_url": "https://www.amazon.co.jp/dp/4594073360?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "4eddc576dd6c",
+    "title": "SWITCH(スイッチ)オートファジーで手に入れる究極の健康長寿",
+    "author": "ジェームズ・W・クレメント、クリスティン・ロバーグ",
+    "count": 2,
+    "total_views": 706060,
+    "total_likes": 15955,
+    "amazon_url": "https://www.amazon.co.jp/dp/429600008X?tag=business-book-ranking02-22"
   },
   {
     "id": "6f3d9292f930",
@@ -5994,6 +6039,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4866631465?tag=business-book-ranking02-22"
   },
   {
+    "id": "94fa31ab1a49",
+    "title": "８０歳の壁 (幻冬舎新書)",
+    "author": "和田秀樹",
+    "count": 2,
+    "total_views": 688744,
+    "total_likes": 13679,
+    "amazon_url": "https://www.amazon.co.jp/dp/B09WD4Y525?tag=business-book-ranking02-22"
+  },
+  {
     "id": "b153ef67c7cd",
     "title": "あなたは、あなたのままでいてください。",
     "author": "鈴木秀子",
@@ -6354,15 +6408,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B07X83V9JT?tag=business-book-ranking02-22"
   },
   {
-    "id": "bb9b0136e595",
-    "title": "99.9％は幸せの素人",
-    "author": "星 渉、前野 隆司",
-    "count": 3,
-    "total_views": 741340,
-    "total_likes": 12977,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08N9WXY18?tag=business-book-ranking02-22"
-  },
-  {
     "id": "660126a64083",
     "title": "9割の病気がよくなる ロジカル食事術 (\"栄養保険\"のススメ)",
     "author": "岡本 裕",
@@ -6714,15 +6759,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4044001189?tag=business-book-ranking02-22"
   },
   {
-    "id": "002457ef8f3f",
-    "title": "80歳の壁 (幻冬舎新書)",
-    "author": "和田 秀樹",
-    "count": 1,
-    "total_views": 611440,
-    "total_likes": 12496,
-    "amazon_url": "https://www.amazon.co.jp/dp/4344986520?tag=business-book-ranking02-22"
-  },
-  {
     "id": "3f810cbab66f",
     "title": "君に友だちはいらない",
     "author": "瀧本哲史",
@@ -6768,15 +6804,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B09GV3KJXF?tag=business-book-ranking02-22"
   },
   {
-    "id": "9ea11e0eda41",
-    "title": "99.9%は幸せの素人",
-    "author": "星 渉、前野 隆司",
-    "count": 2,
-    "total_views": 780112,
-    "total_likes": 12420,
-    "amazon_url": "https://www.amazon.co.jp/dp/4046050071?tag=business-book-ranking02-22"
-  },
-  {
     "id": "e7d930c982d6",
     "title": "トロント最高の医師が教える世界最有効の糖尿病対策",
     "author": "ジェイソン・ファン",
@@ -6811,6 +6838,15 @@
     "total_views": 647402,
     "total_likes": 12378,
     "amazon_url": "https://www.amazon.co.jp/dp/4799321137?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "854765cc81d2",
+    "title": "SLEEP 最高の脳と身体をつくる睡眠の技術",
+    "author": "ショーン・スティーブンソン",
+    "count": 3,
+    "total_views": 625485,
+    "total_likes": 12349,
+    "amazon_url": "https://www.amazon.co.jp/dp/4478101620?tag=business-book-ranking02-22"
   },
   {
     "id": "e4b0fa37d860",
@@ -7110,15 +7146,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4413021673?tag=business-book-ranking02-22"
   },
   {
-    "id": "da1fe6c4ddd7",
-    "title": "医師や薬に頼らない！ すべての不調は自分で治せる",
-    "author": "藤川 徳美",
-    "count": 1,
-    "total_views": 520360,
-    "total_likes": 11886,
-    "amazon_url": "https://www.amazon.co.jp/dp/B082XN9WRL?tag=business-book-ranking02-22"
-  },
-  {
     "id": "846da3a11de7",
     "title": "さとりをひらいた犬 ほんとうの自分に出会う物語",
     "author": "刀根 健",
@@ -7234,15 +7261,6 @@
     "total_views": 784057,
     "total_likes": 11691,
     "amazon_url": "https://www.amazon.co.jp/dp/4492503226?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "ceccd11d9c90",
-    "title": "０秒で動け　「わかってはいるけど動けない」人のための",
-    "author": "伊藤 羊一",
-    "count": 1,
-    "total_views": 649444,
-    "total_likes": 11685,
-    "amazon_url": "https://www.amazon.co.jp/dp/B07VRZFNX9?tag=business-book-ranking02-22"
   },
   {
     "id": "81cb11bd17ea",
@@ -7749,24 +7767,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4797380217?tag=business-book-ranking02-22"
   },
   {
-    "id": "854765cc81d2",
-    "title": "SLEEP 最高の脳と身体をつくる睡眠の技術",
-    "author": "ショーン・スティーブンソン",
-    "count": 2,
-    "total_views": 558329,
-    "total_likes": 10848,
-    "amazon_url": "https://www.amazon.co.jp/dp/4478101620?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "9f32fb50a8b7",
-    "title": "年収90万円で東京ハッピーライフ",
-    "author": "大原扁理",
-    "count": 1,
-    "total_views": 512751,
-    "total_likes": 10840,
-    "amazon_url": "https://www.amazon.co.jp/dp/4778315308?tag=business-book-ranking02-22"
-  },
-  {
     "id": "afd202cb80d6",
     "title": "服を買うなら、捨てなさい",
     "author": "地曳 いく子",
@@ -8082,15 +8082,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4815623384?tag=business-book-ranking02-22"
   },
   {
-    "id": "be86482abe8f",
-    "title": "「朝１時間」ですべてが変わる　モーニングルーティン",
-    "author": "池田千恵",
-    "count": 3,
-    "total_views": 680382,
-    "total_likes": 10520,
-    "amazon_url": "https://www.amazon.co.jp/dp/B089GPK9SZ?tag=business-book-ranking02-22"
-  },
-  {
     "id": "9adcc27ed326",
     "title": "人生最後の日に ガッツポーズして死ねる たったひとつの生き方",
     "author": "ひすいこたろう",
@@ -8397,15 +8388,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4003231139?tag=business-book-ranking02-22"
   },
   {
-    "id": "8bdbe7a7b77d",
-    "title": "５０歳から花開く人、５０歳で止まる人",
-    "author": "有川 真由美",
-    "count": 1,
-    "total_views": 2070267,
-    "total_likes": 10136,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0B1CW9CQZ?tag=business-book-ranking02-22"
-  },
-  {
     "id": "8453061b40bc",
     "title": "国力研究　日本列島を、強く豊かに。",
     "author": "高市 早苗 編著",
@@ -8422,6 +8404,15 @@
     "total_views": 524379,
     "total_likes": 10113,
     "amazon_url": "https://www.amazon.co.jp/dp/4098251329?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "fc38170fbeef",
+    "title": "がんを克服した糖尿病医が考案! 弱った体を修復する内臓リセット健康法",
+    "author": "青木 厚",
+    "count": 2,
+    "total_views": 428142,
+    "total_likes": 10103,
+    "amazon_url": "https://www.amazon.co.jp/dp/4776211033?tag=business-book-ranking02-22"
   },
   {
     "id": "6955cf1f84a7",
@@ -8692,24 +8683,6 @@
     "total_views": 646060,
     "total_likes": 9613,
     "amazon_url": "https://www.amazon.co.jp/dp/4763160761?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "a2aa8177efec",
-    "title": "「朝1時間」ですべてが変わる モーニングルーティン",
-    "author": "池田 千恵",
-    "count": 1,
-    "total_views": 695403,
-    "total_likes": 9609,
-    "amazon_url": "https://www.amazon.co.jp/dp/4534057741?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "fc38170fbeef",
-    "title": "がんを克服した糖尿病医が考案! 弱った体を修復する内臓リセット健康法",
-    "author": "青木 厚",
-    "count": 1,
-    "total_views": 404136,
-    "total_likes": 9601,
-    "amazon_url": "https://www.amazon.co.jp/dp/4776211033?tag=business-book-ranking02-22"
   },
   {
     "id": "adac74e71b69",
@@ -9162,15 +9135,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4492224246?tag=business-book-ranking02-22"
   },
   {
-    "id": "c3f758b5a823",
-    "title": "SWITCH（スイッチ）オートファジーで手に入れる究極の健康長寿",
-    "author": "ジェームズ・Ｗ・クレメント、クリスティン・ロバーグ",
-    "count": 1,
-    "total_views": 411113,
-    "total_likes": 9073,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08QTLX9GJ?tag=business-book-ranking02-22"
-  },
-  {
     "id": "cc7dc225ee82",
     "title": "エセー 6冊セット (岩波文庫)",
     "author": "モンテーニュ",
@@ -9304,15 +9268,6 @@
     "total_views": 449742,
     "total_likes": 8888,
     "amazon_url": "https://www.amazon.co.jp/dp/B00F38461I?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "8c51cd02f25f",
-    "title": "100%得する話し方",
-    "author": "新井 慶一",
-    "count": 1,
-    "total_views": 492810,
-    "total_likes": 8882,
-    "amazon_url": "https://www.amazon.co.jp/dp/4799109103?tag=business-book-ranking02-22"
   },
   {
     "id": "1e39eb514500",
@@ -9628,6 +9583,15 @@
     "total_views": 422443,
     "total_likes": 8423,
     "amazon_url": "https://www.amazon.co.jp/dp/4166602519?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "e355cd2104a8",
+    "title": "絶対悲観主義 (講談社+α新書)",
+    "author": "楠木 建",
+    "count": 7,
+    "total_views": 481120,
+    "total_likes": 8416,
+    "amazon_url": "https://www.amazon.co.jp/dp/4065289327?tag=business-book-ranking02-22"
   },
   {
     "id": "1f45fab962a7",
@@ -10548,15 +10512,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4907623100?tag=business-book-ranking02-22"
   },
   {
-    "id": "668ddaed0024",
-    "title": "人は聞き方が９割",
-    "author": "永松 茂久",
-    "count": 3,
-    "total_views": 384684,
-    "total_likes": 7510,
-    "amazon_url": "https://www.amazon.co.jp/dp/B09HM2RJK7?tag=business-book-ranking02-22"
-  },
-  {
     "id": "8df7ec2f2659",
     "title": "乳酸菌がすべてを解決する",
     "author": "後藤 利夫",
@@ -11133,15 +11088,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4776212412?tag=business-book-ranking02-22"
   },
   {
-    "id": "bf77fe43e465",
-    "title": "ＮＦＴの教科書　ビジネス・ブロックチェーン・法律・会計まで　デジタルデータが資産になる未来",
-    "author": "天羽健介、増田雅史",
-    "count": 2,
-    "total_views": 405873,
-    "total_likes": 7057,
-    "amazon_url": "https://www.amazon.co.jp/dp/B09HGX65C1?tag=business-book-ranking02-22"
-  },
-  {
     "id": "d83735fe771f",
     "title": "毎日みるだけ! 自己肯定感365日BOOK",
     "author": "中島輝",
@@ -11185,15 +11131,6 @@
     "total_views": 311691,
     "total_likes": 7012,
     "amazon_url": "https://www.amazon.co.jp/dp/4344044967?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "058f03f5a7d9",
-    "title": "年収９０万円で東京ハッピーライフ",
-    "author": "大原扁理",
-    "count": 1,
-    "total_views": 570358,
-    "total_likes": 6983,
-    "amazon_url": "https://www.amazon.co.jp/dp/B01MPXWKKV?tag=business-book-ranking02-22"
   },
   {
     "id": "6369571f9d35",
@@ -11340,15 +11277,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B00DKX4I7U?tag=business-book-ranking02-22"
   },
   {
-    "id": "874106252764",
-    "title": "LIFE SCIENCE(ライフサイエンス) 長生きせざるをえない時代の生命科学講義",
-    "author": "吉森 保",
-    "count": 1,
-    "total_views": 294947,
-    "total_likes": 6882,
-    "amazon_url": "https://www.amazon.co.jp/dp/4822288668?tag=business-book-ranking02-22"
-  },
-  {
     "id": "0e15f17987a0",
     "title": "生命を守るしくみ オートファジー 老化、寿命、病気を左右する精巧なメカニズム (ブルーバックス 2190)",
     "author": "吉森 保",
@@ -11356,15 +11284,6 @@
     "total_views": 294947,
     "total_likes": 6882,
     "amazon_url": "https://www.amazon.co.jp/dp/4065268087?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "4eddc576dd6c",
-    "title": "SWITCH(スイッチ)オートファジーで手に入れる究極の健康長寿",
-    "author": "ジェームズ・W・クレメント、クリスティン・ロバーグ",
-    "count": 1,
-    "total_views": 294947,
-    "total_likes": 6882,
-    "amazon_url": "https://www.amazon.co.jp/dp/429600008X?tag=business-book-ranking02-22"
   },
   {
     "id": "35223bcc3bdb",
@@ -11790,6 +11709,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4776210703?tag=business-book-ranking02-22"
   },
   {
+    "id": "ea933ae2c93f",
+    "title": "60歳までに「お金の自由」を手に入れる！ (PHPビジネス新書)",
+    "author": "榊原 正幸",
+    "count": 2,
+    "total_views": 506507,
+    "total_likes": 6496,
+    "amazon_url": "https://www.amazon.co.jp/dp/B09VGNCN68?tag=business-book-ranking02-22"
+  },
+  {
     "id": "f5d1f2d56650",
     "title": "ミスしない大百科　“気をつけてもなくならない”ミスをなくす科学的な方法",
     "author": "飯野 謙次、宇都出 雅巳",
@@ -11959,15 +11887,6 @@
     "total_views": 430465,
     "total_likes": 6368,
     "amazon_url": "https://www.amazon.co.jp/dp/B01HLUS30A?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "5b324c1815f9",
-    "title": "GO WILD 野生の体を取り戻せ！　科学が教えるトレイルラン、低炭水化物食、マインドフルネス",
-    "author": "ジョンＪ．レイティ、リチャード・マニング",
-    "count": 3,
-    "total_views": 379580,
-    "total_likes": 6346,
-    "amazon_url": "https://www.amazon.co.jp/dp/B00R68RYM6?tag=business-book-ranking02-22"
   },
   {
     "id": "eb1f22c38974",
@@ -12312,15 +12231,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B07FP8XCTK?tag=business-book-ranking02-22"
   },
   {
-    "id": "e355cd2104a8",
-    "title": "絶対悲観主義 (講談社+α新書)",
-    "author": "楠木 建",
-    "count": 5,
-    "total_views": 356472,
-    "total_likes": 6118,
-    "amazon_url": "https://www.amazon.co.jp/dp/4065289327?tag=business-book-ranking02-22"
-  },
-  {
     "id": "5496395d28d8",
     "title": "【Amazon.co.jp限定】プロ目線のPodcastのつくり方（特典：制作の裏側がわかる！ポッドキャスト収録現場に密着　動画QRコード データ配信）",
     "author": "野村高文",
@@ -12571,15 +12481,6 @@
     "total_views": 305839,
     "total_likes": 5956,
     "amazon_url": "https://www.amazon.co.jp/dp/4295407445?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "f05f93edb102",
-    "title": "0秒で動け 「わかってはいるけど動けない」人のための",
-    "author": "伊藤羊一",
-    "count": 1,
-    "total_views": 281713,
-    "total_likes": 5951,
-    "amazon_url": "https://www.amazon.co.jp/dp/4815600244?tag=business-book-ranking02-22"
   },
   {
     "id": "f68063c4244e",
@@ -13680,6 +13581,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4198654425?tag=business-book-ranking02-22"
   },
   {
+    "id": "dcd1fb0b3f3f",
+    "title": "億までの人 億からの人 ゴールドマン・サックス勤続17年の投資家が明かす「兆人」のマインド",
+    "author": "田中渓",
+    "count": 4,
+    "total_views": 490840,
+    "total_likes": 5167,
+    "amazon_url": "https://www.amazon.co.jp/dp/4198659044?tag=business-book-ranking02-22"
+  },
+  {
     "id": "c0e0d5bd4696",
     "title": "ゼロ―――なにもない自分に小さなイチを足していく",
     "author": "堀江 貴文",
@@ -13723,15 +13633,6 @@
     "total_views": 249024,
     "total_likes": 5128,
     "amazon_url": "https://www.amazon.co.jp/dp/4776212579?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "d8e384980755",
-    "title": "1%の努力",
-    "author": "ひろゆき",
-    "count": 3,
-    "total_views": 271276,
-    "total_likes": 5126,
-    "amazon_url": "https://www.amazon.co.jp/dp/4478108498?tag=business-book-ranking02-22"
   },
   {
     "id": "8f00d9118d31",
@@ -13975,15 +13876,6 @@
     "total_views": 513863,
     "total_likes": 5007,
     "amazon_url": "https://www.amazon.co.jp/dp/B0D1ZSW3Q9?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "489929ba3ef8",
-    "title": "1万人抱いてわかった! モテる男39の法則",
-    "author": "しみけん",
-    "count": 2,
-    "total_views": 589261,
-    "total_likes": 5006,
-    "amazon_url": "https://www.amazon.co.jp/dp/4909979107?tag=business-book-ranking02-22"
   },
   {
     "id": "ed211f69a17a",
@@ -15696,6 +15588,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B09NKMJ4FK?tag=business-book-ranking02-22"
   },
   {
+    "id": "6d434fdf1643",
+    "title": "なぜかうまくいく人の「秘密の習慣」(ハンディ版)",
+    "author": "佐藤 伝",
+    "count": 2,
+    "total_views": 223551,
+    "total_likes": 4055,
+    "amazon_url": "https://www.amazon.co.jp/dp/4799327909?tag=business-book-ranking02-22"
+  },
+  {
     "id": "f6bfffa3a6df",
     "title": "他人を支配したがる人たち：身近にいる「マニピュレーター」の脅威",
     "author": "ジョージ・サイモン",
@@ -16171,6 +16072,15 @@
     "total_views": 161556,
     "total_likes": 3811,
     "amazon_url": "https://www.amazon.co.jp/dp/B08H1QWSVB?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "409e8a214235",
+    "title": "99％の人生を決める　１％の運の開き方",
+    "author": "崔燎平",
+    "count": 2,
+    "total_views": 219898,
+    "total_likes": 3806,
+    "amazon_url": "https://www.amazon.co.jp/dp/B07FCK4WM5?tag=business-book-ranking02-22"
   },
   {
     "id": "e3dabc612ef8",
@@ -16812,15 +16722,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4065141710?tag=business-book-ranking02-22"
   },
   {
-    "id": "26455a5cc7bc",
-    "title": "60歳までに「お金の自由」を手に入れる! (PHPビジネス新書)",
-    "author": "榊原 正幸",
-    "count": 1,
-    "total_views": 297919,
-    "total_likes": 3515,
-    "amazon_url": "https://www.amazon.co.jp/dp/4569851940?tag=business-book-ranking02-22"
-  },
-  {
     "id": "cf0b24af477c",
     "title": "THE POWER OF REGRET 振り返るからこそ、前に進める",
     "author": "ダニエル・ピンク",
@@ -16855,6 +16756,15 @@
     "total_views": 258992,
     "total_likes": 3486,
     "amazon_url": "https://www.amazon.co.jp/dp/B0D91ZL8KN?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "1a6d371cfb57",
+    "title": "HAPPY STRESS （ハッピーストレス）　ストレスがあなたの脳を進化させる",
+    "author": "青砥 瑞人",
+    "count": 3,
+    "total_views": 201329,
+    "total_likes": 3482,
+    "amazon_url": "https://www.amazon.co.jp/dp/B08PKGVX1V?tag=business-book-ranking02-22"
   },
   {
     "id": "5f53d2c5a915",
@@ -16965,6 +16875,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4815601852?tag=business-book-ranking02-22"
   },
   {
+    "id": "a1fe16586419",
+    "title": "なぜ、人は病気になるのか?",
+    "author": "寺田 武史",
+    "count": 2,
+    "total_views": 134388,
+    "total_likes": 3433,
+    "amazon_url": "https://www.amazon.co.jp/dp/429540683X?tag=business-book-ranking02-22"
+  },
+  {
     "id": "b9196ac43a59",
     "title": "精神科医が教える病気を治す 感情コントロール術",
     "author": "樺沢紫苑",
@@ -16990,15 +16909,6 @@
     "total_views": 201233,
     "total_likes": 3423,
     "amazon_url": "https://www.amazon.co.jp/dp/B07VN4XBWL?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "6d434fdf1643",
-    "title": "なぜかうまくいく人の「秘密の習慣」(ハンディ版)",
-    "author": "佐藤 伝",
-    "count": 1,
-    "total_views": 187746,
-    "total_likes": 3420,
-    "amazon_url": "https://www.amazon.co.jp/dp/4799327909?tag=business-book-ranking02-22"
   },
   {
     "id": "340059d88559",
@@ -17260,15 +17170,6 @@
     "total_views": 178257,
     "total_likes": 3333,
     "amazon_url": "https://www.amazon.co.jp/dp/482721431X?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "a1fe16586419",
-    "title": "なぜ、人は病気になるのか?",
-    "author": "寺田 武史",
-    "count": 1,
-    "total_views": 129018,
-    "total_likes": 3332,
-    "amazon_url": "https://www.amazon.co.jp/dp/429540683X?tag=business-book-ranking02-22"
   },
   {
     "id": "f66c8422cec1",
@@ -17584,15 +17485,6 @@
     "total_views": 140973,
     "total_likes": 3252,
     "amazon_url": "https://www.amazon.co.jp/dp/4866631252?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "409e8a214235",
-    "title": "99％の人生を決める　１％の運の開き方",
-    "author": "崔燎平",
-    "count": 1,
-    "total_views": 190789,
-    "total_likes": 3243,
-    "amazon_url": "https://www.amazon.co.jp/dp/B07FCK4WM5?tag=business-book-ranking02-22"
   },
   {
     "id": "d4a8b692f9d9",
@@ -18279,15 +18171,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B09CY6K1F7?tag=business-book-ranking02-22"
   },
   {
-    "id": "ea933ae2c93f",
-    "title": "60歳までに「お金の自由」を手に入れる！ (PHPビジネス新書)",
-    "author": "榊原 正幸",
-    "count": 1,
-    "total_views": 208588,
-    "total_likes": 2981,
-    "amazon_url": "https://www.amazon.co.jp/dp/B09VGNCN68?tag=business-book-ranking02-22"
-  },
-  {
     "id": "4d9af47df8e9",
     "title": "悪口を言われても気にしない人の考え方",
     "author": "堀もとこ",
@@ -18430,15 +18313,6 @@
     "total_views": 128276,
     "total_likes": 2936,
     "amazon_url": "https://www.amazon.co.jp/dp/4776210851?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "dcd1fb0b3f3f",
-    "title": "億までの人 億からの人 ゴールドマン・サックス勤続17年の投資家が明かす「兆人」のマインド",
-    "author": "田中渓",
-    "count": 2,
-    "total_views": 200534,
-    "total_likes": 2930,
-    "amazon_url": "https://www.amazon.co.jp/dp/4198659044?tag=business-book-ranking02-22"
   },
   {
     "id": "6f6aa80aae5e",
@@ -20268,6 +20142,15 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B0FCCZNTK7?tag=business-book-ranking02-22"
   },
   {
+    "id": "3443ea9e2b8c",
+    "title": "ChatGPT vs． 未来のない仕事をする人たち",
+    "author": "堀江貴文",
+    "count": 3,
+    "total_views": 167131,
+    "total_likes": 2435,
+    "amazon_url": "https://www.amazon.co.jp/dp/4763140892?tag=business-book-ranking02-22"
+  },
+  {
     "id": "979c90894d68",
     "title": "はじめての圏論 ブンゲン先生の現代数学入門 (ブルーバックス B 2313)",
     "author": "加藤 文元",
@@ -20320,15 +20203,6 @@
     "total_views": 165279,
     "total_likes": 2410,
     "amazon_url": "https://www.amazon.co.jp/dp/4344041348?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "abae95026d7a",
-    "title": "HAPPY STRESS (ハッピーストレス) ストレスがあなたの脳を進化させる",
-    "author": "青砥瑞人",
-    "count": 1,
-    "total_views": 145369,
-    "total_likes": 2407,
-    "amazon_url": "https://www.amazon.co.jp/dp/4815604762?tag=business-book-ranking02-22"
   },
   {
     "id": "e7968314d7d5",
@@ -20727,15 +20601,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4763142542?tag=business-book-ranking02-22"
   },
   {
-    "id": "b4572db52d62",
-    "title": "絶対悲観主義 (講談社＋α新書)",
-    "author": "楠木建",
-    "count": 2,
-    "total_views": 124648,
-    "total_likes": 2298,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0B3XFSKJ2?tag=business-book-ranking02-22"
-  },
-  {
     "id": "4e2bb21c2bc1",
     "title": "NINE LIES ABOUT WORK　仕事に関する９つの嘘",
     "author": "マーカス・バッキンガム、アシュリー・グッドール",
@@ -20826,15 +20691,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4267870012?tag=business-book-ranking02-22"
   },
   {
-    "id": "3443ea9e2b8c",
-    "title": "ChatGPT vs． 未来のない仕事をする人たち",
-    "author": "堀江貴文",
-    "count": 2,
-    "total_views": 157001,
-    "total_likes": 2265,
-    "amazon_url": "https://www.amazon.co.jp/dp/4763140892?tag=business-book-ranking02-22"
-  },
-  {
     "id": "5054a51400df",
     "title": "休養ベスト100　科学的根拠に基づく戦略的に休むスキル",
     "author": "加藤 浩晃",
@@ -20905,15 +20761,6 @@
     "total_views": 154339,
     "total_likes": 2237,
     "amazon_url": "https://www.amazon.co.jp/dp/4065294371?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "c7e554c5488a",
-    "title": "億までの人　億からの人　ゴールドマン・サックス勤続１７年の投資家が明かす「兆人」のマインド",
-    "author": "田中渓",
-    "count": 2,
-    "total_views": 290306,
-    "total_likes": 2237,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0DNSW2XSP?tag=business-book-ranking02-22"
   },
   {
     "id": "1f1ae0816c0a",
@@ -23499,15 +23346,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4569847269?tag=business-book-ranking02-22"
   },
   {
-    "id": "979cd84efb5a",
-    "title": "医者が教える食事術　最強の教科書――２０万人を診てわかった医学的に正しい食べ方６８",
-    "author": "牧田 善二",
-    "count": 1,
-    "total_views": 90752,
-    "total_likes": 1516,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0756W3ZR1?tag=business-book-ranking02-22"
-  },
-  {
     "id": "814a0544b052",
     "title": "1日1分の波動習慣で「運のいい人」に変わる: 「ラッキー・バイブレーション」で、なりたい自分になれる! (王様文庫)",
     "author": "桑名 正典",
@@ -23569,15 +23407,6 @@
     "total_views": 92165,
     "total_likes": 1502,
     "amazon_url": "https://www.amazon.co.jp/dp/4866632658?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "469e56873b5b",
-    "title": "ＳＬＥＥＰ　最高の脳と身体をつくる睡眠の技術",
-    "author": "ショーン・スティーブンソン",
-    "count": 1,
-    "total_views": 67156,
-    "total_likes": 1501,
-    "amazon_url": "https://www.amazon.co.jp/dp/B06W9P5NND?tag=business-book-ranking02-22"
   },
   {
     "id": "4286eca49e7f",
@@ -24858,15 +24687,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4419067500?tag=business-book-ranking02-22"
   },
   {
-    "id": "94fa31ab1a49",
-    "title": "８０歳の壁 (幻冬舎新書)",
-    "author": "和田秀樹",
-    "count": 1,
-    "total_views": 77304,
-    "total_likes": 1183,
-    "amazon_url": "https://www.amazon.co.jp/dp/B09WD4Y525?tag=business-book-ranking02-22"
-  },
-  {
     "id": "77f7c19d7065",
     "title": "残された時間の使い方",
     "author": "佐藤優",
@@ -24973,6 +24793,15 @@
     "total_views": 41881,
     "total_likes": 1144,
     "amazon_url": "https://www.amazon.co.jp/dp/4763140833?tag=business-book-ranking02-22"
+  },
+  {
+    "id": "89d2629bd225",
+    "title": "“カナダ式”で幸福度も資産も増え続ける! いつのまにか億り人になれる超マネーハック",
+    "author": "品田一世",
+    "count": 2,
+    "total_views": 63566,
+    "total_likes": 1144,
+    "amazon_url": "https://www.amazon.co.jp/dp/4046065117?tag=business-book-ranking02-22"
   },
   {
     "id": "08de0f123f31",
@@ -25279,15 +25108,6 @@
     "total_views": 92357,
     "total_likes": 1076,
     "amazon_url": "https://www.amazon.co.jp/dp/B09MHRWJKN?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "1a6d371cfb57",
-    "title": "HAPPY STRESS （ハッピーストレス）　ストレスがあなたの脳を進化させる",
-    "author": "青砥 瑞人",
-    "count": 2,
-    "total_views": 55960,
-    "total_likes": 1075,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08PKGVX1V?tag=business-book-ranking02-22"
   },
   {
     "id": "3a41183eb228",
@@ -26064,15 +25884,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4023322865?tag=business-book-ranking02-22"
   },
   {
-    "id": "89d2629bd225",
-    "title": "“カナダ式”で幸福度も資産も増え続ける! いつのまにか億り人になれる超マネーハック",
-    "author": "品田一世",
-    "count": 1,
-    "total_views": 51166,
-    "total_likes": 931,
-    "amazon_url": "https://www.amazon.co.jp/dp/4046065117?tag=business-book-ranking02-22"
-  },
-  {
     "id": "b9ecd9249470",
     "title": "Ｃｈａｔｔｅｒ（チャッター）―「頭の中のひとりごと」をコントロールし、最良の行動を導くための２６の方法",
     "author": "イーサン・クロス",
@@ -26188,15 +25999,6 @@
     "total_views": 42886,
     "total_likes": 914,
     "amazon_url": "https://www.amazon.co.jp/dp/B01JADEDUK?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "5f49bb48b67f",
-    "title": "時間革命 1秒もムダに生きるな",
-    "author": "堀江 貴文",
-    "count": 1,
-    "total_views": 38117,
-    "total_likes": 911,
-    "amazon_url": "https://www.amazon.co.jp/dp/4023318302?tag=business-book-ranking02-22"
   },
   {
     "id": "a212fc0f8d77",
@@ -27513,15 +27315,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/483342553X?tag=business-book-ranking02-22"
   },
   {
-    "id": "3fa3886ec91e",
-    "title": "なぜかうまくいく人の「秘密の習慣」（ハンディ版）",
-    "author": "佐藤伝",
-    "count": 1,
-    "total_views": 35805,
-    "total_likes": 635,
-    "amazon_url": "https://www.amazon.co.jp/dp/B09JK16TTF?tag=business-book-ranking02-22"
-  },
-  {
     "id": "db3bd7fc7949",
     "title": "企業変革（CX）のリアル・ノウハウ 修羅場の経営改革ストーリー (PHPビジネス新書)",
     "author": "木村 尚敬、小島 隆史、玉木 彰",
@@ -28035,15 +27828,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4478113270?tag=business-book-ranking02-22"
   },
   {
-    "id": "514ef4eb8054",
-    "title": "99%の人生を決める 1%の運の開き方",
-    "author": "崔燎平",
-    "count": 1,
-    "total_views": 29109,
-    "total_likes": 563,
-    "amazon_url": "https://www.amazon.co.jp/dp/4862573525?tag=business-book-ranking02-22"
-  },
-  {
     "id": "0b38ca9d42f9",
     "title": "なぜ働いていると本が読めなくなるのか (集英社新書)",
     "author": "三宅香帆",
@@ -28519,15 +28303,6 @@
     "total_views": 35776,
     "total_likes": 503,
     "amazon_url": "https://www.amazon.co.jp/dp/4761277475?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "8bdb939ba57b",
-    "title": "がんを克服した糖尿病医が考案！ 弱った体を修復する内臓リセット健康法",
-    "author": "青木 厚",
-    "count": 1,
-    "total_views": 24006,
-    "total_likes": 502,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08LPRKQX1?tag=business-book-ranking02-22"
   },
   {
     "id": "15a669a2857a",
@@ -29041,15 +28816,6 @@
     "total_views": 17558,
     "total_likes": 444,
     "amazon_url": "https://www.amazon.co.jp/dp/B0B4JFSKZS?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "70247b5ce3d3",
-    "title": "圧倒的に自由で快適な未来が手に入る! 勝間式ネオ・ライフハック100",
-    "author": "勝間 和代",
-    "count": 2,
-    "total_views": 28001,
-    "total_likes": 443,
-    "amazon_url": "https://www.amazon.co.jp/dp/4046047895?tag=business-book-ranking02-22"
   },
   {
     "id": "9d9057911554",
@@ -30789,15 +30555,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/4569859763?tag=business-book-ranking02-22"
   },
   {
-    "id": "96e804d8f8a0",
-    "title": "危険な添加物！　がんがイヤなら、これは食べるな",
-    "author": "渡辺雄二",
-    "count": 2,
-    "total_views": 13383,
-    "total_likes": 249,
-    "amazon_url": "https://www.amazon.co.jp/dp/B08ZCW2K4L?tag=business-book-ranking02-22"
-  },
-  {
     "id": "b47d5285efeb",
     "title": "暗黙知が伝わる 動画経営――生産性を飛躍させるマネジメント・バイ・ムービー",
     "author": "高橋 勇人",
@@ -31129,15 +30886,6 @@
     "total_views": 12224,
     "total_likes": 215,
     "amazon_url": "https://www.amazon.co.jp/dp/B0C6Q26CZR?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "051cfa21c5d3",
-    "title": "“カナダ式”で幸福度も資産も増え続ける！　いつのまにか億り人になれる超マネーハック",
-    "author": "品田一世",
-    "count": 1,
-    "total_views": 12400,
-    "total_likes": 213,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0CHM55KHY?tag=business-book-ranking02-22"
   },
   {
     "id": "a57d69778513",
@@ -31590,15 +31338,6 @@
     "amazon_url": "https://www.amazon.co.jp/dp/B0DRCPT515?tag=business-book-ranking02-22"
   },
   {
-    "id": "2a81b1003d7c",
-    "title": "５０歳を過ぎても体脂肪率１０％の名医が教える　内臓脂肪を落とす最強メソッド",
-    "author": "池谷 敏郎",
-    "count": 1,
-    "total_views": 10757,
-    "total_likes": 176,
-    "amazon_url": "https://www.amazon.co.jp/dp/B07PZB1ZPL?tag=business-book-ranking02-22"
-  },
-  {
     "id": "97089e424933",
     "title": "魚ビジネス　食べるのが好きな人から専門家まで楽しく読める魚の教養",
     "author": "ながさき一生",
@@ -31624,15 +31363,6 @@
     "total_views": 8907,
     "total_likes": 173,
     "amazon_url": "https://www.amazon.co.jp/dp/B017K0VBPA?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "00a7b9af890d",
-    "title": "ChatGPT vs. 未来のない仕事をする人たち",
-    "author": "堀江 貴文",
-    "count": 1,
-    "total_views": 10130,
-    "total_likes": 170,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0CKKZPWN3?tag=business-book-ranking02-22"
   },
   {
     "id": "220d4fbb7021",
@@ -32164,15 +31894,6 @@
     "total_views": 5870,
     "total_likes": 102,
     "amazon_url": "https://www.amazon.co.jp/dp/B0DP84Q9P4?tag=business-book-ranking02-22"
-  },
-  {
-    "id": "5e04f87d2fcd",
-    "title": "なぜ、人は病気になるのか？",
-    "author": "寺田武史",
-    "count": 1,
-    "total_views": 5370,
-    "total_likes": 101,
-    "amazon_url": "https://www.amazon.co.jp/dp/B0B2NY2F5S?tag=business-book-ranking02-22"
   },
   {
     "id": "1e1efc2aed6c",
