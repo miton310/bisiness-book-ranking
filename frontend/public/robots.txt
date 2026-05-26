@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Allow: /book/
+Allow: /channels
+
+# フィルター・ソート・ページネーション・検索URLはインデックス不要
+Disallow: /*?sort=
+Disallow: /*?year=
+Disallow: /*?channel=
+Disallow: /*?pubYear=
+Disallow: /*?publisher=
+Disallow: /*?category=
+Disallow: /*?tag=
+Disallow: /*?q=
+Disallow: /*?page=
 
 Sitemap: https://business.douga-summary.jp/sitemap.xml
