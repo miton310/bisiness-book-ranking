@@ -1,1 +1,1 @@
-export const title = 'チャンネル一覧 - ビジネス書ランキング'
+export const title = 'ビジネス書を紹介するYouTubeチャンネル一覧 | 社会人におすすめのビジネス書ランキング'
