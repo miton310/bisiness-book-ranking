@@ -418,14 +418,14 @@ export default function Page() {
 
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
-      />
+      <section className="site-intro">
+        <h1>本要約系YouTuberが紹介したビジネス書ランキング</h1>
+        <p>
+          本要約チャンネル・サラタメさん・フェルミ漫画大学など人気YouTuberが実際に動画で紹介した書籍を集計し、
+          紹介回数・総再生回数・いいね数をもとにランキング化しています。
+          YouTuberのリアルな推薦データから、今読むべきビジネス書を見つけてください。
+        </p>
+      </section>
       <div className="summary-stats">
         <span>投稿数: <strong>{hasFullData ? totalVideos.toLocaleString() : '...'}</strong></span>
         <span>書籍数: <strong>{hasFullData ? allBooks.length.toLocaleString() : rankings.length.toLocaleString()}</strong></span>
