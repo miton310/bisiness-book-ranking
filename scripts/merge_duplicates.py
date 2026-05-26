@@ -7,6 +7,7 @@
 """
 
 import json
+import re
 import shutil
 import unicodedata
 from pathlib import Path
@@ -31,8 +32,33 @@ def save_json(path, data):
 
 
 def normalize_title(title):
-    """タイトルをNFKC正規化して比較用の文字列を返す"""
-    return unicodedata.normalize("NFKC", title).strip()
+    """タイトルをNFKC正規化+括弧除去+区切り文字統一して比較用の文字列を返す"""
+    t = unicodedata.normalize("NFKC", title)
+    # 上下巻・巻数表記を除去: (上)(下)(中)(1)(2)(第1冊) など
+    t = re.sub(r'\s*[\(（](上|下|中|\d+|第[一二三四五六七八九十\d]+冊?)[\)）]', '', t)
+    # 末尾の括弧内を除去 (出版社名、文庫名、シリーズ名)
+    t = re.sub(r'\s*[\(（][^)）]*[\)）]\s*$', '', t)
+    # サブタイトル区切り文字を統一: ——, ――, ──, ―, — → -
+    t = re.sub(r'[―─—–]{1,2}', '-', t)
+    # 空白を統一
+    t = re.sub(r'[\s　]+', ' ', t)
+    return t.strip()
+
+
+def normalize_author(author):
+    """著者名を正規化して比較用の文字列を返す"""
+    if not author:
+        return ""
+    a = unicodedata.normalize("NFKC", author)
+    # スペース、カンマ区切りを除去して比較
+    a = re.sub(r'[\s　,、・]+', '', a)
+    return a.lower()
+
+
+def authors_match(group):
+    """グループ内の著者が同一人物かを判定"""
+    # 全て統合する（別翻訳・別出版社も同一書籍として扱う）
+    return True
 
 
 def pick_best(field, group):
@@ -69,10 +95,21 @@ def merge_books_by_normalized_title(books):
     merged_books = []
     id_mapping = {}  # old_id -> new_id
     merge_log = []
+    skip_log = []
 
     for norm_title, group in title_groups.items():
         if len(group) == 1:
             merged_books.append(group[0])
+            continue
+
+        # 著者が異なる場合は統合しない（別翻訳・別著者の同名書籍）
+        if not authors_match(group):
+            for book in group:
+                merged_books.append(book)
+            skip_log.append({
+                "title": norm_title,
+                "books": [(b["title"], b.get("author", "")) for b in group],
+            })
             continue
 
         # 重複あり: マージ
@@ -127,7 +164,7 @@ def merge_books_by_normalized_title(books):
             "titles": [b["title"] for b in group],
         })
 
-    return merged_books, id_mapping, merge_log
+    return merged_books, id_mapping, merge_log, skip_log
 
 
 def update_rankings(rankings, id_mapping, book_map, sort_key="count"):
@@ -175,7 +212,7 @@ def main():
     print(f"マージ前: {len(books)}件")
 
     # マージ
-    merged_books, id_mapping, merge_log = merge_books_by_normalized_title(books)
+    merged_books, id_mapping, merge_log, skip_log = merge_books_by_normalized_title(books)
     print(f"マージ後: {len(merged_books)}件")
     print(f"統合された組数: {len(merge_log)}組\n")
 
@@ -186,6 +223,14 @@ def main():
             for t in entry["titles"]:
                 if t != entry["title"]:
                     print(f"    <- {t}")
+        print()
+
+    if skip_log:
+        print(f"--- 著者不一致でスキップ: {len(skip_log)}組 ---")
+        for entry in skip_log:
+            print(f"  {entry['title']}")
+            for title, author in entry["books"]:
+                print(f"    [{author}] {title}")
         print()
 
     if not id_mapping:

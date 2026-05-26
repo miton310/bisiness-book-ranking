@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 import re
+import unicodedata
 import sys
 import time
 import urllib.parse
@@ -228,7 +229,7 @@ def extract_book_info_list(summary):
 
 def normalize_title_key(title):
     """表記揺れ統一用の正規化キーを生成"""
-    t = title
+    t = unicodedata.normalize('NFKC', title)
     t = re.sub(r'[『』「」]', '', t)
     t = re.sub(r'[（(](単行本|文庫|新書|ハードカバー|Kindle版)[）)]', '', t)
     t = re.sub(r'^(改訂版|新版|新装版|増補版|決定版|完全版)\s*', '', t)

@@ -81,6 +81,56 @@ python3 scripts/fetch_videos.py --channel "本要約" --full
 python3 scripts/fetch_videos.py
 ```
 
+### データ更新後の実行順序
+
+データ更新時は以下の順序で実行する。
+
+```bash
+# 1. 動画・書籍データ取得（差分更新 or --full）
+python3 scripts/fetch_videos.py
+
+# 2. 書籍情報補完（ISBN、画像、出版日など）
+python3 scripts/fetch_amazon.py
+
+# 3. 重複統合（NFKC正規化 + 括弧除去 + 上下巻統合）
+python3 scripts/merge_duplicates.py
+
+# 4. ISBN重複統合
+python3 scripts/merge_by_isbn.py
+
+# 5. フロントエンドにコピー（merge_duplicates.pyは自動コピーするが念のため）
+cp data/*.json frontend/public/data/
+
+# 6. ビルド＆デプロイ
+cd frontend && npm run build && npx wrangler deploy
+```
+
+**注意:**
+- 手順3の `merge_duplicates.py` は自動で `frontend/public/data/` にもコピーする
+- `fetch_videos.py` は `normalize_title_key` にNFKC正規化が入っているため、今後の新規取得分は自動統合される。ただし既存データの表記揺れは `merge_duplicates.py` で対応
+
+### 新規チャンネル追加 or 全件再取得（--full）
+
+```bash
+# 1. チャンネルごとに全件取得（時間がかかるため1チャンネルずつ）
+python3 scripts/fetch_videos.py --channel "チャンネル名" --full
+
+# 2. 書籍情報補完
+python3 scripts/fetch_amazon.py
+
+# 3. 重複統合
+python3 scripts/merge_duplicates.py
+
+# 4. ISBN重複統合
+python3 scripts/merge_by_isbn.py
+
+# 5. フロントエンドにコピー
+cp data/*.json frontend/public/data/
+
+# 6. ビルド＆デプロイ
+cd frontend && npm run build && npx wrangler deploy
+```
+
 ### フロントエンド反映
 ```bash
 cp data/*.json frontend/public/data/
