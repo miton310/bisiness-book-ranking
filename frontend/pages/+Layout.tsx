@@ -27,6 +27,9 @@ export function Layout({ children }: { children: ReactNode }) {
           <nav className="nav">
             <TopLink>トップ</TopLink>
             <a href="/channels">チャンネル一覧</a>
+            <a href="/category/business">ビジネス・経済</a>
+            <a href="/category/humanities">人文・思想</a>
+            <a href="/category/lifestyle">健康・子育て</a>
           </nav>
         </div>
       </header>

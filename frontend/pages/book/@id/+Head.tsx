@@ -6,13 +6,14 @@ export function Head() {
 
   if (!book) return null
 
+  const channels = [...new Set(book.videos.map(v => v.channel))]
+  const channelStr = channels.slice(0, 2).join('・') + (channels.length > 2 ? `など${channels.length}チャンネル` : '')
   const description = [
-    `『${book.title}』`,
-    book.author && `著者: ${book.author}`,
-    book.publisher && `出版社: ${book.publisher}`,
-    `${book.count}回紹介`,
-    `総再生回数: ${book.total_views.toLocaleString()}`,
-  ].filter(Boolean).join(' | ')
+    `『${book.title}』を${channelStr}が紹介。`,
+    book.author && `著者: ${book.author}。`,
+    `YouTuber ${book.count}回紹介、総再生回数${Math.round(book.total_views / 10000)}万回。`,
+    `Amazonで購入・詳細を確認。`,
+  ].filter(Boolean).join('')
 
   const pageUrl = `https://business.douga-summary.jp/book/${book.id}`
 

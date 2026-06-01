@@ -4,5 +4,5 @@ import type { Data } from './+data'
 export function title(pageContext: PageContext<Data>): string {
   const book = pageContext.data?.book
   if (!book) return 'ビジネス書ランキング'
-  return `${book.title} - ビジネス書ランキング`
+  return `${book.title}【YouTuber${book.count}回紹介】 - ビジネス書ランキング`
 }

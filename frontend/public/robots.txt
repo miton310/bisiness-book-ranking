@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Allow: /book/
 Allow: /channels
+Allow: /category/
 
 # フィルター・ソート・ページネーション・検索URLはインデックス不要
 Disallow: /*?sort=
