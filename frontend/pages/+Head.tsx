@@ -6,11 +6,9 @@ export function Head() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="ビジネス書ランキング運営チーム" />
       <meta name="robots" content="index, follow" />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://business.douga-summary.jp/" />
-      <meta property="og:image" content="https://business.douga-summary.jp/og-image.png" />
+      <meta property="og:site_name" content="社会人におすすめのビジネス書ランキング" />
+      <meta property="og:locale" content="ja_JP" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://business.douga-summary.jp/og-image.png" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />

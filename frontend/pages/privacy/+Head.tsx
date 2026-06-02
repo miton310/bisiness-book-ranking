@@ -6,7 +6,6 @@ export function Head() {
     <>
       <meta name="description" content={description} />
       <meta name="robots" content="noindex,follow" />
-      <meta property="og:title" content="プライバシーポリシー - ビジネス書ランキング" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={pageUrl} />
       <link rel="canonical" href={pageUrl} />

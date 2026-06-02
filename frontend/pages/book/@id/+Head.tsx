@@ -20,15 +20,12 @@ export function Head() {
   return (
     <>
       <meta name="description" content={description} />
-      <meta property="og:title" content={`${book.title}${book.author ? ` - ${book.author}` : ''} | 社会人におすすめのビジネス書`} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={pageUrl} />
-      {book.image_url && <meta property="og:image" content={book.image_url} />}
+      <meta property="og:image" content={book.image_url || 'https://business.douga-summary.jp/og-image.png'} />
       <meta property="og:type" content="article" />
-      <meta name="twitter:card" content={book.image_url ? 'summary_large_image' : 'summary'} />
-      <meta name="twitter:title" content={`${book.title}${book.author ? ` - ${book.author}` : ''} | 社会人におすすめのビジネス書`} />
       <meta name="twitter:description" content={description} />
-      {book.image_url && <meta name="twitter:image" content={book.image_url} />}
+      <meta name="twitter:image" content={book.image_url || 'https://business.douga-summary.jp/og-image.png'} />
       <link rel="canonical" href={pageUrl} />
     </>
   )

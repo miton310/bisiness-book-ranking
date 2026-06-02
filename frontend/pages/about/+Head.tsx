@@ -5,9 +5,11 @@ export function Head() {
   return (
     <>
       <meta name="description" content={description} />
-      <meta property="og:title" content="このサイトについて - ビジネス書ランキング" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={pageUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://business.douga-summary.jp/og-image.png" />
+      <meta name="twitter:image" content="https://business.douga-summary.jp/og-image.png" />
       <link rel="canonical" href={pageUrl} />
     </>
   )
