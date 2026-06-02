@@ -5,6 +5,9 @@ import vike from 'vike/plugin'
 export default defineConfig({
   plugins: [react(), vike()],
   publicDir: 'public',
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+  },
   build: {
     outDir: 'dist',
   },

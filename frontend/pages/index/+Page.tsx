@@ -608,6 +608,52 @@ export default function Page() {
         ))}
       </div>
       {renderPagination()}
+
+      <section className="faq-section">
+        <h2>よくある質問</h2>
+        <div className="faq-list">
+          <details className="faq-item">
+            <summary className="faq-question">どうやってランキングを集計していますか？</summary>
+            <p className="faq-answer">
+              本要約チャンネル・サラタメさん・フェルミ漫画大学・学識サロン・アバタロー・サムの本解説chなど
+              人気の本要約系YouTubeチャンネルの動画概要欄を解析し、Amazonリンクから書籍情報を取得しています。
+              各書籍が何本の動画で紹介されたか、紹介動画の総再生回数・いいね数を集計してランキングを作成しています。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary className="faq-question">「ポイント順」とはどういう意味ですか？</summary>
+            <p className="faq-answer">
+              紹介したチャンネル数を重視したスコアです。1チャンネルが初めてその本を紹介すると5pt加算、
+              同じチャンネルが2本目以降に紹介するたびに1pt加算されます。
+              複数の独立したチャンネルが評価した本ほど高得点になります。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary className="faq-question">データはどのくらいの頻度で更新されますか？</summary>
+            <p className="faq-answer">
+              YouTube Data APIを使用して定期的にデータを収集・更新しています。
+              最新の動画情報が反映されるまで数日かかる場合があります。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary className="faq-question">どのジャンルのビジネス書が多いですか？</summary>
+            <p className="faq-answer">
+              人文・思想、ビジネス・経済、暮らし・健康・子育て、ノンフィクションのジャンルが多く登録されています。
+              上部の「ジャンル」フィルターで絞り込むか、
+              <a href="/category/humanities">人文・思想</a>・
+              <a href="/category/business">ビジネス・経済</a>
+              などのジャンル別ページもご利用ください。
+            </p>
+          </details>
+          <details className="faq-item">
+            <summary className="faq-question">Amazonのリンクはアフィリエイトリンクですか？</summary>
+            <p className="faq-answer">
+              はい、当サイトのAmazonリンクはAmazonアソシエイトプログラムを利用したアフィリエイトリンクです。
+              リンク経由で購入いただくと、サイト運営の収益になりますが、購入者の方のお支払い金額は変わりません。
+            </p>
+          </details>
+        </div>
+      </section>
     </div>
   )
 }
