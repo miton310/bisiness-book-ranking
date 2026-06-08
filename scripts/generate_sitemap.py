@@ -31,6 +31,7 @@ def generate_sitemap():
     static_pages = [
         {"loc": "/", "priority": "1.0", "changefreq": "daily"},
         {"loc": "/channels", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": "/about", "priority": "0.5", "changefreq": "monthly"},
     ]
     for page in static_pages:
         sitemap.append("  <url>")
@@ -73,10 +74,13 @@ def generate_sitemap():
         sitemap.append(f"    <priority>0.8</priority>")
         sitemap.append("  </url>")
 
-    # 書籍詳細ページ（lastmodを動的に設定）
+    # 書籍詳細ページ（紹介3回以上の濃いページのみ。薄いページはnoindex＆sitemap除外）
+    INDEX_MIN_COUNT = 3
+    indexed_books = 0
     for book in books:
         book_id = book.get("id")
-        if book_id:
+        if book_id and book.get("count", 0) >= INDEX_MIN_COUNT:
+            indexed_books += 1
             lastmod = get_book_lastmod(book)
             sitemap.append("  <url>")
             sitemap.append(f"    <loc>{base_url}/book/{book_id}</loc>")
@@ -91,9 +95,9 @@ def generate_sitemap():
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(sitemap))
 
-    total = len(static_pages) + len(categories) + len(books)
+    total = len(static_pages) + len(categories) + indexed_books
     print(f"✓ Sitemap generated: {output_path}")
-    print(f"  Static: {len(static_pages)}, Categories: {len(categories)}, Books: {len(books)}, Total: {total}")
+    print(f"  Static: {len(static_pages)}, Categories: {len(categories)}, Books(>= {INDEX_MIN_COUNT}回): {indexed_books} / {len(books)}, Total: {total}")
 
 
 if __name__ == "__main__":

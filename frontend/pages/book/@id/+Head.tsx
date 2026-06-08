@@ -16,9 +16,12 @@ export function Head() {
   ].filter(Boolean).join('')
 
   const pageUrl = `https://business.douga-summary.jp/book/${book.id}`
+  // 紹介回数が少ない薄いページはインデックスさせない（質の高いページに集中）
+  const noIndex = book.count < 3
 
   return (
     <>
+      {noIndex && <meta name="robots" content="noindex,follow" />}
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={pageUrl} />
